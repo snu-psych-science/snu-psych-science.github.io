@@ -1,13 +1,13 @@
 ---
 ---
 
-# snu-psych-science's Website
+# 심리과학연구소
 
-An engaging 1-3 sentence description of your lab.
+서울대학교 심리과학연구소는 심리학의 과학주의적 경향과 인간 중심적 접근방식을 바탕으로, 인간의 심리와 행동을 다층적으로 이해하고 한국 사회의 현실 문제에 대한 실증적 연구를 수행합니다.
 
 {% include section.html %}
 
-## Highlights
+## 주요 연구
 
 {% capture text %}
 
