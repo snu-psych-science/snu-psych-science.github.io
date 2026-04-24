@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: 소식
 nav:
   order: 4
   tooltip: Musings and miscellany
