@@ -5,6 +5,6 @@
 
   # snu-psych-science's Website
 
-  Visit **[website url](#)** 🚀
+  Visit **[snu-psych-science.github.io](https://snu-psych-science.github.io)** 🚀
 
   _Built with [Lab Website Template](https://greene-lab.gitbook.io/lab-website-template-docs)_
