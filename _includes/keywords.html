@@ -1,0 +1,7 @@
+{% assign keywords = include.keywords | split: "|" | array_filter %}
+
+<div class="research-keywords">
+  {% for keyword in keywords %}
+    <span class="research-keyword">{{ keyword | strip }}</span>
+  {% endfor %}
+</div>

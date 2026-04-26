@@ -1,0 +1,19 @@
+.research-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 20px;
+  margin: 32px 0;
+}
+
+.research-keyword {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: #7dd3fc;
+  color: #111827;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
