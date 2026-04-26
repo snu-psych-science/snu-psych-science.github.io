@@ -1,5 +1,5 @@
 ---
-title: Research
+title: 학술행사
 nav:
   order: 2
   tooltip: Published works

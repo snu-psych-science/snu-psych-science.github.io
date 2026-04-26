@@ -1,5 +1,5 @@
 ---
-title: 소개
+title: 연구소 소개
 nav:
   order: 1
   tooltip: About our team

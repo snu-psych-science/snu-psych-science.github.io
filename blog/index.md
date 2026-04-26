@@ -1,5 +1,5 @@
 ---
-title: 소식
+title: 뉴스레터
 nav:
   order: 4
   tooltip: Musings and miscellany

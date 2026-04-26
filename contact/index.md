@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: 자료실
 nav:
   order: 5
   tooltip: Email, address, and location

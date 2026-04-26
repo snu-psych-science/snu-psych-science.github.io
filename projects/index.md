@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: 연구소개
 nav:
   order: 3
   tooltip: Software, datasets, and more
