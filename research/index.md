@@ -5,16 +5,9 @@ nav:
   tooltip: Published works
 ---
 
-# {% include icon.html icon="fa-solid fa-microscope" %}Research
+# {% include icon.html icon="fa-solid fa-microscope" %}학술행사
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-{% include section.html %}
-
-## Highlighted
-
-{% include citation.html lookup="Open collaborative writing with Manubot" style="rich" %}
+심리과학연구소는 심리과학 분야의 학문적 교류와 연구 역량 강화를 위해 학술 심포지엄, 초청 강연, 연구 세미나, 워크숍 등 다양한 학술행사를 지속적으로 기획·운영하고 있습니다. 이러한 활동을 통해 학내외 연구자 간의 지식 공유와 협력을 촉진하고, 심리학의 이론적 발전과 사회적 적용 가능성을 함께 모색하고 있습니다.
 
 {% include section.html %}
 
