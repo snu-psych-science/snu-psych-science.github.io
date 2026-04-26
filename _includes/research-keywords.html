@@ -1,7 +1,14 @@
-{% assign keywords = include.keywords | split: "|" | array_filter %}
+{% assign keywords = include.keywords | split: "|" %}
 
-<div class="research-keywords">
-  {% for keyword in keywords %}
-    <span class="research-keyword">{{ keyword | strip }}</span>
-  {% endfor %}
-</div>
+{% if keywords.size > 0 %}
+  <div class="tags">
+    {% for keyword in keywords %}
+      {% assign clean_keyword = keyword | strip %}
+      {% if clean_keyword != "" %}
+        <span class="tag">
+          {{ clean_keyword }}
+        </span>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
