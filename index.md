@@ -7,7 +7,7 @@
 
 {% include section.html %}
 
-## 주요 연구
+## 연구소 소식
 
 {% capture text %}
 

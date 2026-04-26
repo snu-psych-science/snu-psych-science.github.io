@@ -2,9 +2,9 @@
 
 # team member roles
 
-principal-investigator:
+연구소장:
   icon: fa-solid fa-microscope
-  description: Principal Investigator
+  description: 연구소장
 
 postdoc:
   icon: fa-solid fa-glasses
