@@ -13,31 +13,31 @@ title: 홈
 
 <div class="home-preview-grid">
 
-  {% if events.size > 0 %}
-    {% for event in events %}
-      <a class="home-preview-card" href="{{ event.url | relative_url }}">
-        <div class="home-preview-date">
-          {{ event.event_date | default: event.date | date: "%Y.%m.%d" }}
-        </div>
-
-        <h3>{{ event.title }}</h3>
-
-        {% if event.speaker %}
-          <p class="home-preview-meta">{{ event.speaker }}</p>
-        {% endif %}
-
-        {% if event.summary %}
-          <p>{{ event.summary }}</p>
-        {% endif %}
-
-        <span>자세히 보기 →</span>
-      </a>
-    {% endfor %}
-  {% else %}
-    <div class="home-empty-card">
-      등록된 학술행사가 없습니다.
+{% if events.size > 0 %}
+{% for event in events %}
+  <a class="home-preview-card" href="{{ event.url | relative_url }}">
+    <div class="home-preview-date">
+      {{ event.event_date | default: event.date | date: "%Y.%m.%d" }}
     </div>
-  {% endif %}
+
+    <h3>{{ event.title }}</h3>
+
+    {% if event.speaker %}
+      <p class="home-preview-meta">{{ event.speaker }}</p>
+    {% endif %}
+
+    {% if event.summary %}
+      <p>{{ event.summary }}</p>
+    {% endif %}
+
+    <span>자세히 보기 →</span>
+  </a>
+{% endfor %}
+{% else %}
+  <div class="home-empty-card">
+    등록된 학술행사가 없습니다.
+  </div>
+{% endif %}
 
 </div>
 
@@ -54,7 +54,7 @@ title: 홈
 
 {% if latest_newsletter %}
 
-<a class="home-newsletter-card" href="{{ latest_newsletter.url | relative_url }}">
+<div class="home-newsletter-card">
 
   <div class="home-newsletter-image">
     {% if latest_newsletter.image %}
@@ -78,16 +78,18 @@ title: 홈
       <p class="home-preview-meta">{{ latest_newsletter.volume }}</p>
     {% endif %}
 
-    {% if latest_newsletter.excerpt %}
-      <p>
-        {{ latest_newsletter.excerpt | strip_html | truncate: 150 }}
-      </p>
+    {% if latest_newsletter.summary %}
+      <p>{{ latest_newsletter.summary }}</p>
+    {% else %}
+      <p>{{ latest_newsletter.excerpt | strip_html | truncate: 150 }}</p>
     {% endif %}
 
-    <span>뉴스레터 보기 →</span>
+    <a class="home-newsletter-button" href="{{ latest_newsletter.url | relative_url }}">
+      뉴스레터 보기 →
+    </a>
   </div>
 
-</a>
+</div>
 
 {% else %}
 
