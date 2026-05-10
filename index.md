@@ -2,24 +2,6 @@
 title: 홈
 ---
 
-<div class="home-hero">
-
-  <div class="home-slideshow">
-    <div class="home-slide" style="background-image: url('{{ "/images/background.png" | relative_url }}');"></div>
-    <div class="home-slide" style="background-image: url('{{ "/images/home-slide-2.jpg" | relative_url }}');"></div>
-    <div class="home-slide" style="background-image: url('{{ "/images/home-slide-3.jpg" | relative_url }}');"></div>
-  </div>
-
-  <div class="home-hero-overlay"></div>
-
-  <div class="home-hero-content">
-    <div class="home-hero-label">SEOUL NATIONAL UNIVERSITY</div>
-    <h1>서울대학교 심리과학연구소</h1>
-    <p>Institute of Psychological Science</p>
-  </div>
-
-</div>
-
 {% assign events = site.events | sort: "date" | reverse | slice: 0, 3 %}
 {% assign newsletters = site.newsletters | sort: "date" | reverse %}
 {% assign latest_newsletter = newsletters | first %}
@@ -72,34 +54,45 @@ title: 홈
 
 {% if latest_newsletter %}
 
-  <a class="home-newsletter-card" href="{{ latest_newsletter.url | relative_url }}">
-    <div class="home-newsletter-image">
+<a class="home-newsletter-card" href="{{ latest_newsletter.url | relative_url }}">
+
+  <div class="home-newsletter-image">
+    {% if latest_newsletter.image %}
+      <img
+        src="{{ latest_newsletter.image | relative_url }}"
+        alt="{{ latest_newsletter.title }}"
+      >
+    {% else %}
       {% include icon.html icon="fa-solid fa-newspaper" %}
+    {% endif %}
+  </div>
+
+  <div class="home-newsletter-content">
+    <div class="home-preview-date">
+      {{ latest_newsletter.date | date: "%Y.%m.%d" }}
     </div>
 
-    <div class="home-newsletter-content">
-      <div class="home-preview-date">
-        {{ latest_newsletter.date | date: "%Y.%m.%d" }}
-      </div>
+    <h3>{{ latest_newsletter.title }}</h3>
 
-      <h3>{{ latest_newsletter.title }}</h3>
+    {% if latest_newsletter.volume %}
+      <p class="home-preview-meta">{{ latest_newsletter.volume }}</p>
+    {% endif %}
 
-      {% if latest_newsletter.volume %}
-        <p class="home-preview-meta">{{ latest_newsletter.volume }}</p>
-      {% endif %}
-
+    {% if latest_newsletter.excerpt %}
       <p>
         {{ latest_newsletter.excerpt | strip_html | truncate: 150 }}
       </p>
+    {% endif %}
 
-      <span>뉴스레터 보기 →</span>
-    </div>
-  </a>
+    <span>뉴스레터 보기 →</span>
+  </div>
+
+</a>
 
 {% else %}
 
-  <div class="home-empty-card">
-    등록된 뉴스레터가 없습니다.
-  </div>
+<div class="home-empty-card">
+  등록된 뉴스레터가 없습니다.
+</div>
 
 {% endif %}

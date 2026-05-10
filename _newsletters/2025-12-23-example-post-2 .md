@@ -1,6 +1,6 @@
 ---
 title: 뉴스레터 4호
-image: images/news_4.png
+image: images/newsletter-vol4.png
 author: 관리자
 ---
 
