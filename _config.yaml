@@ -41,6 +41,10 @@ collections:
   events:
     output: true
     permalink: /events/:name/
+    
+  newsletters:
+    output: true
+    permalink: /newsletters/:name/
 
 # jekyll plugins
 plugins:

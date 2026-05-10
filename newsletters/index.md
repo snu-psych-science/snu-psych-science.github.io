@@ -2,7 +2,7 @@
 title: 뉴스레터
 nav:
   order: 4
-  tooltip: Musings and miscellany
+  tooltip: 뉴스레터
 ---
 
 # {% include icon.html icon="fa-solid fa-feather-pointed" %}뉴스레터
@@ -11,10 +11,34 @@ nav:
 
 {% include section.html %}
 
-{% include search-box.html %}
+{% assign newsletters = site.newsletters | sort: "date" | reverse %}
 
-{% include tags.html tags=site.tags %}
+<div class="newsletter-list">
 
-{% include search-info.html %}
+  {% for newsletter in newsletters %}
+    <a class="newsletter-card" href="{{ newsletter.url | relative_url }}">
 
-{% include list.html data="posts" component="post-excerpt" %}
+      <div class="newsletter-date">
+        {{ newsletter.date | date: "%Y.%m.%d" }}
+      </div>
+
+      <div class="newsletter-content">
+        <h3>{{ newsletter.title }}</h3>
+
+        {% if newsletter.volume %}
+          <p class="newsletter-volume">{{ newsletter.volume }}</p>
+        {% endif %}
+
+        {% if newsletter.excerpt %}
+          <p class="newsletter-summary">
+            {{ newsletter.excerpt | strip_html | truncate: 140 }}
+          </p>
+        {% endif %}
+      </div>
+
+      <div class="newsletter-arrow">→</div>
+
+    </a>
+  {% endfor %}
+
+</div>
