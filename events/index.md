@@ -17,25 +17,25 @@ nav:
 
 </div>
 
-{% assign events = site.posts | where_exp: "post", "post.categories contains 'event'" | sort: "date" | reverse %}
+{% assign events = site.events | sort: "date" | reverse %}
 
 <div class="event-list">
 
-  {% for post in events %}
-    <a class="event-card" href="{{ post.url | relative_url }}">
+  {% for event in events %}
+    <a class="event-card" href="{{ event.url | relative_url }}">
       <div class="event-date">
-        {{ post.event_date | default: post.date | date: "%Y.%m.%d" }}
+        {{ event.event_date | default: event.date | date: "%Y.%m.%d" }}
       </div>
 
       <div class="event-content">
-        <h3>{{ post.title }}</h3>
+        <h3>{{ event.title }}</h3>
 
-        {% if post.speaker %}
-          <p class="event-speaker">{{ post.speaker }}</p>
+        {% if event.speaker %}
+          <p class="event-speaker">{{ event.speaker }}</p>
         {% endif %}
 
-        {% if post.summary %}
-          <p class="event-summary">{{ post.summary }}</p>
+        {% if event.summary %}
+          <p class="event-summary">{{ event.summary }}</p>
         {% endif %}
       </div>
 
