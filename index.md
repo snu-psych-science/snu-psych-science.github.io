@@ -1,81 +1,105 @@
 ---
+title: 홈
 ---
 
-# 심리과학연구소
+<div class="home-hero">
 
-서울대학교 심리과학연구소는 심리학의 과학주의적 경향과 인간 중심적 접근방식을 바탕으로, 인간의 심리와 행동을 다층적으로 이해하고 한국 사회의 현실 문제에 대한 실증적 연구를 수행합니다.
+  <div class="home-slideshow">
+    <div class="home-slide" style="background-image: url('{{ "/images/background.png" | relative_url }}');"></div>
+    <div class="home-slide" style="background-image: url('{{ "/images/home-slide-2.jpg" | relative_url }}');"></div>
+    <div class="home-slide" style="background-image: url('{{ "/images/home-slide-3.jpg" | relative_url }}');"></div>
+  </div>
+
+  <div class="home-hero-overlay"></div>
+
+  <div class="home-hero-content">
+    <div class="home-hero-label">SEOUL NATIONAL UNIVERSITY</div>
+    <h1>서울대학교 심리과학연구소</h1>
+    <p>Institute of Psychological Science</p>
+  </div>
+
+</div>
+
+{% assign events = site.events | sort: "date" | reverse | slice: 0, 3 %}
+{% assign newsletters = site.newsletters | sort: "date" | reverse %}
+{% assign latest_newsletter = newsletters | first %}
+
+<div class="home-section-title">
+  <span>ACADEMIC EVENTS</span>
+  <h2>학술행사</h2>
+</div>
+
+<div class="home-preview-grid">
+
+  {% if events.size > 0 %}
+    {% for event in events %}
+      <a class="home-preview-card" href="{{ event.url | relative_url }}">
+        <div class="home-preview-date">
+          {{ event.event_date | default: event.date | date: "%Y.%m.%d" }}
+        </div>
+
+        <h3>{{ event.title }}</h3>
+
+        {% if event.speaker %}
+          <p class="home-preview-meta">{{ event.speaker }}</p>
+        {% endif %}
+
+        {% if event.summary %}
+          <p>{{ event.summary }}</p>
+        {% endif %}
+
+        <span>자세히 보기 →</span>
+      </a>
+    {% endfor %}
+  {% else %}
+    <div class="home-empty-card">
+      등록된 학술행사가 없습니다.
+    </div>
+  {% endif %}
+
+</div>
+
+<div class="home-more-wrap">
+  <a class="home-more-button" href="{{ '/events/' | relative_url }}">학술행사 더보기</a>
+</div>
 
 {% include section.html %}
 
-## 연구소 소식
+<div class="home-section-title">
+  <span>NEWSLETTER</span>
+  <h2>뉴스레터</h2>
+</div>
 
-{% capture text %}
+{% if latest_newsletter %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  <a class="home-newsletter-card" href="{{ latest_newsletter.url | relative_url }}">
+    <div class="home-newsletter-image">
+      {% include icon.html icon="fa-solid fa-newspaper" %}
+    </div>
 
-{%
-  include button.html
-  link="research"
-  text="See our publications"
-  icon="fa-solid fa-arrow-right"
-  flip=true
-  style="bare"
-%}
+    <div class="home-newsletter-content">
+      <div class="home-preview-date">
+        {{ latest_newsletter.date | date: "%Y.%m.%d" }}
+      </div>
 
-{% endcapture %}
+      <h3>{{ latest_newsletter.title }}</h3>
 
-{%
-  include feature.html
-  image="images/photo.jpg"
-  link="research"
-  title="Our Research"
-  text=text
-%}
+      {% if latest_newsletter.volume %}
+        <p class="home-preview-meta">{{ latest_newsletter.volume }}</p>
+      {% endif %}
 
-{% capture text %}
+      <p>
+        {{ latest_newsletter.excerpt | strip_html | truncate: 150 }}
+      </p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <span>뉴스레터 보기 →</span>
+    </div>
+  </a>
 
-{%
-  include button.html
-  link="projects"
-  text="Browse our projects"
-  icon="fa-solid fa-arrow-right"
-  flip=true
-  style="bare"
-%}
+{% else %}
 
-{% endcapture %}
+  <div class="home-empty-card">
+    등록된 뉴스레터가 없습니다.
+  </div>
 
-{%
-  include feature.html
-  image="images/photo.jpg"
-  link="projects"
-  title="Our Projects"
-  flip=true
-  style="bare"
-  text=text
-%}
-
-{% capture text %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-{%
-  include button.html
-  link="team"
-  text="Meet our team"
-  icon="fa-solid fa-arrow-right"
-  flip=true
-  style="bare"
-%}
-
-{% endcapture %}
-
-{%
-  include feature.html
-  image="images/photo.jpg"
-  link="team"
-  title="Our Team"
-  text=text
-%}
+{% endif %}
