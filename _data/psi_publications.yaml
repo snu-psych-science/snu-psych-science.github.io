@@ -1,0 +1,279 @@
+- year: "2026"
+  type: "Book"
+  title: "뇌 속의 사회"
+  citation: >-
+    최진영. (2026). 뇌 속의 사회. 김영사.
+  link: "https://product.kyobobook.co.kr/detail/S000219610967"
+  link_label: "Book"
+
+- year: "2026"
+  type: "Article"
+  title: "A Systematic Review of Interoception in Substance Use Disorders"
+  citation: >-
+    Im, J. J., So, E., Kim, K., & Ahn, W. Y. (2026). A Systematic Review of Interoception in Substance Use Disorders. Current Addiction Reports, 13(1), 43.
+  link: "https://doi.org/10.1007/s40429-026-00747-x"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Having more friends is associated with greater sensitization to social exclusion"
+  citation: >-
+    Baek, E. C., Shen, Y. L., Kim, H., Baldina, E., Chey, J., Youm, Y., & Parkinson, C. (2025). Having more friends is associated with greater sensitization to social exclusion: Neural and behavioral evidence. Social Cognitive and Affective Neuroscience, 20, nsaf067.
+  link: "https://doi.org/10.1093/scan/nsaf067"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Positive social relations, loneliness, and immune system gene regulation"
+  citation: >-
+    Lee, S.-H., Chey, J., Choi, I., Youm, Y., & Cole, S. (2025). Positive social relations, loneliness, and immune system gene regulation. Annals of the New York Academy of Sciences, 1549(1), 139–147.
+  link: "https://doi.org/10.1111/nyas.15372"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "노인 인지통제훈련에 따른 두뇌 기능적 연결성의 변화"
+  citation: >-
+    김호영, 류애리, & 최진영. (2025). 노인 인지통제훈련에 따른 두뇌 기능적 연결성의 변화. 한국심리학회지: 인지 및 생물, 37(2), 73–90.
+  link: "https://scholar.google.com/scholar?q=노인+인지통제훈련에+따른+두뇌+기능적+연결성의+변화"
+  link_label: "Scholar"
+
+- year: "2025"
+  type: "Article"
+  title: "Social stress enhances intuitive prosocial behavior in males while disrupting self-reward processing"
+  citation: >-
+    Kim, K. I., Lee, J.-H., Ahn, W.-Y., & Kim, H. (2025). Social stress enhances intuitive prosocial behavior in males while disrupting self-reward processing: Evidence from behavioral, computational, and neuroimaging studies. NeuroImage, 315, 121273.
+  link: "https://doi.org/10.1016/j.neuroimage.2025.121273"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Preprint"
+  title: "A reinforcement learning and decision-making framework for understanding mental disorders"
+  citation: >-
+    Lee, J.-H., et al. (2025). A reinforcement learning and decision-making framework for understanding mental disorders. PsyArXiv. [preprint]
+  link: "https://scholar.google.com/scholar?q=A+reinforcement+learning+and+decision-making+framework+for+understanding+mental+disorders"
+  link_label: "Scholar"
+
+- year: "2025"
+  type: "Article"
+  title: "Polygenic architecture of brain structure and function, behaviors, and psychopathologies in children"
+  citation: >-
+    Joo, Y. Y., Kim, B. G., Kim, G., Lee, E., Seo, J., & Cha, J. (2025). Polygenic architecture of brain structure and function, behaviors, and psychopathologies in children. Nature Communications, 16(1), 1–18.
+  link: "https://doi.org/10.1038/s41467-025-63312-6"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Polygenic scores for psychiatric traits mediate the impact of multigenerational history of depression on offspring psychopathology"
+  citation: >-
+    Lee, E., van Dijk, M. T., Kim, B. G., et al. (2025). Polygenic scores for psychiatric traits mediate the impact of multigenerational history of depression on offspring psychopathology. Molecular Psychiatry.
+  link: "https://doi.org/10.1038/s41380-025-03221-8"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Neural systems for processing social relationship information along two principal dimensions"
+  citation: >-
+    Kang, W., Kwon, M., & Lee, S.-H. (2025). Neural systems for processing social relationship information along two principal dimensions. Communications Biology, 8, 1120.
+  link: "https://doi.org/10.1038/s42003-025-08504-y"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Supramodal and cross-modal representations of working memory in higher-order cortex"
+  citation: >-
+    Park, D., Hwang, S.-H., Lee, K., Ryoo, Y., Kim, H. F., & Lee, S.-H. (2025). Supramodal and cross-modal representations of working memory in higher-order cortex. Nature Communications, 16(1), 1–15.
+  link: "https://doi.org/10.1038/s41467-025-59825-9"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Better than you or who I used to be"
+  citation: >-
+    Lee, H. Y., Gürel, C., Overbeek, G., & Brummelman, E. (2025). Better than you or who I used to be: Social comparison, but not temporal comparison, maintains narcissism in adolescence. Development and Psychopathology, 1–15.
+  link: "https://doi.org/10.1017/S0954579425000331"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "In press"
+  title: "The moderating effects of emotion regulation goals on the relationship between emotional suppression and psychological well-being"
+  citation: >-
+    Han, J., & Kim, H. S. (in press). The moderating effects of emotion regulation goals on the relationship between emotional suppression and psychological well-being. Korean Journal of Clinical Psychology.
+  link: "https://scholar.google.com/scholar?q=The+moderating+effects+of+emotion+regulation+goals+on+the+relationship+between+emotional+suppression+and+psychological+well-being"
+  link_label: "Scholar"
+
+- year: "2025"
+  type: "In press"
+  title: "A short-term longitudinal effect of future-oriented goals and autonomy on the self-esteem of college students"
+  citation: >-
+    Kim, H., & Kim, H. S. (in press). A short-term longitudinal effect of future-oriented goals and autonomy on the self-esteem of college students. Korean Journal of Health Psychology.
+  link: "https://scholar.google.com/scholar?q=A+short-term+longitudinal+effect+of+future-oriented+goals+and+autonomy+on+the+self-esteem+of+college+students"
+  link_label: "Scholar"
+
+- year: "2025"
+  type: "Article"
+  title: "사전-사후 통제집단 설계에서 차이점수 분석과 공분산분석의 수행 비교"
+  citation: >-
+    이영수, & 석혜원. (2025). 사전-사후 통제집단 설계에서 차이점수 분석과 공분산분석의 수행 비교: 시뮬레이션 연구. 한국심리학회지: 일반, 44(3), 163–198.
+  link: "https://doi.org/10.22257/kjp.2025.9.44.3.163"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "우울과 정서조절 유연성"
+  citation: >-
+    현지원, 양채연, 석혜원, & 김향숙. (2025). 우울과 정서조절 유연성: 사회적 상호작용 상황에서의 정서조절 변산성과 맥락 민감성을 중심으로. 한국심리학회지: 임상심리 연구와 실제, 11(2), 295–317.
+  link: "https://scholar.google.com/scholar?q=우울과+정서조절+유연성+사회적+상호작용+상황에서의+정서조절+변산성과+맥락+민감성"
+  link_label: "Scholar"
+
+- year: "2025"
+  type: "Article"
+  title: "Ten-year differences in the prevalence and related factors of depression and suicidal behavior in Korean older adults"
+  citation: >-
+    Jeon, J. Y., Hahm, B.-J., Seong, S. J., Seo, H. Y., Chang, S. M., Kim, B.-S., An, H., Jeon, H. J., Hong, J. P., Suk, H. W., & Park, J. E. (2025). Ten-year differences in the prevalence and related factors of depression and suicidal behavior in Korean older adults: A comparison of representative nationwide studies for mental disorders in 2011 and 2021. Journal of Affective Disorders, 384, 173–179.
+  link: "https://doi.org/10.1016/j.jad.2025.05.007"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Putting maximization dimensions and well-being in a daily context"
+  citation: >-
+    Shim, Y., Quan, S., Lim, J.-A., & Suk, H. W. (2025). Putting maximization dimensions and well-being in a daily context: The moderating role of choice domains and characteristics. The Journal of Positive Psychology, 20(3), 485–497.
+  link: "https://doi.org/10.1080/17439760.2024.2370534"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Challenges of brain ageing in modern societies"
+  citation: >-
+    Chey, J. (2024). Challenges of brain ageing in modern societies: A case of a rapidly ageing society and its dementia risk. International Journal of Psychology, 59, 315–316. [DOI 미확인, invited symposium]
+  link: "https://scholar.google.com/scholar?q=Challenges+of+brain+ageing+in+modern+societies+a+case+of+a+rapidly+ageing+society+and+its+dementia+risk"
+  link_label: "Scholar"
+
+- year: "2024"
+  type: "Article"
+  title: "A prospective sociocentric study of 2 entire traditional Korean villages"
+  citation: >-
+    Baek, J., Baldina, E., Sung, K., Lee, S. H., Christakis, N. A., Bearman, P., Kim, H. C., Chu, S. H., Lee, E., Park, Y.-R., Chey, J., Choi, Y. H., Lee, D., & Youm, Y. (2024). A prospective sociocentric study of 2 entire traditional Korean villages: The Korean Social Life, Health, and Aging Project (KSHAP). American Journal of Epidemiology, 193(2), 241–255.
+  link: "https://doi.org/10.1093/aje/kwad190"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "건강한 노년과 인지예비능"
+  citation: >-
+    이한경, & 최진영. (2024). 건강한 노년과 인지예비능: 생의 과정을 통한 인지 및 병리적 노화의 조절. 한국심리학회지: 일반, 43(1), 31–64.
+  link: "https://scholar.google.com/scholar?q=건강한+노년과+인지예비능+생의+과정을+통한+인지+및+병리적+노화의+조절"
+  link_label: "Scholar"
+
+- year: "2024"
+  type: "Article"
+  title: "한국 저교육 노인에게 적용 가능한 개념화 능력 평가 도구의 개발 및 타당화"
+  citation: >-
+    이한경, & 최진영. (2024). 한국 저교육 노인에게 적용 가능한 개념화 능력 평가 도구의 개발 및 타당화: 속담 검사 예비타당화 연구. 한국노년학회지, 44(2), 67–89.
+  link: "https://scholar.google.com/scholar?q=한국+저교육+노인에게+적용+가능한+개념화+능력+평가+도구의+개발+및+타당화"
+  link_label: "Scholar"
+
+- year: "2024"
+  type: "Article"
+  title: "Acute stress enhances memory and preference for smoking-related associations in smokers"
+  citation: >-
+    Lee, J.-H., Kang, S., Maier, S. U., Lee, S. A., Goldfarb, E. V., & Ahn, W.-Y. (2024). Acute stress enhances memory and preference for smoking-related associations in smokers. Nicotine & Tobacco Research, 26(3), 333–341.
+  link: "https://doi.org/10.1093/ntr/ntad152"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Neural correlates of model-based behavior in internet gaming disorder and alcohol use disorder"
+  citation: >-
+    Kwon, M., Choi, H., Park, H., Ahn, W.-Y., & Jung, Y.-C. (2024). Neural correlates of model-based behavior in internet gaming disorder and alcohol use disorder. Journal of Behavioral Addictions, 13(1), 236–249.
+  link: "https://doi.org/10.1556/2006.2024.00006"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Multimodal-based machine learning approach to classify features of internet gaming disorder and alcohol use disorder"
+  citation: >-
+    Lee, J.-Y., Song, M.-S., Yoo, S. Y., Jang, J. H., Lee, D., Jung, Y.-C., Ahn, W.-Y., & Choi, J.-S. (2024). Multimodal-based machine learning approach to classify features of internet gaming disorder and alcohol use disorder. Comprehensive Psychiatry, 130, 152460.
+  link: "https://doi.org/10.1016/j.comppsych.2023.152460"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Early life stress modulates the genetic influence on brain structure and cognitive function in children"
+  citation: >-
+    Wang, H.-H., Moon, S.-Y., Kim, H., Kim, G., Ahn, W.-Y., Joo, Y. Y., & Cha, J. (2024). Early life stress modulates the genetic influence on brain structure and cognitive function in children. Heliyon, 10(1), e23345.
+  link: "https://doi.org/10.1016/j.heliyon.2023.e23345"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Interview"
+  title: "Vision for Change: Measuring memory"
+  citation: >-
+    Lee, S.-H. (2024). Vision for Change: Measuring memory [Interview]. Nature, 632, S12.
+  link: "https://scholar.google.com/scholar?q=Vision+for+Change+Measuring+memory+Lee+S-H+Nature+632+S12"
+  link_label: "Scholar"
+
+- year: "2024"
+  type: "Article"
+  title: "Convergent representation of values from tactile and visual inputs for efficient goal-directed behavior in the primate putamen"
+  citation: >-
+    Hwang, S.-H., Park, D., Lee, J.-W., Lee, S.-H., & Kim, H. F. (2024). Convergent representation of values from tactile and visual inputs for efficient goal-directed behavior in the primate putamen. Nature Communications, 15.
+  link: "https://doi.org/10.1038/s41467-024-53342-x"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Internalizing symptoms moderate associations between adolescent hormones and stress coping"
+  citation: >-
+    Chafkin, J. E., Josephs, R. A., Lee, H. Y., & Yeager, D. S. (2024). Internalizing symptoms moderate associations between adolescent hormones and stress coping. Psychoneuroendocrinology, 160, 106803.
+  link: "https://doi.org/10.1016/j.psyneuen.2023.106803"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "The relationships between multiple facets of self-concept clarity and depression"
+  citation: >-
+    Baik, S. Y., Lee, S. H., & Kim, H. S. (2024). The relationships between multiple facets of self-concept clarity and depression. Self and Identity, 23, 429–449.
+  link: "https://scholar.google.com/scholar?q=The+relationships+between+multiple+facets+of+self-concept+clarity+and+depression"
+  link_label: "Scholar"
+
+- year: "2024"
+  type: "Article"
+  title: "Exploring predictors of depression with a focus on emotion regulation flexibility for positive and negative affects"
+  citation: >-
+    Kim, H., & Kim, H. S. (2024). Exploring predictors of depression with a focus on emotion regulation flexibility for positive and negative affects. Korean Journal of Clinical Psychology, 43, 1–16.
+  link: "https://scholar.google.com/scholar?q=Exploring+predictors+of+depression+with+a+focus+on+emotion+regulation+flexibility+for+positive+and+negative+affects"
+  link_label: "Scholar"
+
+- year: "2024"
+  type: "Article"
+  title: "The structure of emotion regulation strategies in Korea"
+  citation: >-
+    Kim, H., Han, H., & Kim, H. S. (2024). The structure of emotion regulation strategies in Korea. Personality and Individual Differences, 229, 112752.
+  link: "https://scholar.google.com/scholar?q=The+structure+of+emotion+regulation+strategies+in+Korea"
+  link_label: "Scholar"
+
+- year: "2024"
+  type: "Article"
+  title: "반복측정 자료에 기반한 변화의 집단차 분석 방법"
+  citation: >-
+    이영수, & 석혜원. (2024). 반복측정 자료에 기반한 변화의 집단차 분석 방법: 차이점수 모형과 공분산분석 모형 비교. 한국심리학회지: 일반, 43(3), 231–260.
+  link: "https://doi.org/10.22257/kjp.2024.9.43.3.231"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "측정 비불변성이 ANCOVA에 기반한 처치효과 추론에 미치는 영향"
+  citation: >-
+    황유경, & 석혜원. (2024). 측정 비불변성이 ANCOVA에 기반한 처치효과 추론에 미치는 영향: 응답이동에 의한 절편 비동일성을 중심으로. 사회과학연구, 63(2), 173–204.
+  link: "https://doi.org/10.22418/JSS.2024.8.63.2.173"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Bridging the gap between self-report and behavioral laboratory measures"
+  citation: >-
+    Lee, S. H., Song, M. S., Oh, M. H., & Ahn, W.-Y. (2024). Bridging the gap between self-report and behavioral laboratory measures: A real-time driving task with inverse reinforcement learning. Psychological Science, 35(4), 345–357.
+  link: "https://doi.org/10.1177/09567976241228503"
+  link_label: "DOI"
