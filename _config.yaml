@@ -38,6 +38,10 @@ collections:
   posts:
     output: true
 
+  events:
+    output: true
+    permalink: /events/:name/
+
 # jekyll plugins
 plugins:
   - jekyll-spaceship

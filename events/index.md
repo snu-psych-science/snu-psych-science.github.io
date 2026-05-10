@@ -2,19 +2,45 @@
 title: 학술행사
 nav:
   order: 2
-  tooltip: Published works
+  tooltip: 학술행사
 ---
 
-# {% include icon.html icon="fa-solid fa-microscope" %}학술행사
+<div class="events-hero-card">
 
-심리과학연구소는 심리과학 분야의 학문적 교류와 연구 역량 강화를 위해 학술 심포지엄, 초청 강연, 연구 세미나, 워크숍 등 다양한 학술행사를 지속적으로 기획·운영하고 있습니다. 이러한 활동을 통해 학내외 연구자 간의 지식 공유와 협력을 촉진하고, 심리학의 이론적 발전과 사회적 적용 가능성을 함께 모색하고 있습니다.
+  <div class="events-hero-label">ACADEMIC EVENTS</div>
 
-{% include section.html %}
+  <h1>학술행사</h1>
 
-## All
+  <p class="events-hero-subtitle">
+    심리과학연구소는 세미나, 콜로키움, 초청강연 등 다양한 학술행사를 통해 심리과학 분야의 연구 교류와 학문적 논의를 촉진하고 있습니다.
+  </p>
 
-{% include search-box.html %}
+</div>
 
-{% include search-info.html %}
+{% assign events = site.posts | where_exp: "post", "post.categories contains 'event'" | sort: "date" | reverse %}
 
-{% include list.html data="citations" component="citation" style="rich" %}
+<div class="event-list">
+
+  {% for post in events %}
+    <a class="event-card" href="{{ post.url | relative_url }}">
+      <div class="event-date">
+        {{ post.event_date | default: post.date | date: "%Y.%m.%d" }}
+      </div>
+
+      <div class="event-content">
+        <h3>{{ post.title }}</h3>
+
+        {% if post.speaker %}
+          <p class="event-speaker">{{ post.speaker }}</p>
+        {% endif %}
+
+        {% if post.summary %}
+          <p class="event-summary">{{ post.summary }}</p>
+        {% endif %}
+      </div>
+
+      <div class="event-arrow">→</div>
+    </a>
+  {% endfor %}
+
+</div>
