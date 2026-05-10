@@ -1,13 +1,11 @@
 {% assign keywords = include.keywords | split: "|" %}
 
 {% if keywords.size > 0 %}
-  <div class="tags">
+  <div class="tags research-keywords">
     {% for keyword in keywords %}
       {% assign clean_keyword = keyword | strip %}
       {% if clean_keyword != "" %}
-        <span class="tag">
-          {{ clean_keyword }}
-        </span>
+        <span class="tag research-keyword">{{ clean_keyword }}</span>
       {% endif %}
     {% endfor %}
   </div>

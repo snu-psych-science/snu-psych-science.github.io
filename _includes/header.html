@@ -39,21 +39,33 @@
   </a>
 
   <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+      
+  <nav class="site-nav">
+    {% assign nav_items = site.data.navigation | sort: "order" %}
 
-  <nav>
-    {% assign pages = site.pages
-      | where_exp: "page", "page.nav"
-      | sort: "nav.order"
-    %}
-    {% for page in pages %}
-      {% if page.nav %}
+    {% for item in nav_items %}
+      <div class="nav-item{% if item.children %} has-dropdown{% endif %}">
         <a
-          href="{{ page.dir | relative_url | uri_escape }}"
-          data-tooltip="{{ page.nav.tooltip | xml_escape }}"
+          class="nav-link"
+          href="{{ item.url | relative_url | uri_escape }}"
         >
-          {{ page.title }}
+          {{ item.title }}
         </a>
-      {% endif %}
+
+        {% if item.children %}
+          <div class="dropdown-menu">
+            {% for child in item.children %}
+              <a
+                class="dropdown-link"
+                href="{{ child.url | relative_url | uri_escape }}"
+              >
+                {{ child.title }}
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
     {% endfor %}
   </nav>
+
 </header>

@@ -1,5 +1,5 @@
 - title: 연구소 소개
-  url: /about/greeting/
+  url: /about/
   order: 1
   children:
     - title: 소장 인사말
