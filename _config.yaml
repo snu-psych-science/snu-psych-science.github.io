@@ -45,6 +45,10 @@ collections:
   newsletters:
     output: true
     permalink: /newsletters/:name/
+    
+  notices:
+    output: true
+    permalink: /notices/:name/
 
 # jekyll plugins
 plugins:
