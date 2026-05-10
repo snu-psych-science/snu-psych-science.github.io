@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header {
   display: flex;
   justify-content: space-between;
@@ -142,6 +143,111 @@ header[data-big] .title {
 }
 header[data-big] .subtitle {
   font-size: var(--large);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.site-nav .nav-item {
+  position: relative;
+}
+
+.site-nav .nav-link {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.site-nav .nav-item:hover > .nav-link,
+.site-nav .nav-item:focus-within > .nav-link {
+  color: var(--primary);
+}
+
+.site-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 210px;
+  padding: 10px 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+  text-align: center;
+}
+
+.site-nav .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+}
+
+.site-nav .has-dropdown:hover .dropdown-menu,
+.site-nav .has-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+.site-nav .dropdown-link {
+  display: block;
+  padding: 11px 18px;
+  color: #111827;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.site-nav .dropdown-link:hover {
+  color: var(--primary);
+  background: #f5f7fa;
+}
+
+/* 모바일에서는 hover가 애매하니까 하위 메뉴를 펼쳐서 보여줌 */
+@media (max-width: 700px) {
+  .site-nav {
+    display: block;
+  }
+  .site-nav .nav-item {
+    width: 100%;
+    text-align: right;
+  }
+  .site-nav .nav-link {
+    padding: 8px 0;
+  }
+  .site-nav .dropdown-menu {
+    display: block;
+    position: static;
+    transform: none;
+    min-width: unset;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    text-align: right;
+  }
+  .site-nav .dropdown-menu::before {
+    display: none;
+  }
+  .site-nav .dropdown-link {
+    padding: 5px 0;
+    font-size: 0.9rem;
+    color: inherit;
+    opacity: 0.75;
+  }
+  .site-nav .dropdown-link:hover {
+    background: transparent;
+  }
 }
 
 /*# sourceMappingURL=header.css.map */
