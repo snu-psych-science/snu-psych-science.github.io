@@ -6,6 +6,24 @@ title: 홈
 {% assign newsletters = site.newsletters | sort: "date" | reverse %}
 {% assign latest_newsletter = newsletters | first %}
 
+<div class="home-slide-hero">
+
+  <div class="home-slide-show">
+    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-1.png" | relative_url }}');"></div>
+    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-2.jpeg" | relative_url }}');"></div>
+    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-3.png" | relative_url }}');"></div>
+  </div>
+
+  <div class="home-slide-overlay"></div>
+
+  <div class="home-slide-content">
+    <div class="home-slide-label">SEOUL NATIONAL UNIVERSITY</div>
+    <h1>서울대학교 심리과학연구소</h1>
+    <p>Institute of Psychological Science</p>
+  </div>
+
+</div>
+
 <div class="home-section-title">
   <span>ACADEMIC EVENTS</span>
   <h2>학술행사</h2>
