@@ -14,11 +14,35 @@ title: 찾아오시는 길
 
 ## 연락처
 
-| 구분 | 내용 |
-|---|---|
-| 주소 | 서울특별시 관악구 관악로 1 서울대학교 관악캠퍼스 종합교육연구동 522호 |
-| 전화 | 확인 후 업데이트 예정 |
-| 이메일 | 확인 후 업데이트 예정 |
+<div class="contact-table-wrap">
+
+<table class="contact-table">
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>주소</td>
+      <td>서울특별시 관악구 관악로 1 서울대학교 관악캠퍼스 종합교육연구동 522호</td>
+    </tr>
+
+    <tr>
+      <td>전화</td>
+      <td>확인 후 업데이트 예정</td>
+    </tr>
+
+    <tr>
+      <td>이메일</td>
+      <td>확인 후 업데이트 예정</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 {% include section.html %}
 

@@ -26,18 +26,136 @@ title: 조직 및 구성원
 
 ## 겸임연구원
 
-| 구분 | 이름 | 연구 분야 | 랩 웹사이트 |
-|---|---|---|---|
-| 소장 | <a href="https://thecns.snu.ac.kr" target="_blank" rel="noopener">최진영</a> | 임상신경과학 | <a href="https://thecns.snu.ac.kr" target="_blank" rel="noopener">thecns.snu.ac.kr</a> |
-| 겸임연구원 | <a href="https://ccs-lab.github.io/" target="_blank" rel="noopener">안우영</a> | 임상심리 / 계산신경과학 | <a href="https://ccs-lab.github.io/" target="_blank" rel="noopener">ccs-lab.github.io</a> |
-| 겸임연구원 | <a href="https://www.connectomelab.com/" target="_blank" rel="noopener">차지욱</a> | 신경과학 / 커넥톰 | <a href="https://www.connectomelab.com/" target="_blank" rel="noopener">connectomelab.com</a> |
-| 겸임연구원 | <a href="https://sites.google.com/view/emphl-snu" target="_blank" rel="noopener">김향숙</a> | 임상심리 | <a href="https://sites.google.com/view/emphl-snu" target="_blank" rel="noopener">emphl-snu</a> |
-| 겸임연구원 | <a href="https://memcolab.org/" target="_blank" rel="noopener">이수현</a> | 인지신경과학 | <a href="https://memcolab.org/" target="_blank" rel="noopener">memcolab.org</a> |
-| 겸임연구원 | <a href="https://www.kawon.snu.ac.kr" target="_blank" rel="noopener">김가원</a> | 조직심리 | <a href="https://www.kawon.snu.ac.kr" target="_blank" rel="noopener">kawon.snu.ac.kr</a> |
-| 겸임연구원 | <a href="http://snu-sldl.com" target="_blank" rel="noopener">이해연</a> | 발달심리 | <a href="http://snu-sldl.com" target="_blank" rel="noopener">snu-sldl.com</a> |
-| 겸임연구원 | <a href="https://sites.google.com/view/hsuk" target="_blank" rel="noopener">석혜원</a> | 계량심리 | <a href="https://sites.google.com/view/hsuk" target="_blank" rel="noopener">hsuk</a> |
+<div class="member-table-wrap">
 
-{% include section.html %}
+<table class="member-table">
+  <thead>
+    <tr>
+      <th>직위</th>
+      <th>성명</th>
+      <th>연구 분야</th>
+      <th>랩 웹사이트</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td class="member-role">소장</td>
+      <td>
+        <a href="https://thecns.snu.ac.kr" target="_blank" rel="noopener">
+          최진영
+        </a>
+      </td>
+      <td>임상신경과학</td>
+      <td>
+        <a href="https://thecns.snu.ac.kr" target="_blank" rel="noopener">
+          thecns.snu.ac.kr
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="member-role" rowspan="7">겸임연구원</td>
+      <td>
+        <a href="https://ccs-lab.github.io/" target="_blank" rel="noopener">
+          안우영
+        </a>
+      </td>
+      <td>임상심리 / 계산신경과학</td>
+      <td>
+        <a href="https://ccs-lab.github.io/" target="_blank" rel="noopener">
+          ccs-lab.github.io
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <a href="https://www.connectomelab.com/" target="_blank" rel="noopener">
+          차지욱
+        </a>
+      </td>
+      <td>신경과학 / 커넥톰</td>
+      <td>
+        <a href="https://www.connectomelab.com/" target="_blank" rel="noopener">
+          connectomelab.com
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <a href="https://sites.google.com/view/emphl-snu" target="_blank" rel="noopener">
+          김향숙
+        </a>
+      </td>
+      <td>임상심리</td>
+      <td>
+        <a href="https://sites.google.com/view/emphl-snu" target="_blank" rel="noopener">
+          emphl-snu
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <a href="https://memcolab.org/" target="_blank" rel="noopener">
+          이수현
+        </a>
+      </td>
+      <td>인지신경과학</td>
+      <td>
+        <a href="https://memcolab.org/" target="_blank" rel="noopener">
+          memcolab.org
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <a href="https://www.kawon.snu.ac.kr" target="_blank" rel="noopener">
+          김가원
+        </a>
+      </td>
+      <td>조직심리</td>
+      <td>
+        <a href="https://www.kawon.snu.ac.kr" target="_blank" rel="noopener">
+          kawon.snu.ac.kr
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <a href="http://snu-sldl.com" target="_blank" rel="noopener">
+          이해연
+        </a>
+      </td>
+      <td>발달심리</td>
+      <td>
+        <a href="http://snu-sldl.com" target="_blank" rel="noopener">
+          snu-sldl.com
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <a href="https://sites.google.com/view/hsuk" target="_blank" rel="noopener">
+          석혜원
+        </a>
+      </td>
+      <td>계량심리</td>
+      <td>
+        <a href="https://sites.google.com/view/hsuk" target="_blank" rel="noopener">
+          hsuk
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 ## 포닥 및 기타 연구원
 
