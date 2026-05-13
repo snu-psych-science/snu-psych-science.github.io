@@ -14,8 +14,6 @@ title: 홈
     <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-3.png" | relative_url }}');"></div>
   </div>
 
-  <div class="home-slide-overlay"></div>
-
 </div>
 
 <div class="home-section-title">
