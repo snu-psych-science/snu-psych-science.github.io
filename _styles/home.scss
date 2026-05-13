@@ -22,7 +22,7 @@
   background-size: cover;
   background-position: center;
   opacity: 0;
-  animation: homeSlideFade 6s infinite;
+  animation: homeSlideFade 12s infinite;
 }
 
 .home-slide-item:nth-child(1) {
@@ -30,11 +30,11 @@
 }
 
 .home-slide-item:nth-child(2) {
-  animation-delay: 2s;
+  animation-delay: 4s;
 }
 
 .home-slide-item:nth-child(3) {
-  animation-delay: 4s;
+  animation-delay: 8s;
 }
 
 @keyframes homeSlideFade {
@@ -64,8 +64,7 @@
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(135deg, rgba(3, 12, 24, 0.74), rgba(5, 24, 44, 0.38)),
-    radial-gradient(circle at 62% 45%, rgba(14, 165, 233, 0.16), transparent 35%);
+    linear-gradient(135deg, rgba(3, 12, 24, 0.30), rgba(5, 24, 44, 0.12));
 }
 
 .home-slide-content {
