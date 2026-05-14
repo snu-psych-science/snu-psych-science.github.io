@@ -42,13 +42,13 @@ title: 조직 및 구성원
     <tr>
       <td class="member-role">소장</td>
       <td>
-        <a href="https://thecns.snu.ac.kr" target="_blank" rel="noopener">
+        <a href="https://www.thecns.snu.ac.kr/professor" target="_blank" rel="noopener">
           최진영
         </a>
       </td>
       <td>임상신경과학</td>
       <td>
-        <a href="https://thecns.snu.ac.kr" target="_blank" rel="noopener">
+        <a href="https://www.thecns.snu.ac.kr/professor" target="_blank" rel="noopener">
           thecns.snu.ac.kr
         </a>
       </td>
@@ -57,13 +57,13 @@ title: 조직 및 구성원
     <tr>
       <td class="member-role" rowspan="7">겸임연구원</td>
       <td>
-        <a href="https://ccs-lab.github.io/" target="_blank" rel="noopener">
+        <a href="https://ccs-lab.github.io/team/young-ahn/" target="_blank" rel="noopener">
           안우영
         </a>
       </td>
       <td>임상심리 / 계산신경과학</td>
       <td>
-        <a href="https://ccs-lab.github.io/" target="_blank" rel="noopener">
+        <a href="https://ccs-lab.github.io/team/young-ahn/" target="_blank" rel="noopener">
           ccs-lab.github.io
         </a>
       </td>
@@ -71,13 +71,13 @@ title: 조직 및 구성원
 
     <tr>
       <td>
-        <a href="https://www.connectomelab.com/" target="_blank" rel="noopener">
+        <a href="https://www.connectomelab.com/team" target="_blank" rel="noopener">
           차지욱
         </a>
       </td>
       <td>신경과학 / 커넥톰</td>
       <td>
-        <a href="https://www.connectomelab.com/" target="_blank" rel="noopener">
+        <a href="https://www.connectomelab.com/team" target="_blank" rel="noopener">
           connectomelab.com
         </a>
       </td>
@@ -85,13 +85,13 @@ title: 조직 및 구성원
 
     <tr>
       <td>
-        <a href="https://sites.google.com/view/emphl-snu" target="_blank" rel="noopener">
+        <a href="https://sites.google.com/view/emphl-snu/members/principal-investigator" target="_blank" rel="noopener">
           김향숙
         </a>
       </td>
       <td>임상심리</td>
       <td>
-        <a href="https://sites.google.com/view/emphl-snu" target="_blank" rel="noopener">
+        <a href="https://sites.google.com/view/emphl-snu/members/principal-investigator" target="_blank" rel="noopener">
           emphl-snu
         </a>
       </td>
@@ -99,13 +99,13 @@ title: 조직 및 구성원
 
     <tr>
       <td>
-        <a href="https://memcolab.org/" target="_blank" rel="noopener">
+        <a href="https://memcolab.org/people/principal-investigator/" target="_blank" rel="noopener">
           이수현
         </a>
       </td>
       <td>인지신경과학</td>
       <td>
-        <a href="https://memcolab.org/" target="_blank" rel="noopener">
+        <a href="https://memcolab.org/people/principal-investigator/" target="_blank" rel="noopener">
           memcolab.org
         </a>
       </td>
@@ -127,13 +127,13 @@ title: 조직 및 구성원
 
     <tr>
       <td>
-        <a href="http://snu-sldl.com" target="_blank" rel="noopener">
+        <a href="https://snu-sldl.com/about-dr-lee-2/" target="_blank" rel="noopener">
           이해연
         </a>
       </td>
       <td>발달심리</td>
       <td>
-        <a href="http://snu-sldl.com" target="_blank" rel="noopener">
+        <a href="https://snu-sldl.com/about-dr-lee-2/" target="_blank" rel="noopener">
           snu-sldl.com
         </a>
       </td>
@@ -141,13 +141,13 @@ title: 조직 및 구성원
 
     <tr>
       <td>
-        <a href="https://sites.google.com/view/hsuk" target="_blank" rel="noopener">
+        <a href="https://sites.google.com/view/hsuk/members" target="_blank" rel="noopener">
           석혜원
         </a>
       </td>
       <td>계량심리</td>
       <td>
-        <a href="https://sites.google.com/view/hsuk" target="_blank" rel="noopener">
+        <a href="https://sites.google.com/view/hsuk/members" target="_blank" rel="noopener">
           hsuk
         </a>
       </td>
