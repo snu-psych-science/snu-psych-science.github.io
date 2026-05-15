@@ -2,6 +2,9 @@
 title: 서울대학교 심리과학연구소
 subtitle: Institute of Psychological Science
 description: 서울대학교 심리과학연구소는 행동과학, 뇌과학, 임상심리, 데이터 과학을 통합하여 인간의 심리와 사회적 문제를 연구합니다.
+url: "https://snu-psych-science.github.io"
+baseurl: ""
+lang: ko-KR
 header: images/background.png
 footer: images/background.png
 proofer: false
@@ -57,6 +60,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-feed
   - jekyll-last-modified-at
+  - jekyll-seo-tag
 
 # code block syntax highlighting
 highlighter: rouge
