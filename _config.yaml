@@ -60,7 +60,6 @@ plugins:
   - jekyll-redirect-from
   - jekyll-feed
   - jekyll-last-modified-at
-  - jekyll-seo-tag
 
 # code block syntax highlighting
 highlighter: rouge
