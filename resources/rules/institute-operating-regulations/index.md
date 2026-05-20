@@ -81,7 +81,7 @@ title: 서울대학교 사회과학연구원 규정
       <span>FULL TEXT</span>
       <h2>규정 전문</h2>
       <p>
-        아래 PDF 미리보기 또는 다운로드 버튼을 통해 서울대학교 사회과학연구원 규정 전문을 확인할 수 있습니다.
+        아래 다운로드 버튼을 통해 서울대학교 사회과학연구원 규정 전문을 확인할 수 있습니다.
       </p>
     </div>
 
@@ -93,14 +93,6 @@ title: 서울대학교 사회과학연구원 규정
     >
       PDF 다운로드 →
     </a>
-  </div>
-
-  <div class="regulation-pdf-viewer">
-    <iframe
-      src="{{ '/files/rules/snu-social-sciences-research-institute-regulations.pdf' | relative_url }}"
-      title="서울대학교 사회과학연구원 규정 PDF"
-      loading="lazy">
-    </iframe>
   </div>
 
 </div>

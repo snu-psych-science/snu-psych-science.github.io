@@ -471,3 +471,25 @@ header.background .dropdown-link:hover {
     padding-right: 64px;
   }
 }
+
+/* Keep mobile menu button at top-right even when menu is open */
+
+@media (max-width: 900px) {
+  header.background .nav-toggle {
+    position: absolute !important;
+    top: 24px !important;
+    right: 22px !important;
+    transform: none !important;
+
+    width: 42px;
+    height: 42px;
+
+    z-index: 3000;
+  }
+
+  header.background .nav-toggle:checked {
+    top: 24px !important;
+    right: 22px !important;
+    transform: none !important;
+  }
+}
