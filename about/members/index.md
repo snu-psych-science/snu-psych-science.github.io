@@ -8,22 +8,6 @@ title: 조직 및 구성원
 
 {% include section.html %}
 
-## 기구표
-
-현재 기구표는 준비 중입니다. 추후 연구소 조직 구조와 연구 분야 분류가 확정되는 대로 업데이트할 예정입니다.
-
-임시 구성은 다음과 같습니다.
-
-- 소장
-  - 운영위원회
-  - 행정실
-  - 연구 분야별 연구실 그룹
-    - 기초 심리학 분야
-    - 응용 심리학 분야
-    - 임상·상담 심리학 분야
-
-{% include section.html %}
-
 ## 겸임연구원
 
 <div class="member-table-wrap">
@@ -55,7 +39,69 @@ title: 조직 및 구성원
     </tr>
 
     <tr>
-      <td class="member-role" rowspan="7">겸임연구원</td>
+      <td class="member-role" rowspan="12">겸임연구원</td>
+      <td>
+        <a href="http://snusocialpsy.com/people" target="_blank" rel="noopener">
+          최인철
+        </a>
+      </td>
+      <td>사회심리학</td>
+      <td>
+        <a href="http://snusocialpsy.com/people" target="_blank" rel="noopener">
+          snusocialpsy.com
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <a href="http://www.mindclinic.co.kr/" target="_blank" rel="noopener">
+          이훈진
+        </a>
+      </td>
+      <td>임상상담심리학</td>
+      <td>
+        <a href="http://www.mindclinic.co.kr/" target="_blank" rel="noopener">
+          mindclinic.co.kr
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>고성룡</td>
+      <td>언어심리학</td>
+      <td>준비 중</td>
+    </tr>
+
+    <tr>
+      <td>
+        <a href="http://perception.snu.ac.kr" target="_blank" rel="noopener">
+          오성주
+        </a>
+      </td>
+      <td>지각심리학</td>
+      <td>
+        <a href="http://perception.snu.ac.kr" target="_blank" rel="noopener">
+          perception.snu.ac.kr
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <a href="https://hfpsych.snu.ac.kr/People.html" target="_blank" rel="noopener">
+          한소원
+        </a>
+      </td>
+      <td>인지심리학</td>
+      <td>
+        <a href="https://hfpsych.snu.ac.kr/People.html" target="_blank" rel="noopener">
+          hfpsych.snu.ac.kr
+        </a>
+      </td>
+    </tr>
+
+    <tr>
       <td>
         <a href="https://ccs-lab.github.io/team/young-ahn/" target="_blank" rel="noopener">
           안우영
@@ -156,15 +202,3 @@ title: 조직 및 구성원
 </table>
 
 </div>
-
-## 포닥 및 기타 연구원
-
-포닥 및 기타 연구원 명단은 각 연구실 확인 후 업데이트할 예정입니다.
-
-<!--
-추후 아래 형식으로 추가하면 됩니다.
-
-| 이름 | 소속 | 연구 분야 |
-|---|---|---|
-| 홍길동 | ○○연구실 | 인지신경과학 |
--->

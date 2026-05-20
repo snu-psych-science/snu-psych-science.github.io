@@ -30,18 +30,18 @@ title: 연구소 규정
     </div>
   </a>
 
-  <div class="resources-rule-card is-disabled">
+  <a class="resources-rule-card" href="{{ '/resources/rules/institute-operating-regulations/' | relative_url }}">
     <div class="resources-rule-icon">
       {% include icon.html icon="fa-solid fa-file-lines" %}
     </div>
 
     <div class="resources-rule-content">
-      <h3>심리과학연구소 운영규정</h3>
+      <h3>서울대학교 사회과학연구원 운영규정</h3>
       <p>
-        심리과학연구소 운영규정은 현재 준비 중입니다. 자료 확정 후 업데이트할 예정입니다.
+        서울대학교 사회과학연구원의 목적, 사업, 조직, 운영위원회, 연구원 구성 및 운영에 관한 규정입니다.
       </p>
-      <span>준비 중</span>
+      <span>전문 보기 →</span>
     </div>
-  </div>
+  </a>
 
 </div>
