@@ -382,4 +382,45 @@ header.background .dropdown-link:hover {
   background: #f3f7fb;
 }
 
+/* Mobile visible menu button */
+@media (max-width: 900px) {
+  header.background {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  header.background .nav-toggle {
+    display: block !important;
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    margin: 0;
+    padding: 0;
+    border: 1.5px solid rgba(15, 42, 68, 0.35);
+    border-radius: 12px;
+    background-color: #ffffff;
+    background-image: linear-gradient(#0f2a44, #0f2a44), linear-gradient(#0f2a44, #0f2a44), linear-gradient(#0f2a44, #0f2a44);
+    background-repeat: no-repeat;
+    background-size: 22px 2.5px, 22px 2.5px, 22px 2.5px;
+    background-position: center 13px, center 20px, center 27px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    cursor: pointer;
+    z-index: 2000;
+  }
+  header.background .nav-toggle:checked {
+    background-image: linear-gradient(45deg, transparent 47%, #0f2a44 48%, #0f2a44 52%, transparent 53%), linear-gradient(-45deg, transparent 47%, #0f2a44 48%, #0f2a44 52%, transparent 53%);
+    background-size: 24px 24px, 24px 24px;
+    background-position: center, center;
+  }
+  header.background .home {
+    padding-right: 64px;
+  }
+}
+
 /*# sourceMappingURL=header.css.map */
