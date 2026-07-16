@@ -3,6 +3,9 @@ title: 연구소개
 nav:
   order: 3
   tooltip: 연구소개
+redirect_from:
+  - /research/publications/
+  - /research/projects/
 ---
 
 <div class="research-hero-card">
