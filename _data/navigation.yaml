@@ -18,9 +18,6 @@
 - title: 연구소개
   url: /research/
   order: 3
-  children:
-    - title: 대표논문
-      url: /research/publications/
 
 - title: 뉴스레터
   url: /newsletters/
