@@ -39,28 +39,8 @@ nav:
 {% include section.html %}
 
 <div class="research-section-title">
-  <span>EXPLORE RESEARCH</span>
-  <h2>연구소개 바로가기</h2>
+  <span>SELECTED PUBLICATIONS</span>
+  <h2>대표논문</h2>
 </div>
 
-<div class="research-card-grid">
-
-  <a class="research-card" href="{{ '/research/publications/' | relative_url }}">
-    <div class="research-card-icon">
-      {% include icon.html icon="fa-solid fa-book-open" %}
-    </div>
-    <h3>대표논문</h3>
-    <p>심리과학연구소 참여 연구진의 주요 논문과 저서를 연도별로 확인할 수 있습니다.</p>
-    <span class="research-card-more">자세히 보기 →</span>
-  </a>
-
-  <a class="research-card" href="{{ '/research/projects/' | relative_url }}">
-    <div class="research-card-icon">
-      {% include icon.html icon="fa-solid fa-diagram-project" %}
-    </div>
-    <h3>연구 프로젝트</h3>
-    <p>연구소에서 수행 중인 주요 연구과제와 학제적 연구 활동을 소개합니다.</p>
-    <span class="research-card-more">자세히 보기 →</span>
-  </a>
-
-</div>
+{% include publication-list.html %}

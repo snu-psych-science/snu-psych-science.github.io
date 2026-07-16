@@ -21,8 +21,6 @@
   children:
     - title: 대표논문
       url: /research/publications/
-    - title: 연구 프로젝트
-      url: /research/projects/
 
 - title: 뉴스레터
   url: /newsletters/
