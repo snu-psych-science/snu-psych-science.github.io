@@ -8,6 +8,8 @@
   border-radius: 26px;
   overflow: hidden;
   background: #061827;
+  background-position: center;
+  background-size: cover;
   box-shadow: 0 24px 60px rgba(5, 24, 44, 0.22);
 }
 
@@ -22,7 +24,7 @@
   background-size: cover;
   background-position: center;
   opacity: 0;
-  animation: homeSlideFade 30s infinite;
+  animation: homeSlideFade 40s infinite;
 }
 
 .home-slide-item:nth-child(1) {
@@ -37,20 +39,24 @@
   animation-delay: 20s;
 }
 
+.home-slide-item:nth-child(4) {
+  animation-delay: 30s;
+}
+
 @keyframes homeSlideFade {
   0% {
     opacity: 0;
   }
 
-  8% {
+  6% {
     opacity: 1;
   }
 
-  30% {
+  22% {
     opacity: 1;
   }
 
-  40% {
+  28% {
     opacity: 0;
   }
 

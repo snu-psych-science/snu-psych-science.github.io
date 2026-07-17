@@ -6,9 +6,10 @@ title: 홈
 {% assign newsletters = site.newsletters | sort: "date" | reverse %}
 {% assign latest_newsletter = newsletters | first %}
 
-<div class="home-slide-hero">
+<div class="home-slide-hero" style="background-image: url('{{ "/images/home-slide-active-aging-conference.jpg" | relative_url }}');">
 
   <div class="home-slide-show">
+    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-active-aging-conference.jpg" | relative_url }}');"></div>
     <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-1.png" | relative_url }}');"></div>
     <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-2.jpeg" | relative_url }}');"></div>
     <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-3.png" | relative_url }}');"></div>
