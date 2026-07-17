@@ -22,7 +22,7 @@
   background-size: cover;
   background-position: center;
   opacity: 0;
-  animation: homeSlideFade 40s linear infinite;
+  animation: homeSlideFade 40s ease-in-out infinite;
 }
 
 .home-slide-item:nth-child(1) {
@@ -47,7 +47,7 @@
     opacity: 0;
   }
 
-  2.5% {
+  6.25% {
     opacity: 1;
   }
 
@@ -55,7 +55,7 @@
     opacity: 1;
   }
 
-  27.5% {
+  31.25% {
     opacity: 0;
   }
 
@@ -70,8 +70,8 @@
     opacity: 1;
   }
 
-  27.5%,
-  97.5% {
+  31.25%,
+  93.75% {
     opacity: 0;
   }
 
