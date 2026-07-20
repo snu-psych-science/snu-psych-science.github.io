@@ -2,8 +2,9 @@
 <html lang="ko-KR" data-dark="false">
   {% include head.html %}
   <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
     {% include header.html %}
-    <main>
+    <main id="main-content" tabindex="-1">
       {% include content.html content=content %}
     </main>
     {% include footer.html %}

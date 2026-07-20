@@ -87,7 +87,7 @@ title: 서울대학교 사회과학연구원 규정
 
     <a
       class="regulation-download-button"
-      href="{{ '/files/rules/snu-social-sciences-research-institute-regulations.pdf' | relative_url }}"
+      href="{{ '/resources/rules/snu-social-sciences-research-institute-regulations.pdf' | relative_url }}"
       target="_blank"
       rel="noopener"
     >

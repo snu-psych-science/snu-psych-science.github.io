@@ -1,67 +1,66 @@
 /*
-  fetches tags (aka "topics") from a given GitHub repo and adds them to row of
-  tag buttons. specify repo in data-repo attribute on row.
+  Fetches GitHub topics for tag rows that declare data-repo and data-link.
 */
 
-{
-  const onLoad = async () => {
-    // get tag rows with specified repos
-    const rows = document.querySelectorAll("[data-repo]");
+(() => {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
 
-    // for each repo
-    for (const row of rows) {
-      // get props from tag row
-      const repo = row.dataset.repo.trim();
-      const link = row.dataset.link.trim();
+  const headers = new Headers({ Accept: "application/vnd.github+json" });
 
-      // get tags from github
-      if (!repo) continue;
-      let tags = await fetchTags(repo);
-
-      // filter out tags already present in row
-      let existing = [...row.querySelectorAll(".tag")].map((tag) =>
-        window.normalizeTag(tag.innerText)
-      );
-      tags = tags.filter((tag) => !existing.includes(normalizeTag(tag)));
-
-      // add tags to row
-      for (const tag of tags) {
-        const a = document.createElement("a");
-        a.classList.add("tag");
-        a.innerHTML = tag;
-        a.href = `${link}?search="tag: ${tag}"`;
-        a.dataset.tooltip = `Show items with the tag "${tag}"`;
-        row.append(a);
-      }
-
-      // delete tags container if empty
-      if (!row.innerText.trim()) row.remove();
-    }
-
-    // emit "tags done" event for other scripts to listen for
-    window.dispatchEvent(new Event("tagsfetched"));
-  };
-
-  // after page loads
-  window.addEventListener("load", onLoad);
-
-  // GitHub topics endpoint
-  const api = "https://api.github.com/repos/REPO/topics";
-  const headers = new Headers();
-  headers.set("Accept", "application/vnd.github+json");
-
-  // get tags from GitHub based on repo name
   const fetchTags = async (repo) => {
-    const url = api.replace("REPO", repo);
+    const repoPath = repo
+      .split("/")
+      .map((part) => encodeURIComponent(part))
+      .join("/");
+    const url = `https://api.github.com/repos/${repoPath}/topics`;
+
     try {
-      const response = await (await fetch(url)).json();
-      if (response.names) return response.names;
-      else throw new Error(JSON.stringify(response));
+      const response = await fetch(url, { headers });
+      if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
+      const body = await response.json();
+      return Array.isArray(body.names) ? body.names : [];
     } catch (error) {
-      console.groupCollapsed("GitHub fetch tags error");
-      console.log(error);
-      console.groupEnd();
+      console.warn("Unable to fetch GitHub topics.", error);
       return [];
     }
   };
-}
+
+  const buildTagUrl = (link, tag) => {
+    const url = new URL(link, window.location.href);
+    url.searchParams.set("search", `"tag: ${tag}"`);
+    return url.toString();
+  };
+
+  const onLoad = async () => {
+    const normalizeTag =
+      window.normalizeTag || ((tag) => tag.trim().toLowerCase().replaceAll(/\s+/g, "-"));
+
+    for (const row of document.querySelectorAll("[data-repo]")) {
+      const repo = row.dataset.repo?.trim();
+      const link = row.dataset.link?.trim() || window.location.pathname;
+      if (!repo) continue;
+
+      const existing = new Set(
+        [...row.querySelectorAll(".tag")].map((tag) => normalizeTag(tag.innerText))
+      );
+      const tags = (await fetchTags(repo)).filter(
+        (tag) => !existing.has(normalizeTag(tag))
+      );
+
+      for (const tag of tags) {
+        const anchor = document.createElement("a");
+        anchor.classList.add("tag");
+        anchor.textContent = tag;
+        anchor.href = buildTagUrl(link, tag);
+        anchor.dataset.tooltip = `“${tag}” 태그 항목 보기`;
+        row.append(anchor);
+      }
+
+      if (!row.textContent.trim()) row.remove();
+    }
+
+    window.dispatchEvent(new Event("tagsfetched"));
+  };
+
+  window.addEventListener("load", onLoad, { once: true });
+})();

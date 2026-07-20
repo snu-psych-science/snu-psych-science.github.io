@@ -1,0 +1,42 @@
+name: test-site
+run-name: test site source and generated output
+
+on:
+  workflow_call:
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout tested revision
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Test source contracts and JavaScript
+        run: node --test tests/interactions.test.cjs tests/search.test.cjs tests/source-contract.test.cjs
+
+      - name: Install Ruby packages
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build --baseurl "/preview/test"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Test generated site
+        run: node --test tests/generated-site.ci.cjs
+        env:
+          SITE_BASEURL: /preview/test

@@ -1,5 +1,4 @@
 require 'liquid'
-require 'html-proofer'
 
 module Jekyll
   module MiscFilters
@@ -104,6 +103,7 @@ module Jekyll
         }
 
         begin
+          require 'html-proofer'
           HTMLProofer.check_directory(site.dest, options).run
         rescue Exception => error
           STDERR.puts error
