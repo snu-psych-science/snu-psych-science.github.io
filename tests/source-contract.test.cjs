@@ -74,8 +74,8 @@ test("core accessibility landmarks and status regions are present", () => {
   assert.match(layout, /<main id="main-content" tabindex="-1">/);
   assert.match(read("_includes/search-info.html"), /role="status"[\s\S]*aria-live="polite"/);
   assert.match(read("_includes/search-box.html"), /<label[\s\S]*type="search"/);
-  assert.match(read("index.md"), /class="home-slide-toggle"[\s\S]*aria-controls="home-slides"/);
-  assert.doesNotMatch(read("index.md"), /aria-pressed/);
+  assert.match(read("index.md"), /class="home-slide-show" aria-hidden="true"/);
+  assert.doesNotMatch(read("index.md"), /home-slide-toggle|aria-pressed/);
 });
 
 test("theme link colors meet normal-text contrast", () => {
