@@ -7,7 +7,7 @@ title: 소장 인사말
   <div class="greeting-photo-wrap">
     <img
       class="greeting-photo"
-      src="{{ '/images/jychey.jpg' | relative_url }}"
+      src="{{ '/images/jychey-director-2026.jpg' | relative_url }}"
       alt="최진영 심리과학연구소장"
     >
   </div>
