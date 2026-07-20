@@ -18,6 +18,7 @@ title: 찾아오시는 길
 
   <iframe
     class="location-map"
+    title="서울대학교 심리과학연구소 위치 지도"
     src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90%20%EC%82%AC%ED%9A%8C%EA%B3%BC%ED%95%99%EB%8C%80%ED%95%99%2016%EB%8F%99&output=embed"
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
@@ -31,8 +32,9 @@ title: 찾아오시는 길
   <div class="location-info-item">
     <h3>위치</h3>
     <p>
-      서울대학교 사회과학대학<br>
-      서울특별시 관악구 관악로 1 16동
+      {% for line in site.contact.address_lines %}
+        {{ line }}{% unless forloop.last %}<br>{% endunless %}
+      {% endfor %}
     </p>
   </div>
 

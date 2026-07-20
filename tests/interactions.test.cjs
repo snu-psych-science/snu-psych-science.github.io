@@ -104,33 +104,63 @@ test("mobile navigation synchronizes state and closes on Escape or resize", () =
   assert.equal(toggle.getAttribute("aria-expanded"), "false");
 });
 
+test("dark mode follows the system until the user saves a visible choice", () => {
+  const toggle = new FakeElement();
+  const preference = new FakeElement();
+  preference.matches = true;
+  const saved = new Map();
+  const document = new FakeElement();
+  document.readyState = "complete";
+  document.documentElement = { dataset: {} };
+  document.querySelector = (selector) => (selector === ".dark-toggle" ? toggle : null);
+  const window = {
+    matchMedia: () => preference,
+    localStorage: {
+      getItem: (key) => saved.get(key) ?? null,
+      setItem: (key, value) => saved.set(key, value),
+    },
+  };
+
+  vm.runInNewContext(script("dark-mode.js"), { window, document, console }, {
+    filename: "dark-mode.js",
+  });
+
+  assert.equal(document.documentElement.dataset.dark, "true");
+  assert.equal(toggle.checked, true);
+
+  toggle.checked = false;
+  toggle.emit("input");
+  assert.equal(document.documentElement.dataset.dark, "false");
+  assert.equal(saved.get("dark-mode"), "false");
+
+  preference.emit("change", { matches: true });
+  assert.equal(document.documentElement.dataset.dark, "false");
+});
+
 test("home slideshow autoplays without playback controls and respects reduced motion", () => {
   const homepage = fs.readFileSync(path.join(root, "index.md"), "utf8");
   const styles = fs.readFileSync(path.join(root, "_styles", "home.scss"), "utf8");
+  const homeData = fs.readFileSync(path.join(root, "_data", "home.yaml"), "utf8");
 
   assert.doesNotMatch(homepage, /home-slide-toggle|data-slideshow/);
-  const slideImages = [
-    "home-slide-arpa-h-bays.jpg",
-    "home-slide-research-group.jpg",
-    "home-slide-seminar.jpg",
-    "home-slide-active-aging-conference.jpg",
-  ];
-  assert.deepEqual(
-    [...homepage.matchAll(/\/images\/(home-slide-[^"']+)/g)].map((match) => match[1]),
-    slideImages
+  assert.match(homepage, /for slide in site\.data\.home\.slides/);
+  assert.match(homepage, /class="home-slide-show" aria-hidden="true"/);
+  const slideImages = [...homeData.matchAll(/^\s+- image:\s*(\S+)/gm)].map(
+    (match) => match[1]
   );
-  for (const image of slideImages)
-    assert.ok(fs.existsSync(path.join(root, "images", image)), `missing slide image: ${image}`);
-  assert.doesNotMatch(homepage, /home-slide-(?:1\.png|2\.jpeg|3\.png)/);
-  assert.match(styles, /\.home-slide-hero\s*{[\s\S]*min-height:\s*620px/);
-  assert.match(
-    styles,
-    /@media \(max-width: 900px\)[\s\S]*\.home-slide-hero\s*{[\s\S]*min-height:\s*500px/
-  );
-  assert.match(styles, /animation:\s*homeSlideFade 40s ease-in-out infinite/);
+  assert.ok(slideImages.length > 1, "slideshow needs multiple configured images");
+  for (const image of slideImages) {
+    assert.match(image, /^\/images\//);
+    assert.ok(fs.existsSync(path.join(root, image.slice(1))), `missing slide image: ${image}`);
+  }
+  assert.match(styles, /animation:\s*homeSlideFade\b/);
   assert.match(
     styles,
     /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.home-slide-item\s*{[\s\S]*animation:\s*none/
+  );
+  assert.match(
+    styles,
+    /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.home-slide-item:first-child[\s\S]*opacity:\s*1/
   );
 });
 

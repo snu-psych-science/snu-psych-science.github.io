@@ -1,33 +1,30 @@
 ---
 title: 연구소개
-nav:
-  order: 3
-  tooltip: 연구소개
 redirect_from:
   - /research/publications/
   - /research/projects/
 ---
 
-<div class="research-hero-card">
+<div class="research-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
 
-  <div class="research-hero-label">RESEARCH AREAS</div>
+  <div class="research-hero-label page-hero__eyebrow">RESEARCH AREAS</div>
 
-  <h1>연구소개</h1>
+  <h1 class="page-hero__title">연구소개</h1>
 
-  <p class="research-hero-subtitle">
+  <p class="research-hero-subtitle page-hero__description">
     심리과학연구소는 인간의 마음과 행동을 과학적으로 이해하기 위해 기초 심리학과 응용 심리학을 아우르는 다학제적 연구를 수행합니다.
   </p>
 
 </div>
 
-<div class="research-intro-panel">
+<div class="research-intro-panel intro-panel">
 
-  <div class="research-intro-heading">
+  <div class="research-intro-heading intro-panel__heading">
     <span>Institute of Psychological Science</span>
     <h2>심리과학의 이론적 발전과 사회적 활용</h2>
   </div>
 
-  <div class="research-intro-text">
+  <div class="research-intro-text intro-panel__content">
     <p>
       심리과학연구소는 뇌와 행동의 관계, 언어처리 및 학습, 계산 인지 모델링, 정신병리 예측, 디지털 심리치료, 인간-컴퓨터 상호작용 등 다양한 연구 분야를 포괄하고 있습니다.
     </p>
@@ -41,7 +38,7 @@ redirect_from:
 
 {% include section.html %}
 
-<div class="research-section-title">
+<div class="research-section-title section-heading">
   <span>SELECTED PUBLICATIONS</span>
   <h2>대표논문</h2>
 </div>

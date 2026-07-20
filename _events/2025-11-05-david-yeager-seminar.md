@@ -1,24 +1,12 @@
 ---
 title: David Yeager 교수·박다은 교수 특별강연
 date: 2025-11-05
-event_date: 2025.11.05
 speaker: David Yeager 교수, 박다은 교수
+affiliation: "The University of Texas at Austin, 성균관대학교 심리학과"
+topic: "From Growth Mindset to Mentor Mindset: Lessons from 15 Years of Field Experiments on Motivating Young People"
 summary: "From Growth Mindset to Mentor Mindset: Lessons from 15 Years of Field Experiments on Motivating Young People"
-categories:
-  - event
 permalink: /events/david-yeager-seminar-2025/
 ---
-
-# David Yeager 교수·박다은 교수 특별강연
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.11.05 |
-| 연사 | David Yeager 교수, 박다은 교수 |
-| 소속 | The University of Texas at Austin, 성균관대학교 심리학과 |
-| 내용 | From Growth Mindset to Mentor Mindset: Lessons from 15 Years of Field Experiments on Motivating Young People |
 
 ## 행사 소개
 

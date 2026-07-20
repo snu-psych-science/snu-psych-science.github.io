@@ -1,24 +1,12 @@
 ---
 title: 연세대학교 강인한 교수 세미나
 date: 2025-11-04
-event_date: 2025.11.04
 speaker: 강인한 교수
+affiliation: "연세대학교 심리학과"
+topic: "Learning from Model Violations: Toward Integrative Psychometric, Cognitive, and Network Approaches"
 summary: "Learning from Model Violations: Toward Integrative Psychometric, Cognitive, and Network Approaches"
-categories:
-  - event
 permalink: /events/kang-inhan-seminar-2025/
 ---
-
-# 연세대학교 강인한 교수 세미나
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.11.04 |
-| 연사 | 강인한 교수 |
-| 소속 | 연세대학교 심리학과 |
-| 내용 | Learning from Model Violations: Toward Integrative Psychometric, Cognitive, and Network Approaches |
 
 ## 행사 소개
 

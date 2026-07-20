@@ -1,26 +1,14 @@
 ---
 title: "마이아이비 박영희 대표 심리학 특강"
 date: 2025-11-18
-event_date: 2025.11.18
+start_time: "10:00"
+venue: "규장각한국학연구원(103동) B101호"
 speaker: 박영희 대표
+affiliation: "마이아이비"
+topic: "My Career Journey: 조직심리학, 컨설팅, HR, 그리고 ESG"
 summary: "My Career Journey: 조직심리학, 컨설팅, HR, 그리고 ESG"
-categories:
-  - event
 permalink: /events/park-younghee-seminar-2025/
 ---
-
-# 마이아이비 박영희 대표 심리학 특강
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.11.18 |
-| 시간 | 10:00 |
-| 장소 | 규장각한국학연구원(103동) B101호 |
-| 연사 | 박영희 대표 |
-| 소속 | 마이아이비 |
-| 내용 | My Career Journey: 조직심리학, 컨설팅, HR, 그리고 ESG |
 
 ## 행사 소개
 

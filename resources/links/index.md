@@ -6,7 +6,7 @@ title: 관련 링크
 
 <div class="related-link-grid">
 
-  <a class="related-link-card" href="https://psych.snu.ac.kr/" target="_blank" rel="noopener">
+  <a class="related-link-card" href="https://psych.snu.ac.kr/" target="_blank" rel="noopener noreferrer">
     <div class="related-link-icon">
       {% include icon.html icon="fa-solid fa-brain" %}
     </div>
@@ -15,7 +15,7 @@ title: 관련 링크
     <span>바로가기 →</span>
   </a>
 
-  <a class="related-link-card" href="https://social.snu.ac.kr/" target="_blank" rel="noopener">
+  <a class="related-link-card" href="https://social.snu.ac.kr/" target="_blank" rel="noopener noreferrer">
     <div class="related-link-icon">
       {% include icon.html icon="fa-solid fa-building-columns" %}
     </div>
@@ -24,7 +24,7 @@ title: 관련 링크
     <span>바로가기 →</span>
   </a>
 
-  <a class="related-link-card" href="https://www.koreanpsychology.or.kr/" target="_blank" rel="noopener">
+  <a class="related-link-card" href="https://www.koreanpsychology.or.kr/" target="_blank" rel="noopener noreferrer">
     <div class="related-link-icon">
       {% include icon.html icon="fa-solid fa-users" %}
     </div>
@@ -33,7 +33,7 @@ title: 관련 링크
     <span>바로가기 →</span>
   </a>
 
-  <a class="related-link-card" href="https://www.snu.ac.kr/" target="_blank" rel="noopener">
+  <a class="related-link-card" href="https://www.snu.ac.kr/" target="_blank" rel="noopener noreferrer">
     <div class="related-link-icon">
       {% include icon.html icon="fa-solid fa-school" %}
     </div>

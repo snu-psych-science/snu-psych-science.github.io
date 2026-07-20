@@ -1,24 +1,12 @@
 ---
 title: University of Southern California Gratch 교수 세미나
 date: 2025-11-12
-event_date: 2025.11.12
 speaker: Gratch 교수
+affiliation: "University of Southern California"
+topic: "Affective Computing Special Lecture Series"
 summary: Affective Computing Special Lecture Series
-categories:
-  - event
 permalink: /events/gratch-seminar-2025/
 ---
-
-# University of Southern California Gratch 교수 세미나
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.11.12 |
-| 연사 | Gratch 교수 |
-| 소속 | University of Southern California |
-| 내용 | Affective Computing Special Lecture Series |
 
 ## 행사 소개
 

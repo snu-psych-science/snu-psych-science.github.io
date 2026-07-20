@@ -1,30 +1,27 @@
 ---
 title: 연구소 소개
-nav:
-  order: 1
-  tooltip: 연구소 소개
 ---
 
-<div class="about-hero-card">
+<div class="about-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
 
-  <div class="about-hero-label">ABOUT THE INSTITUTE</div>
+  <div class="about-hero-label page-hero__eyebrow">ABOUT THE INSTITUTE</div>
 
-  <h1>심리과학연구소</h1>
+  <h1 class="page-hero__title">심리과학연구소</h1>
 
-  <p class="about-hero-subtitle">
+  <p class="about-hero-subtitle page-hero__description">
     인간의 마음과 행동을 과학적으로 이해하고, 심리과학의 학문적 발전과 사회적 기여를 함께 추구합니다.
   </p>
 
 </div>
 
-<div class="about-intro-panel">
+<div class="about-intro-panel intro-panel">
 
-  <div class="about-intro-heading">
+  <div class="about-intro-heading intro-panel__heading">
     <span>Institute of Psychological Science</span>
     <h2>연구소 소개</h2>
   </div>
 
-  <div class="about-intro-text">
+  <div class="about-intro-text intro-panel__content">
     <p>
       심리과학연구소는 심리학의 과학주의적 경향과 인간 중심적 접근방식에 기반하여 인간의 마음과 행동을 과학적으로 탐구하고, 한국 사회의 현실 문제에 대한 심리학적 접근과 실용적 해결 방안을 모색하는 연구기관입니다.
     </p>
@@ -38,47 +35,19 @@ nav:
 
 {% include section.html %}
 
-<div class="about-section-title">
+<div class="about-section-title section-heading">
   <span>QUICK LINKS</span>
   <h2>연구소 소개 바로가기</h2>
 </div>
 
-<div class="about-card-grid">
-
-  <a class="about-card" href="{{ '/about/greeting/' | relative_url }}">
-    <div class="about-card-icon">
-      {% include icon.html icon="fa-solid fa-comment-dots" %}
-    </div>
-    <h3>소장 인사말</h3>
-    <p>심리과학연구소 소장의 인사말을 소개합니다.</p>
-    <span class="about-card-more">자세히 보기 →</span>
-  </a>
-
-  <a class="about-card" href="{{ '/about/history/' | relative_url }}">
-    <div class="about-card-icon">
-      {% include icon.html icon="fa-solid fa-landmark" %}
-    </div>
-    <h3>설립목적 및 연혁</h3>
-    <p>연구소의 설립 배경, 목적, 주요 연혁을 확인할 수 있습니다.</p>
-    <span class="about-card-more">자세히 보기 →</span>
-  </a>
-
-  <a class="about-card" href="{{ '/about/members/' | relative_url }}">
-    <div class="about-card-icon">
-      {% include icon.html icon="fa-solid fa-users" %}
-    </div>
-    <h3>조직 및 구성원</h3>
-    <p>연구소 조직 구조와 참여 연구진을 소개합니다.</p>
-    <span class="about-card-more">자세히 보기 →</span>
-  </a>
-
-  <a class="about-card" href="{{ '/about/location/' | relative_url }}">
-    <div class="about-card-icon">
-      {% include icon.html icon="fa-solid fa-location-dot" %}
-    </div>
-    <h3>찾아오시는 길</h3>
-    <p>연구소 위치, 연락처, 방문 안내를 확인할 수 있습니다.</p>
-    <span class="about-card-more">자세히 보기 →</span>
-  </a>
-
+{% assign about_navigation = site.data.navigation | where: "url", "/about/" | first %}
+<div class="about-card-grid card-grid">
+  {% for item in about_navigation.children %}
+    <a class="about-card content-card" href="{{ item.url | relative_url }}">
+      <div class="about-card-icon">{% include icon.html icon=item.icon %}</div>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+      <span class="about-card-more action-link">자세히 보기 →</span>
+    </a>
+  {% endfor %}
 </div>

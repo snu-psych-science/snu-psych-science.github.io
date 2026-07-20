@@ -1,0 +1,136 @@
+- id: director
+  name: 최진영
+  role: 소장
+  group: director
+  research_area: 임상신경과학
+  profile_url: https://www.thecns.snu.ac.kr/professor
+  profile_label: thecns.snu.ac.kr
+  email: jychey@snu.ac.kr
+  image: /images/jychey-director-2026.jpg
+  image_width: 1742
+  image_height: 2613
+  profile_image: /images/jychey.jpg
+  profile_image_width: 1900
+  profile_image_height: 2443
+  bio: 주요 관심 분야는 정신 및 뇌 건강이다. 최근에는 정상 노화 과정을 이탈하는 치매 발현 경로를 탐색하여 사회적 고립, 교육 및 유전자 발현 등의 역할을 확인하는 연구를 진행하고 있다. 연구들은 사회적 네트워크, 뇌영상, 신경면역 분석들을 심리 특질과 측정치들과 통합시켜 복잡한 인지 노화 경로를 밝히는 다학제적 접근법을 사용하고 있다. 이 외에도 치매 검사를 포함한 인지검사들을 출판하고 고등 인지 훈련 프로그램을 개발하였다.
+  order: 1
+  active: true
+
+- id: choi-incheol
+  name: 최인철
+  role: 겸임연구원
+  group: affiliated
+  research_area: 사회심리학
+  profile_url: http://snusocialpsy.com/people
+  profile_label: snusocialpsy.com
+  order: 2
+  active: true
+
+- id: lee-hoonjin
+  name: 이훈진
+  role: 겸임연구원
+  group: affiliated
+  research_area: 임상상담심리학
+  profile_url: http://www.mindclinic.co.kr/
+  profile_label: mindclinic.co.kr
+  order: 3
+  active: true
+
+- id: koh-sungryong
+  name: 고성룡
+  role: 겸임연구원
+  group: affiliated
+  research_area: 언어심리학
+  profile_label: 준비 중
+  order: 4
+  active: true
+
+- id: oh-sungjoo
+  name: 오성주
+  role: 겸임연구원
+  group: affiliated
+  research_area: 지각심리학
+  profile_url: http://perception.snu.ac.kr
+  profile_label: perception.snu.ac.kr
+  order: 5
+  active: true
+
+- id: han-sowon
+  name: 한소원
+  role: 겸임연구원
+  group: affiliated
+  research_area: 인지심리학
+  profile_url: https://hfpsych.snu.ac.kr/People.html
+  profile_label: hfpsych.snu.ac.kr
+  order: 6
+  active: true
+
+- id: ahn-wooyoung
+  name: 안우영
+  role: 겸임연구원
+  group: affiliated
+  research_area: 임상심리 / 계산신경과학
+  profile_url: https://ccs-lab.github.io/team/young-ahn/
+  profile_label: ccs-lab.github.io
+  order: 7
+  active: true
+
+- id: cha-jiwook
+  name: 차지욱
+  role: 겸임연구원
+  group: affiliated
+  research_area: 신경과학 / 커넥톰
+  profile_url: https://www.connectomelab.com/team
+  profile_label: connectomelab.com
+  order: 8
+  active: true
+
+- id: kim-hyangsook
+  name: 김향숙
+  role: 겸임연구원
+  group: affiliated
+  research_area: 임상심리
+  profile_url: https://sites.google.com/view/emphl-snu/members/principal-investigator
+  profile_label: emphl-snu
+  order: 9
+  active: true
+
+- id: lee-suhyun
+  name: 이수현
+  role: 겸임연구원
+  group: affiliated
+  research_area: 인지신경과학
+  profile_url: https://memcolab.org/people/principal-investigator/
+  profile_label: memcolab.org
+  order: 10
+  active: true
+
+- id: kim-gawon
+  name: 김가원
+  role: 겸임연구원
+  group: affiliated
+  research_area: 조직심리
+  profile_url: https://www.kawon.snu.ac.kr
+  profile_label: kawon.snu.ac.kr
+  order: 11
+  active: true
+
+- id: lee-haeyeon
+  name: 이해연
+  role: 겸임연구원
+  group: affiliated
+  research_area: 발달심리
+  profile_url: https://snu-sldl.com/about-dr-lee-2/
+  profile_label: snu-sldl.com
+  order: 12
+  active: true
+
+- id: seok-hyewon
+  name: 석혜원
+  role: 겸임연구원
+  group: affiliated
+  research_area: 계량심리
+  profile_url: https://sites.google.com/view/hsuk/members
+  profile_label: hsuk
+  order: 13
+  active: true

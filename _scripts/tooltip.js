@@ -1,41 +1,70 @@
-/* 
-  shows a popup of text on hover/focus of any element with the data-tooltip
-  attribute.
-*/
+/* Progressive, dependency-free tooltips for hover and keyboard focus. */
 
-{
-  const onLoad = () => {
-    // make sure Tippy library available
-    if (typeof tippy === "undefined") return;
+(() => {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
 
-    // get elements with non-empty tooltips
-    const elements = [...document.querySelectorAll("[data-tooltip]")].filter(
-      (element) => element.dataset.tooltip.trim() && !element._tippy
-    );
+  const tooltipId = "site-tooltip";
+  const describedBy = new WeakMap();
+  let tooltip;
+  let activeReference;
 
-    // add tooltip to elements
-    tippy(elements, {
-      content: (element) => element.dataset.tooltip.trim(),
-      delay: [200, 0],
-      offset: [0, 20],
-      allowHTML: false,
-      interactive: true,
-      appendTo: () => document.body,
-      aria: {
-        content: "describedby",
-        expanded: null,
-      },
-      onShow: ({ reference, popper }) => {
-        const dark = reference.closest("[data-dark]")?.dataset.dark;
-        if (dark === "false") popper.dataset.dark = true;
-        if (dark === "true") popper.dataset.dark = false;
-      },
-      // onHide: () => false, // debug
-    });
+  const hide = () => {
+    if (!activeReference || !tooltip) return;
+    const original = describedBy.get(activeReference);
+    if (original) activeReference.setAttribute("aria-describedby", original);
+    else activeReference.removeAttribute("aria-describedby");
+    tooltip.hidden = true;
+    activeReference = undefined;
   };
 
-  // after page loads
-  window.addEventListener("load", onLoad);
-  // after tags load
-  window.addEventListener("tagsfetched", onLoad);
-}
+  const position = (reference) => {
+    const referenceBox = reference.getBoundingClientRect();
+    const tooltipBox = tooltip.getBoundingClientRect();
+    const gap = 10;
+    const left = Math.min(
+      window.innerWidth - tooltipBox.width - gap,
+      Math.max(gap, referenceBox.left + referenceBox.width / 2 - tooltipBox.width / 2)
+    );
+    const above = referenceBox.top - tooltipBox.height - gap;
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${above >= gap ? above : referenceBox.bottom + gap}px`;
+  };
+
+  const show = (reference) => {
+    const content = reference.dataset.tooltip?.trim();
+    if (!content) return;
+    hide();
+    activeReference = reference;
+    describedBy.set(reference, reference.getAttribute("aria-describedby"));
+    reference.setAttribute("aria-describedby", tooltipId);
+    tooltip.textContent = content;
+    tooltip.hidden = false;
+    position(reference);
+  };
+
+  const onReady = () => {
+    tooltip = document.createElement("div");
+    tooltip.id = tooltipId;
+    tooltip.className = "tooltip-popup";
+    tooltip.setAttribute("role", "tooltip");
+    tooltip.hidden = true;
+    document.body.append(tooltip);
+
+    for (const reference of document.querySelectorAll("[data-tooltip]")) {
+      reference.addEventListener("mouseenter", () => show(reference));
+      reference.addEventListener("mouseleave", hide);
+      reference.addEventListener("focus", () => show(reference));
+      reference.addEventListener("blur", hide);
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") hide();
+    });
+    window.addEventListener("resize", hide);
+    window.addEventListener("scroll", hide, true);
+  };
+
+  if (document.readyState === "loading")
+    document.addEventListener("DOMContentLoaded", onReady, { once: true });
+  else onReady();
+})();

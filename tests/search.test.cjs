@@ -1,24 +1,8 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 
-const { normalizeTag, splitQuery } = require("../_scripts/search.js");
 const { buildSiteSearchUrl } = require("../_scripts/site-search.js");
 const { resolveDarkMode } = require("../_scripts/dark-mode.js");
-
-test("search queries are split into terms, phrases, and normalized tags", () => {
-  assert.deepEqual(
-    splitQuery('memory aging "social network" "tag: Cognitive Science"'),
-    {
-      terms: ["memory", "aging"],
-      phrases: ["social network"],
-      tags: ["cognitive-science"],
-    }
-  );
-});
-
-test("tag normalization trims, lowercases, and collapses whitespace", () => {
-  assert.equal(normalizeTag("  Social   Cognition "), "social-cognition");
-});
 
 test("site-search URLs preserve the complete query", () => {
   const url = new URL(

@@ -1,27 +1,17 @@
 ---
 title: Princeton University Uri Hasson 교수 세미나
 date: 2024-10-31
-event_date: 2024.10.31
+start_time: "10:00"
+end_time: "11:30"
+venue: "온라인 진행"
 speaker: Uri Hasson 교수
+affiliation: "Princeton University"
+topic: "Deep language models as a cognitive model for natural language processing in the human brain"
+organizer: "서울대학교 심리학과·심리과학연구소"
+organizer_label: "주관"
 summary: "Deep language models as a cognitive model for natural language processing in the human brain"
-categories:
-  - event
 permalink: /events/uri-hasson-seminar-2024/
 ---
-
-# Princeton University Uri Hasson 교수 세미나
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2024.10.31 |
-| 시간 | 10:00–11:30 |
-| 장소 | 온라인 진행 |
-| 연사 | Uri Hasson 교수 |
-| 소속 | Princeton University |
-| 내용 | Deep language models as a cognitive model for natural language processing in the human brain |
-| 주관 | 서울대학교 심리학과·심리과학연구소 |
 
 ## 행사 소개
 

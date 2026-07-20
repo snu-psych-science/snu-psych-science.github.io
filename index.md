@@ -11,10 +11,12 @@ title: 홈
 <div class="home-slide-hero">
 
   <div class="home-slide-show" aria-hidden="true">
-    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-arpa-h-bays.jpg" | relative_url }}');"></div>
-    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-research-group.jpg" | relative_url }}');"></div>
-    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-seminar.jpg" | relative_url }}');"></div>
-    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-active-aging-conference.jpg" | relative_url }}');"></div>
+    {% for slide in site.data.home.slides %}
+      <div
+        class="home-slide-item"
+        style="background-image: url('{{ slide.image | relative_url }}'); background-position: {{ slide.position | default: 'center' }};"
+      ></div>
+    {% endfor %}
   </div>
 
 </div>
@@ -30,7 +32,7 @@ title: 홈
 {% for event in events %}
   <a class="home-preview-card" href="{{ event.url | relative_url }}">
     <div class="home-preview-date">
-      {{ event.event_date | default: event.date | date: "%Y.%m.%d" }}
+      {{ event.date | date: "%Y.%m.%d" }}
     </div>
 
     <h3>{{ event.title }}</h3>
@@ -74,6 +76,9 @@ title: 홈
       <img
         src="{{ latest_newsletter.image | relative_url }}"
         alt="{{ latest_newsletter.title }}"
+        width="{{ latest_newsletter.image_width }}"
+        height="{{ latest_newsletter.image_height }}"
+        loading="lazy"
       >
     {% else %}
       {% include icon.html icon="fa-solid fa-newspaper" %}

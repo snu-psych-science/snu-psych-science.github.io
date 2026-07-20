@@ -2,13 +2,17 @@
 title: 소장 인사말
 ---
 
-<div class="greeting-hero-card">
+{% assign director = site.data.members | where: "id", "director" | first %}
+
+<div class="greeting-hero-card" style="--page-hero-image: url('{{ site.header | relative_url }}')">
 
   <div class="greeting-photo-wrap">
     <img
       class="greeting-photo"
-      src="{{ '/images/jychey-director-2026.jpg' | relative_url }}"
-      alt="최진영 심리과학연구소장"
+      src="{{ director.image | relative_url }}"
+      alt="{{ director.name }} 심리과학연구소장"
+      width="{{ director.image_width }}"
+      height="{{ director.image_height }}"
     >
   </div>
 
@@ -22,8 +26,8 @@ title: 소장 인사말
     </p>
 
     <div class="greeting-signature">
-      <strong>최진영</strong>
-      <span>심리과학연구소장</span>
+      <strong>{{ director.name }}</strong>
+      <span>{{ site.title | remove: "서울대학교 " }}장</span>
     </div>
   </div>
 

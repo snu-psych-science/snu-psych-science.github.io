@@ -2,13 +2,13 @@
 title: 연구소 규정
 ---
 
-<div class="resources-hero-card">
+<div class="resources-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
 
-  <div class="resources-hero-label">REGULATIONS & GUIDELINES</div>
+  <div class="resources-hero-label page-hero__eyebrow">REGULATIONS & GUIDELINES</div>
 
-  <h1>연구소 규정</h1>
+  <h1 class="page-hero__title">연구소 규정</h1>
 
-  <p class="resources-hero-subtitle">
+  <p class="resources-hero-subtitle page-hero__description">
     심리과학연구소 운영과 연구 수행에 필요한 규정 및 지침을 안내합니다.
   </p>
 

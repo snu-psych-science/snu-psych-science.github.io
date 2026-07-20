@@ -16,11 +16,15 @@
   -->
 
   <div>
-    {% for link in site.links %}
-      {% assign key = link[0] %}
-      {% assign value = link[1] %}
-      {% include button.html type=key text="" link=value style="bare" %}
-    {% endfor %}
+    <a
+      class="button"
+      data-style="bare"
+      data-tooltip="Email"
+      aria-label="이메일 보내기"
+      href="mailto:{{ site.contact.email }}"
+    >
+      {% include icon.html icon="fa-solid fa-envelope" %}
+    </a>
   </div>
 
   <div>

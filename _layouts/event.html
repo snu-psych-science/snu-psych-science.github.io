@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<article class="event-detail">
+  <header class="event-detail-header">
+    <div class="event-detail-label">ACADEMIC EVENT</div>
+    <h1>{{ page.title }}</h1>
+  </header>
+
+  <section aria-labelledby="event-information">
+    <h2 id="event-information">행사 정보</h2>
+    <div class="table-scroll" tabindex="0" aria-label="행사 정보 표">
+      <table class="event-information-table">
+        <tbody>
+          <tr><th scope="row">일자</th><td>{{ page.date | date: "%Y.%m.%d" }}</td></tr>
+          {% if page.start_time %}
+            <tr>
+              <th scope="row">시간</th>
+              <td>{{ page.start_time }}{% if page.end_time %}–{{ page.end_time }}{% endif %}</td>
+            </tr>
+          {% endif %}
+          {% if page.venue %}<tr><th scope="row">장소</th><td>{{ page.venue }}</td></tr>{% endif %}
+          {% if page.speaker %}<tr><th scope="row">연사</th><td>{{ page.speaker }}</td></tr>{% endif %}
+          {% if page.affiliation %}<tr><th scope="row">소속</th><td>{{ page.affiliation }}</td></tr>{% endif %}
+          {% if page.topic %}<tr><th scope="row">{{ page.topic_label | default: "내용" }}</th><td>{{ page.topic }}</td></tr>{% endif %}
+          {% if page.organizer %}<tr><th scope="row">{{ page.organizer_label | default: "주최" }}</th><td>{{ page.organizer }}</td></tr>{% endif %}
+          {% if page.host %}<tr><th scope="row">호스트</th><td>{{ page.host }}</td></tr>{% endif %}
+          {% if page.sponsor %}<tr><th scope="row">후원</th><td>{{ page.sponsor }}</td></tr>{% endif %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {% if content != empty %}
+    <div class="event-detail-content">{{ content }}</div>
+  {% endif %}
+</article>
+
+{%- assign event_day = page.date | date: "%Y-%m-%d" -%}
+{%- capture event_start -%}{{ event_day }}{% if page.start_time %}T{{ page.start_time }}:00+09:00{% endif %}{%- endcapture -%}
+{%- capture event_end -%}{{ event_day }}{% if page.end_time %}T{{ page.end_time }}:00+09:00{% elsif page.start_time %}T{{ page.start_time }}:00+09:00{% endif %}{%- endcapture -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.summary | default: page.topic | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "startDate": {{ event_start | jsonify }},
+  "endDate": {{ event_end | jsonify }},
+  "organizer": { "@type": "Organization", "name": {{ page.organizer | default: site.title | jsonify }} }{% if page.venue %},
+  "location": { "@type": "Place", "name": {{ page.venue | jsonify }} }{% endif %}{% if page.speaker %},
+  "performer": { "@type": "Person", "name": {{ page.speaker | jsonify }} }{% endif %}
+}
+</script>

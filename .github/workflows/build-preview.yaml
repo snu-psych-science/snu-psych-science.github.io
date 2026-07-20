@@ -2,56 +2,47 @@ name: build-preview
 run-name: build pull request preview
 
 on:
-  # run when called from another workflow
   workflow_call:
 
-  # run if user manually requests it
-  workflow_dispatch:
-
-# variables
 env:
   PREVIEWS_FOLDER: preview
 
-permissions:
-  contents: write
-  pull-requests: write
+concurrency:
+  # This queue prevents preview cleanup and live deployment from racing on gh-pages.
+  group: gh-pages-writes
+  cancel-in-progress: false
 
 jobs:
   build-preview:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - name: Debug dump
-        if: runner.debug == '1'
-        uses: crazy-max/ghaction-dump-context@v2
-
-      - name: Checkout branch contents
+      - name: Checkout pull request contents
         if: github.event.action != 'closed'
         uses: actions/checkout@v4
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Install Ruby packages
         if: github.event.action != 'closed'
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1"
+          ruby-version: "3.2"
           bundler-cache: true
 
-      - name: Get Pages url
+      - name: Get Pages URL
         if: github.event.action != 'closed'
         id: pages
         uses: actions/configure-pages@v4
 
-      - name: SSH debug
-        if: runner.debug == '1'
-        uses: mxschmitt/action-tmate@v3
-
       - name: Build preview version of site
         if: github.event.action != 'closed'
-        run: |
-          JEKYLL_ENV=production bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path || '' }}/${{ env.PREVIEWS_FOLDER }}/pr-${{ github.event.number }}"
+        run: bundle exec jekyll build --config _config.yaml --baseurl "${{ steps.pages.outputs.base_path || '' }}/${{ env.PREVIEWS_FOLDER }}/pr-${{ github.event.number }}"
+        env:
+          JEKYLL_ENV: production
 
       - name: Commit preview to Pages branch
         if: github.event.action != 'closed'
@@ -60,24 +51,46 @@ jobs:
           source-dir: _site
           umbrella-dir: ${{ env.PREVIEWS_FOLDER }}
 
-      - name: Checkout Pages branch
+      - name: Checkout Pages branch for cleanup
         uses: actions/checkout@v4
         with:
           ref: gh-pages
 
-      - name: Clean up preview folders
+      - name: Remove previews for every closed pull request
         uses: actions/github-script@v7
         with:
           script: |
+            const path = require("path");
             const { rm } = require("fs").promises;
             const { PREVIEWS_FOLDER } = process.env;
             const { owner, repo } = context.repo;
-            const prs = (await github.rest.pulls.list({ owner, repo, state: "closed" })).data;
-            for (const { number } of prs)
-              await rm(`${PREVIEWS_FOLDER}/pr-${number}`, { recursive: true, force: true });
+            const previewsRoot = path.resolve(process.cwd(), PREVIEWS_FOLDER);
+            const closedPulls = await github.paginate(
+              github.rest.pulls.list,
+              { owner, repo, state: "closed", per_page: 100 }
+            );
 
-      - name: Commit changed files
+            for (const { number } of closedPulls) {
+              const folder = `pr-${number}`;
+              const target = path.resolve(previewsRoot, folder);
+              if (!/^pr-\d+$/.test(folder) || path.dirname(target) !== previewsRoot)
+                throw new Error(`Refusing unsafe preview path: ${target}`);
+              await rm(target, { recursive: true, force: true });
+            }
+
+      - name: Detect cleanup changes
+        id: cleanup
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit cleanup only when files changed
+        if: steps.cleanup.outputs.changed == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: gh-pages
-          commit_message: "Clean up previews"
+          commit_message: "Clean up closed pull request previews"

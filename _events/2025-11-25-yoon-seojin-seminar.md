@@ -1,26 +1,14 @@
 ---
 title: "윤서진 코치 심리학 특강"
 date: 2025-11-25
-event_date: 2025.11.25
+start_time: "10:00"
+venue: "규장각한국학연구원(103동) B101호"
 speaker: 윤서진 코치
+affiliation: "기업코칭전문가"
+topic: "Why Coaching? 개인과 조직의 성장을 이끄는 솔루션"
 summary: "Why Coaching? 개인과 조직의 성장을 이끄는 솔루션"
-categories:
-  - event
 permalink: /events/yoon-seojin-seminar-2025/
 ---
-
-# 윤서진 코치 심리학 특강
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.11.25 |
-| 시간 | 10:00 |
-| 장소 | 규장각한국학연구원(103동) B101호 |
-| 연사 | 윤서진 코치 |
-| 소속 | 기업코칭전문가 |
-| 내용 | Why Coaching? 개인과 조직의 성장을 이끄는 솔루션 |
 
 ## 행사 소개
 

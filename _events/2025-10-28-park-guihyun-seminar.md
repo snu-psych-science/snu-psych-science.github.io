@@ -1,24 +1,12 @@
 ---
 title: 고려대학교 박귀현 교수 세미나
 date: 2025-10-28
-event_date: 2025.10.28
 speaker: 박귀현 교수
+affiliation: "고려대학교 심리학부"
+topic: "팀웍의 심리학"
 summary: "팀웍의 심리학"
-categories:
-  - event
 permalink: /events/park-guihyun-seminar-2025/
 ---
-
-# 고려대학교 박귀현 교수 세미나
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.10.28 |
-| 연사 | 박귀현 교수 |
-| 소속 | 고려대학교 심리학부 |
-| 내용 | 팀웍의 심리학 |
 
 ## 행사 소개
 

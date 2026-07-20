@@ -1,24 +1,12 @@
 ---
 title: 아주대학교 박현준 교수 세미나
 date: 2025-10-21
-event_date: 2025.10.21
 speaker: 박현준 교수
+affiliation: "아주대학교 심리학과"
+topic: "사회정체성 위협의 다층적인 부정적 영향<br>The Impact of Social Identity Threat Across Multiple Levels “Under the Skin” and “In the Air”"
 summary: "사회정체성 위협의 다층적인 부정적 영향"
-categories:
-  - event
 permalink: /events/park-hyunjoon-seminar-2025/
 ---
-
-# 아주대학교 박현준 교수 세미나
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.10.21 |
-| 연사 | 박현준 교수 |
-| 소속 | 아주대학교 심리학과 |
-| 내용 | 사회정체성 위협의 다층적인 부정적 영향<br>The Impact of Social Identity Threat Across Multiple Levels “Under the Skin” and “In the Air” |
 
 ## 행사 소개
 

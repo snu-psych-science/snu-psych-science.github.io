@@ -1,8 +1,5 @@
 ---
 title: 뉴스레터
-nav:
-  order: 4
-  tooltip: 뉴스레터
 ---
 
 # {% include icon.html icon="fa-solid fa-feather-pointed" %}뉴스레터
@@ -16,7 +13,7 @@ nav:
 <div class="newsletter-list">
 
   {% for newsletter in newsletters %}
-    <a class="newsletter-card" href="{{ newsletter.url | relative_url }}">
+    <a class="newsletter-card list-card" href="{{ newsletter.url | relative_url }}">
 
       <div class="newsletter-date">
         {{ newsletter.date | date: "%Y.%m.%d" }}
@@ -29,9 +26,9 @@ nav:
           <p class="newsletter-volume">{{ newsletter.volume }}</p>
         {% endif %}
 
-        {% if newsletter.excerpt %}
+        {% if newsletter.summary %}
           <p class="newsletter-summary">
-            {{ newsletter.excerpt | strip_html | truncate: 140 }}
+            {{ newsletter.summary | truncate: 140 }}
           </p>
         {% endif %}
       </div>

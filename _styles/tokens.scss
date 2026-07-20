@@ -1,0 +1,78 @@
+[data-dark="false"] {
+  --color-brand: #0369a1;
+  --color-brand-strong: #075985;
+  --color-accent: #7dd3fc;
+  --color-brand-muted: #e0f2fe;
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-border: #d6dbe1;
+  --color-focus: #b45309;
+  --color-overlay: #00000020;
+  --color-hero-text: #ffffff;
+  --color-hero-text-muted: #ffffffdb;
+  --color-button-text: #ffffff;
+}
+
+[data-dark="true"] {
+  --color-brand: #7dd3fc;
+  --color-brand-strong: #bae6fd;
+  --color-accent: #38bdf8;
+  --color-brand-muted: #0c4a6e;
+  --color-text: #f8fafc;
+  --color-text-muted: #cbd5e1;
+  --color-surface: #181818;
+  --color-surface-muted: #23272f;
+  --color-border: #475569;
+  --color-focus: #facc15;
+  --color-overlay: #ffffff10;
+  --color-hero-text: #ffffff;
+  --color-hero-text-muted: #ffffffdb;
+  --color-button-text: #0f172a;
+}
+
+:root {
+  --title: "Barlow", sans-serif;
+  --heading: "Barlow", sans-serif;
+  --body: "Barlow", sans-serif;
+  --code: "Roboto Mono", monospace;
+
+  --large: 1.2rem;
+  --xl: 1.4rem;
+  --xxl: 1.6rem;
+  --thin: 200;
+  --regular: 400;
+  --semi-bold: 500;
+  --bold: 600;
+  --spacing: 2;
+  --compact: 1.5;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 4px 14px var(--color-overlay);
+  --shadow-md: 0 12px 34px var(--color-overlay);
+  --shadow-lg: 0 18px 48px var(--color-overlay);
+  --transition: 0.2s ease;
+
+  /* Compatibility aliases for the remaining template primitives. */
+  --primary: var(--color-brand);
+  --secondary: var(--color-accent);
+  --text: var(--color-text);
+  --background: var(--color-surface);
+  --background-alt: var(--color-surface-muted);
+  --light-gray: var(--color-border);
+  --gray: var(--color-text-muted);
+  --dark-gray: var(--color-text-muted);
+  --overlay: var(--color-overlay);
+  --rounded: var(--radius-sm);
+  --shadow: var(--shadow-sm);
+}

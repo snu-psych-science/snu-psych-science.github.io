@@ -2,22 +2,28 @@
 layout: default
 ---
 
-<h1>{{ page.name | default: page.title }}</h1>
+{% assign member = site.data.members | where: "id", page.member_id | first %}
 
-{% capture floatcontent %}
+<article class="member-profile">
+  <h1>{{ member.name | default: page.title }}</h1>
 
-{% include portrait.html lookup=page.slug %}
+  <div class="member-profile-grid">
+    <img
+      class="portrait-image"
+      src="{{ member.profile_image | default: member.image | relative_url }}"
+      alt="{{ member.name }} {{ member.role }}"
+      width="{{ member.profile_image_width | default: member.image_width }}"
+      height="{{ member.profile_image_height | default: member.image_height }}"
+      loading="lazy"
+      {% include fallback.html %}
+    >
+    <div>
+      <p class="member-profile-role">{{ member.role }}</p>
+      {% if member.research_area %}<p>{{ member.research_area }}</p>{% endif %}
+      {% if member.profile_url %}<p><a href="{{ member.profile_url }}" target="_blank" rel="noopener noreferrer">{{ member.profile_label }}</a></p>{% endif %}
+      {% if member.email %}<p><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>{% endif %}
+    </div>
+  </div>
 
-<div>
-  {% for link in page.links %}
-    {% assign key = link[0] %}
-    {% assign value = link[1] %}
-    {% include button.html type=key link=value style="bare" %}<br>
-  {% endfor %}
-</div>
-
-{% endcapture %}
-
-{% include float.html content=floatcontent %}
-
-{{ content }}
+  {% if member.bio %}<p>{{ member.bio }}</p>{% endif %}
+</article>

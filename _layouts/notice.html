@@ -4,7 +4,7 @@ layout: default
 
 <article class="notice-detail">
 
-  <div class="notice-detail-header">
+  <div class="notice-detail-header" style="--page-hero-image: url('{{ site.header | relative_url }}')">
     <div class="notice-detail-label">NOTICE</div>
 
     <h1>{{ page.title }}</h1>
@@ -34,7 +34,7 @@ layout: default
             class="notice-attachment"
             href="{{ file.url | relative_url }}"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             {% include icon.html icon="fa-solid fa-paperclip" %}
             <span>{{ file.title }}</span>

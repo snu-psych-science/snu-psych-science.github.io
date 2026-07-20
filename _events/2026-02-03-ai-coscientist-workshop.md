@@ -1,26 +1,15 @@
 ---
 title: "2026 심리과학연구소 동계 워크숍"
 date: 2026-02-03
-event_date: 2026.02.03
+start_time: "09:30"
+end_time: "17:00"
+venue: "아시아연구소 삼익홀(101동 220호)"
 speaker: 차지욱 교수 외
+affiliation: "서울대학교 심리과학연구소"
+topic: "Build your own AI Co-Scientist"
 summary: "Build your own AI Co-Scientist"
-categories:
-  - event
 permalink: /events/ai-coscientist-workshop-2026/
 ---
-
-# 2026 심리과학연구소 동계 워크숍
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2026.02.03 |
-| 시간 | 09:30–17:00 |
-| 장소 | 아시아연구소 삼익홀(101동 220호) |
-| 연사 | 차지욱 교수 외 |
-| 소속 | 서울대학교 심리과학연구소 |
-| 내용 | Build your own AI Co-Scientist |
 
 ## 행사 소개
 

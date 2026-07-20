@@ -1,24 +1,12 @@
 ---
 title: 성신여자대학교 진경선 교수 세미나
 date: 2025-10-14
-event_date: 2025.10.14
 speaker: 진경선 교수
+affiliation: "성신여자대학교 심리학과"
+topic: "Early Social Cognition"
 summary: "Early Social Cognition"
-categories:
-  - event
 permalink: /events/jin-kyungsun-seminar-2025/
 ---
-
-# 성신여자대학교 진경선 교수 세미나
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.10.14 |
-| 연사 | 진경선 교수 |
-| 소속 | 성신여자대학교 심리학과 |
-| 내용 | Early Social Cognition |
 
 ## 행사 소개
 

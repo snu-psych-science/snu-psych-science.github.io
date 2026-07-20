@@ -1,26 +1,15 @@
 ---
 title: "Utrecht University Sander Thomaes 교수 해외석학 특별강연"
 date: 2026-06-29
-event_date: 2026.06.29
+start_time: "10:00"
+end_time: "12:00"
+venue: "아시아연구소 영원홀(101동 210호)"
 speaker: Sander Thomaes 교수
+affiliation: "Utrecht University"
+topic: "Coming of Age in a Warming World"
 summary: "Coming of Age in a Warming World"
-categories:
-  - event
 permalink: /events/sander-thomaes-special-lecture-2026/
 ---
-
-# Utrecht University Sander Thomaes 교수 해외석학 특별강연
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2026.06.29 |
-| 시간 | 10:00–12:00 |
-| 장소 | 아시아연구소 영원홀(101동 210호) |
-| 연사 | Sander Thomaes 교수 |
-| 소속 | Utrecht University |
-| 내용 | Coming of Age in a Warming World |
 
 ## 행사 소개
 

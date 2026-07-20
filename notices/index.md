@@ -1,17 +1,14 @@
 ---
 title: 공지사항
-nav:
-  order: 6
-  tooltip: 공지사항
 ---
 
-<div class="notices-hero-card">
+<div class="notices-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
 
-  <div class="notices-hero-label">NOTICE</div>
+  <div class="notices-hero-label page-hero__eyebrow">NOTICE</div>
 
-  <h1>공지사항</h1>
+  <h1 class="page-hero__title">공지사항</h1>
 
-  <p class="notices-hero-subtitle">
+  <p class="notices-hero-subtitle page-hero__description">
     심리과학연구소의 주요 공지, 안내사항, 자료 업데이트 소식을 확인할 수 있습니다.
   </p>
 
@@ -56,7 +53,7 @@ nav:
 
   {% else %}
 
-    <div class="notice-empty">
+    <div class="notice-empty empty-state">
       등록된 공지사항이 없습니다.
     </div>
 

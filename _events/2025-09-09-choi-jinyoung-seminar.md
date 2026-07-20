@@ -1,24 +1,12 @@
 ---
 title: 서울대학교 최진영 교수 세미나
 date: 2025-09-09
-event_date: 2025.09.09
 speaker: 최진영 교수
+affiliation: "서울대학교 심리학과"
+topic: "A Rapidly Aging Society and its Dementia Risk: Cognitive Aging & Dementia in Korea during Millennial Transition<br>고속 고령화 사회의 치매 위험: 밀레니엄 전환기 한국에서 인지노화와 치매 위험"
 summary: "A Rapidly Aging Society and its Dementia Risk: Cognitive Aging & Dementia in Korea during Millennial Transition"
-categories:
-  - event
 permalink: /events/choi-jinyoung-seminar-2025/
 ---
-
-# 서울대학교 최진영 교수 세미나
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.09.09 |
-| 연사 | 최진영 교수 |
-| 소속 | 서울대학교 심리학과 |
-| 내용 | A Rapidly Aging Society and its Dementia Risk: Cognitive Aging & Dementia in Korea during Millennial Transition<br>고속 고령화 사회의 치매 위험: 밀레니엄 전환기 한국에서 인지노화와 치매 위험 |
 
 ## 행사 소개
 

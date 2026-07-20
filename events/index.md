@@ -1,17 +1,14 @@
 ---
 title: 학술행사
-nav:
-  order: 2
-  tooltip: 학술행사
 ---
 
-<div class="events-hero-card">
+<div class="events-hero-card page-hero" style="--page-hero-image: url('{{ site.header | relative_url }}')">
 
-  <div class="events-hero-label">ACADEMIC EVENTS</div>
+  <div class="events-hero-label page-hero__eyebrow">ACADEMIC EVENTS</div>
 
-  <h1>학술행사</h1>
+  <h1 class="page-hero__title">학술행사</h1>
 
-  <p class="events-hero-subtitle">
+  <p class="events-hero-subtitle page-hero__description">
     심리과학연구소는 세미나, 콜로키움, 초청강연 등 다양한 학술행사를 통해 심리과학 분야의 연구 교류와 학문적 논의를 촉진하고 있습니다.
   </p>
 
@@ -22,9 +19,9 @@ nav:
 <div class="event-list">
 
   {% for event in events %}
-    <a class="event-card" href="{{ event.url | relative_url }}">
+    <a class="event-card list-card" href="{{ event.url | relative_url }}">
       <div class="event-date">
-        {{ event.event_date | default: event.date | date: "%Y.%m.%d" }}
+        {{ event.date | date: "%Y.%m.%d" }}
       </div>
 
       <div class="event-content">

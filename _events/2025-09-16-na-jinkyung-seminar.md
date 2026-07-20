@@ -1,24 +1,12 @@
 ---
 title: 서강대학교 나진경 교수 세미나
 date: 2025-09-16
-event_date: 2025.09.16
 speaker: 나진경 교수
+affiliation: "서강대학교 심리학과"
+topic: "Social Class Differences in Psychological Reaction to Unfair Treatment"
 summary: "Social Class Differences in Psychological Reaction to Unfair Treatment"
-categories:
-  - event
 permalink: /events/na-jinkyung-seminar-2025/
 ---
-
-# 서강대학교 나진경 교수 세미나
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.09.16 |
-| 연사 | 나진경 교수 |
-| 소속 | 서강대학교 심리학과 |
-| 내용 | Social Class Differences in Psychological Reaction to Unfair Treatment |
 
 ## 행사 소개
 

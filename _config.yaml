@@ -7,11 +7,12 @@ baseurl: ""
 lang: ko-KR
 header: images/background.png
 footer: images/background.png
-proofer: false
-
-# site social media and other links
-links:
+# shared institute contact information
+contact:
   email: ips.snu@gmail.com
+  address_lines:
+    - 서울대학교 사회과학대학
+    - 서울특별시 관악구 관악로 1 16동
 
 ### jekyll settings
 
@@ -22,25 +23,23 @@ defaults:
       path: ""
     values:
       layout: default
-  # markdown files in /_members
+  # event documents
   - scope:
-      type: "members"
+      type: "events"
     values:
-      layout: member
-  # markdown files in /_posts
+      layout: event
+  # newsletter documents
   - scope:
-      type: "posts"
+      type: "newsletters"
     values:
-      layout: post
+      layout: newsletter
+  # notice documents
+  - scope:
+      type: "notices"
+    values:
+      layout: notice
 
 collections:
-  # generate page for each member
-  members:
-    output: true
-  # generate page for each post
-  posts:
-    output: true
-
   events:
     output: true
     permalink: /events/:name/
@@ -70,14 +69,15 @@ theme: null
 # sass settings
 sass:
   sass_dir: _styles
+  style: compressed
 
 # force jekyll to include certain files/folders
 include:
-  - _styles
   - _scripts
 
 # force jekyll to exclude certain files/folders
 exclude:
   - README.md
   - LICENSE.md
-  - CITATION.cff
+  - package.json
+  - tests

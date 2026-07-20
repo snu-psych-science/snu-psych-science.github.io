@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="newsletter-detail">
+  <header class="newsletter-detail-header">
+    <div class="newsletter-detail-label">NEWSLETTER</div>
+    <h1>{{ page.title }}</h1>
+    <div class="newsletter-detail-meta">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+      {% if page.volume %}<span>{{ page.volume }}</span>{% endif %}
+    </div>
+  </header>
+
+  {% if page.summary %}<p class="newsletter-detail-summary">{{ page.summary }}</p>{% endif %}
+  {% if content != empty %}<div class="newsletter-detail-content">{{ content }}</div>{% endif %}
+
+  <a class="action-link" href="{{ page.pdf | relative_url }}">뉴스레터 PDF 보기</a>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.summary | jsonify }},
+  "datePublished": {{ page.date | date: "%Y-%m-%d" | jsonify }},
+  "author": { "@type": "Organization", "name": {{ site.title | jsonify }} },
+  "url": {{ page.url | absolute_url | jsonify }},
+  "encoding": { "@type": "MediaObject", "contentUrl": {{ page.pdf | absolute_url | jsonify }} }
+}
+</script>

@@ -1,25 +1,16 @@
 ---
 title: "2025 서울대학교 심리학과 대학원 연구발표회"
 date: 2025-12-09
-event_date: 2025.12.09
+start_time: "10:00"
+end_time: "12:50"
+venue: "아시아연구소(101동) 삼익홀(220호)"
 speaker: 서울대학교 심리학과 대학원생
+topic: "SNU Psychology Graduate Research Day"
+topic_label: "행사명"
+sponsor: "서울대학교 심리학과·심리과학연구소"
 summary: "SNU Psychology Graduate Research Day"
-categories:
-  - event
 permalink: /events/graduate-research-day-2025/
 ---
-
-# 2025 서울대학교 심리학과 대학원 연구발표회
-
-## 행사 정보
-
-| 항목 | 내용 |
-|---|---|
-| 일자 | 2025.12.09 |
-| 시간 | 10:00–12:50 |
-| 장소 | 아시아연구소(101동) 삼익홀(220호) |
-| 행사명 | SNU Psychology Graduate Research Day |
-| 후원 | 서울대학교 심리학과·심리과학연구소 |
 
 ## 구두 발표
 

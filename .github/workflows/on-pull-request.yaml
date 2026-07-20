@@ -9,12 +9,15 @@ on:
       - synchronize
       - closed
 
-permissions:
-  contents: read
+concurrency:
+  group: preview-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
   test-site:
     if: github.event.action != 'closed'
+    permissions:
+      contents: read
     uses: ./.github/workflows/test-site.yaml
 
   build-preview:
@@ -26,5 +29,4 @@ jobs:
       (github.event.action == 'closed' || needs.test-site.result == 'success')
     permissions:
       contents: write
-      pull-requests: write
     uses: ./.github/workflows/build-preview.yaml
