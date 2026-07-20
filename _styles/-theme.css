@@ -1,5 +1,5 @@
 [data-dark=false] {
-  --primary: #0795d9;
+  --primary: #0369a1;
   --secondary: #7dd3fc;
   --text: #000000;
   --background: #ffffff;
@@ -11,7 +11,7 @@
 }
 
 [data-dark=true] {
-  --primary: #0795d9;
+  --primary: #7dd3fc;
   --secondary: #075985;
   --text: #ffffff;
   --background: #181818;

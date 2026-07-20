@@ -21,6 +21,11 @@
   background-position: center;
   opacity: 0;
   animation: homeSlideFade 40s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.home-slide-hero[data-slideshow-ready]:not([data-slideshow-paused]) .home-slide-item {
+  animation-play-state: running;
 }
 
 .home-slide-item:nth-child(1) {
@@ -75,7 +80,39 @@
   .home-slide-item:first-child {
     opacity: 1;
   }
+  .home-slide-toggle {
+    display: none;
+  }
 }
+.home-slide-toggle {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  background: rgba(6, 24, 39, 0.82);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.home-slide-toggle[hidden] {
+  display: none !important;
+}
+
+.home-slide-toggle::before {
+  content: "\f04c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.home-slide-toggle[data-paused]::before {
+  content: "\f04b";
+}
+
 .home-slide-content {
   position: relative;
   z-index: 2;
@@ -124,7 +161,7 @@
 .home-section-title span {
   display: inline-block;
   margin-bottom: 10px;
-  color: #0284c7;
+  color: var(--primary);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -132,7 +169,7 @@
 
 .home-section-title h2 {
   margin: 0;
-  color: #0f172a;
+  color: var(--text);
   font-size: 2rem;
   line-height: 1.25;
 }
@@ -171,7 +208,7 @@
 
 .home-preview-date {
   margin-bottom: 14px;
-  color: #0284c7;
+  color: #0369a1;
   font-weight: 800;
   font-size: 0.95rem;
 }
@@ -197,7 +234,7 @@
 .home-preview-card span {
   margin-top: auto;
   padding-top: 22px;
-  color: #0284c7;
+  color: #0369a1;
   font-weight: 800;
   font-size: 0.95rem;
 }
@@ -211,7 +248,7 @@
   display: inline-block;
   padding: 12px 20px;
   border-radius: 999px;
-  background: #0284c7;
+  background: #0369a1;
   color: white;
   font-weight: 800;
   text-decoration: none;
@@ -219,7 +256,7 @@
 }
 
 .home-more-button:hover {
-  background: #0369a1;
+  background: #075985;
   color: white;
 }
 
@@ -275,14 +312,14 @@
   margin-top: 18px;
   padding: 12px 18px;
   border-radius: 999px;
-  background: #0284c7;
+  background: #0369a1;
   color: white;
   font-weight: 800;
   text-decoration: none;
 }
 
 .home-newsletter-button:hover {
-  background: #0369a1;
+  background: #075985;
   color: white;
 }
 

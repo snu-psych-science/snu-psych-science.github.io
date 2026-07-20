@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["form.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA","sourcesContent":["form {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n}\n"],"file":"form.css"}
+{"version":3,"sourceRoot":"","sources":["form.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE","sourcesContent":["form {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n}\n\n.site-search label {\n  flex: 1;\n}\n\n.site-search input {\n  width: 100%;\n}\n"],"file":"form.css"}

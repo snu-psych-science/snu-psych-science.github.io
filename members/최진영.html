@@ -107,12 +107,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?display=swap&&family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600" rel="stylesheet">
 
-<!-- Font Awesome icons (load asynchronously due to size) -->
+<!-- Font Awesome icons -->
 
-<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
-<noscript>
-  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
-</noscript>
+<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
 
   <!-- third party styles -->
 <!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
@@ -127,6 +124,10 @@
 
   
     <link href="/_styles/about.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/accessibility.css" rel="stylesheet">
   
 
   
@@ -341,28 +342,24 @@
   <!-- third party scripts -->
 <script src="https://unpkg.com/@popperjs/core@2" defer></script>
 <script src="https://unpkg.com/tippy.js@6" defer></script>
-<script src="https://unpkg.com/mark.js@8" defer></script>
 
-<!-- include all js in scripts folder -->
+<!-- shared site behavior, in dependency order -->
+<script src="/_scripts/anchors.js"></script>
+<script src="/_scripts/dark-mode.js"></script>
+<script src="/_scripts/image-fallback.js"></script>
+<script src="/_scripts/navigation.js"></script>
+<script src="/_scripts/table-wrap.js"></script>
+<script src="/_scripts/tooltip.js"></script>
 
 
-  <script src="/_scripts/anchors.js"></script>
 
-  <script src="/_scripts/dark-mode.js"></script>
 
-  <script src="/_scripts/fetch-tags.js"></script>
 
-  <script src="/_scripts/search.js"></script>
-
-  <script src="/_scripts/site-search.js"></script>
-
-  <script src="/_scripts/table-wrap.js"></script>
-
-  <script src="/_scripts/tooltip.js"></script>
 
 
 </head>
   <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
     
 
 
@@ -376,7 +373,7 @@
     
       <span class="logo">
         
-          <img src="/images/logo_.png" alt="logo">
+          <img src="/images/logo_.png" alt="">
         
       </span>
     
@@ -392,9 +389,9 @@
     
   </a>
 
-  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+  <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="메뉴 열기" hidden></button>
       
-  <nav class="site-nav">
+  <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴">
     
 
     
@@ -482,7 +479,7 @@
 
 </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <!--
   modify main content of page:
   - add section breaks
@@ -500,7 +497,11 @@
   
 
   <section class="background" data-size="page">
-    <div class="float">
+    <h1>최진영</h1>
+
+
+
+<div class="float">
   
 <div class="portrait-wrapper">
   <a class="portrait" data-style="" aria-label="최진영">
@@ -508,7 +509,7 @@
       <i class="icon fa-solid fa-microscope"></i>
     
 
-    <img src="/images/jychey.jpg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+    <img src="/images/jychey.jpg" class="portrait-image" alt="member portrait" loading="lazy" data-fallback-src="/images/fallback.svg">
 
     
       <span class="portrait-name">
@@ -569,27 +570,6 @@
 
 
 <p>주요 관심 분야는 정신 및 뇌 건강이다. 최근에는 정상 노화 과정을 이탈하는 치매 발현 경로를 탐색하여 사회적 고립, 교육 및 유전자 발현 등의 역할을 확인하는 연구를 진행하고 있다. 연구들은 사회적 네트워크, 뇌영상, 신경면역 분석들을 심리 특질과 측정치들과 통합시켜 복잡한 인지 노화 경로를 밝히는 다학제적 접근법을 사용하고 있다. 이 외에도 치매 검사를 포함한 인지검사들을 출판하고 고등 인지 훈련 프로그램을 개발하였다.</p>
-
-
-
-
-
-
-<p class="center">
-  <a href="/research/?search=%22%EC%B5%9C%EC%A7%84%EC%98%81%22%20">
-    Search for 최진영's papers on the Research page
-  </a>
-</p>
-
-
-
-<!--
-<p class="center">
-  <a href="/blog/?search=%EC%B5%9C%EC%A7%84%EC%98%81">
-    See 최진영's posts on the Blog page
-  </a>
-</p>
--->
   </section>
 
 
@@ -632,7 +612,7 @@
     </a>
   </div>
 
-  <input type="checkbox" class="dark-toggle" data-tooltip="Dark mode" aria-label="toggle dark mode" oninput="onDarkToggleChange(event)">
+  <input type="checkbox" class="dark-toggle" role="switch" data-tooltip="다크 모드" aria-label="다크 모드 전환">
 </footer>
 
   </body>

@@ -5,4 +5,12 @@ form {
   gap: 10px;
 }
 
+.site-search label {
+  flex: 1;
+}
+
+.site-search input {
+  width: 100%;
+}
+
 /*# sourceMappingURL=form.css.map */

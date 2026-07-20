@@ -107,12 +107,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?display=swap&&family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600" rel="stylesheet">
 
-<!-- Font Awesome icons (load asynchronously due to size) -->
+<!-- Font Awesome icons -->
 
-<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
-<noscript>
-  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
-</noscript>
+<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
 
   <!-- third party styles -->
 <!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
@@ -127,6 +124,10 @@
 
   
     <link href="/_styles/about.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/accessibility.css" rel="stylesheet">
   
 
   
@@ -393,6 +394,8 @@
 
   
 
+  
+
 
 <!-- include all css in styles folder -->
 
@@ -401,28 +404,24 @@
   <!-- third party scripts -->
 <script src="https://unpkg.com/@popperjs/core@2" defer></script>
 <script src="https://unpkg.com/tippy.js@6" defer></script>
-<script src="https://unpkg.com/mark.js@8" defer></script>
 
-<!-- include all js in scripts folder -->
+<!-- shared site behavior, in dependency order -->
+<script src="/_scripts/anchors.js"></script>
+<script src="/_scripts/dark-mode.js"></script>
+<script src="/_scripts/image-fallback.js"></script>
+<script src="/_scripts/navigation.js"></script>
+<script src="/_scripts/table-wrap.js"></script>
+<script src="/_scripts/tooltip.js"></script>
 
 
-  <script src="/_scripts/anchors.js"></script>
 
-  <script src="/_scripts/dark-mode.js"></script>
 
-  <script src="/_scripts/fetch-tags.js"></script>
 
-  <script src="/_scripts/search.js"></script>
-
-  <script src="/_scripts/site-search.js"></script>
-
-  <script src="/_scripts/table-wrap.js"></script>
-
-  <script src="/_scripts/tooltip.js"></script>
 
 
 </head>
   <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
     
 
 
@@ -436,7 +435,7 @@
     
       <span class="logo">
         
-          <img src="/images/logo_.png" alt="logo">
+          <img src="/images/logo_.png" alt="">
         
       </span>
     
@@ -452,9 +451,9 @@
     
   </a>
 
-  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+  <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="메뉴 열기" hidden></button>
       
-  <nav class="site-nav">
+  <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴">
     
 
     
@@ -487,7 +486,7 @@
       </div>
     
       <div class="nav-item">
-        <a class="nav-link" href="/events/">
+        <a class="nav-link" href="/events/" aria-current="page">
           학술행사
         </a>
 
@@ -542,7 +541,7 @@
 
 </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <!--
   modify main content of page:
   - add section breaks
@@ -819,7 +818,7 @@
     </a>
   </div>
 
-  <input type="checkbox" class="dark-toggle" data-tooltip="Dark mode" aria-label="toggle dark mode" oninput="onDarkToggleChange(event)">
+  <input type="checkbox" class="dark-toggle" role="switch" data-tooltip="다크 모드" aria-label="다크 모드 전환">
 </footer>
 
   </body>

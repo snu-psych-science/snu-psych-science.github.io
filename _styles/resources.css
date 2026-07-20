@@ -70,7 +70,7 @@
 .resources-section-title span {
   display: inline-block;
   margin-bottom: 10px;
-  color: #0284c7;
+  color: #0369a1;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -94,6 +94,14 @@
 .resources-section-title {
   margin: 30px 0 22px;
   text-align: center;
+}
+
+.resources-section-title span {
+  color: var(--primary);
+}
+
+.resources-section-title h2 {
+  color: var(--text);
 }
 
 .resources-card-grid,
@@ -142,14 +150,16 @@
   margin-bottom: 20px;
   border-radius: 16px;
   background: #e0f2fe;
-  color: #0284c7;
+  color: #0369a1;
   font-size: 1.25rem;
 }
 
 .resources-card h3,
 .resources-rule-card h3,
-.related-link-card h3 {
+.related-link-card h2 {
   margin: 0 0 12px;
+  padding-bottom: 0;
+  border-bottom: 0;
   color: #0f172a;
   font-size: 1.25rem;
 }
@@ -167,7 +177,7 @@
 .related-link-card span {
   margin-top: auto;
   padding-top: 24px;
-  color: #0284c7;
+  color: #0369a1;
   font-weight: 700;
   font-size: 0.95rem;
 }
@@ -243,7 +253,7 @@
 
 .guideline-fulltext summary {
   cursor: pointer;
-  color: #0284c7;
+  color: #0369a1;
   font-weight: 800;
   font-size: 1.08rem;
 }
@@ -259,14 +269,14 @@
   margin-top: 22px;
   padding: 12px 18px;
   border-radius: 999px;
-  background: #0284c7;
+  background: #0369a1;
   color: white;
   font-weight: 800;
   text-decoration: none;
 }
 
 .resources-download-button:hover {
-  background: #0369a1;
+  background: #075985;
   color: white;
 }
 
@@ -308,7 +318,7 @@
 .regulation-pdf-header span {
   display: inline-block;
   margin-bottom: 8px;
-  color: #0284c7;
+  color: #0369a1;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
