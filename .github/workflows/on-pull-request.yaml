@@ -2,7 +2,7 @@ name: on-pull-request
 run-name: on pull request activity
 
 on:
-  pull_request_target:
+  pull_request:
     types:
       - opened
       - reopened
@@ -10,14 +10,21 @@ on:
       - closed
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
-  update-citations:
-    uses: ./.github/workflows/update-citations.yaml
-    secrets: inherit
+  test-site:
+    if: github.event.action != 'closed'
+    uses: ./.github/workflows/test-site.yaml
 
   build-preview:
-    needs: update-citations
+    needs: test-site
+    if: >-
+      always() &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]' &&
+      (github.event.action == 'closed' || needs.test-site.result == 'success')
+    permissions:
+      contents: write
+      pull-requests: write
     uses: ./.github/workflows/build-preview.yaml

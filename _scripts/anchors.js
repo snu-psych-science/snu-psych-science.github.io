@@ -26,14 +26,23 @@
 
   // scroll to target of url hash
   const scrollToTarget = () => {
-    const id = window.location.hash.replace("#", "");
+    const encodedId = window.location.hash.slice(1);
+    let id = encodedId;
+    try {
+      id = decodeURIComponent(encodedId);
+    } catch (error) {
+      console.warn("Unable to decode the current section link.", error);
+    }
     const target = document.getElementById(id);
 
     if (!target) return;
-    const offset = document.querySelector("header").clientHeight || 0;
+    const offset = document.querySelector("header")?.clientHeight || 0;
+    const reducedMotion = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
     window.scrollTo({
       top: target.getBoundingClientRect().top + window.scrollY - offset,
-      behavior: "smooth",
+      behavior: reducedMotion ? "auto" : "smooth",
     });
   };
 

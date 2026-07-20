@@ -15,6 +15,7 @@
     class="tags"
     {% if include.repo %}
       data-repo="{{ include.repo | xml_escape }}"
+      data-link="{{ link | relative_url | uri_escape }}"
     {% endif %}
   >
     {% for tag in tags %}

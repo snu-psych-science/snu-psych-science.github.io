@@ -19,7 +19,7 @@
         {% if svg %}
           {{ svg | file_read }}
         {% else %}
-          <img src="{{ logo | relative_url | uri_escape }}" alt="logo">
+          <img src="{{ logo | relative_url | uri_escape }}" alt="">
         {% endif %}
       </span>
     {% endif %}
@@ -35,9 +35,16 @@
     {% endif %}
   </a>
 
-  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+  <button
+    class="nav-toggle"
+    type="button"
+    aria-controls="site-navigation"
+    aria-expanded="false"
+    aria-label="메뉴 열기"
+    hidden
+  ></button>
       
-  <nav class="site-nav">
+  <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴">
     {% assign nav_items = site.data.navigation | sort: "order" %}
 
     {% for item in nav_items %}
@@ -45,6 +52,9 @@
         <a
           class="nav-link"
           href="{{ item.url | relative_url | uri_escape }}"
+          {% if page.url == item.url %}
+            aria-current="page"
+          {% endif %}
         >
           {{ item.title }}
         </a>
@@ -55,6 +65,9 @@
               <a
                 class="dropdown-link"
                 href="{{ child.url | relative_url | uri_escape }}"
+                {% if page.url == child.url %}
+                  aria-current="page"
+                {% endif %}
               >
                 {{ child.title }}
               </a>

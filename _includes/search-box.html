@@ -1,15 +1,19 @@
-<div class="search-box">
-  <input
-    type="text"
-    class="search-input"
-    oninput="onSearchInput(this)"
-    placeholder="Search items on this page"
-  />
+<div class="search-box" role="search" aria-label="페이지 내 검색">
+  <label class="search-label">
+    <span class="visually-hidden">페이지 내 항목 검색</span>
+    <input
+      type="search"
+      class="search-input"
+      placeholder="페이지 내 항목 검색"
+      autocomplete="off"
+    >
+  </label>
   <button
+    type="button"
     disabled
-    data-tooltip="Clear search"
-    aria-label="clear search"
-    onclick="onSearchClear()"
+    data-search-clear
+    data-tooltip="검색어 지우기"
+    aria-label="검색어 지우기"
   >
     {% include icon.html icon="fa-solid fa-magnifying-glass" %}
   </button>

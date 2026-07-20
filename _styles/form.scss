@@ -7,3 +7,11 @@ form {
   align-items: center;
   gap: 10px;
 }
+
+.site-search label {
+  flex: 1;
+}
+
+.site-search input {
+  width: 100%;
+}

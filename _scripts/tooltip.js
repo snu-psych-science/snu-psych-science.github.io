@@ -18,7 +18,7 @@
       content: (element) => element.dataset.tooltip.trim(),
       delay: [200, 0],
       offset: [0, 20],
-      allowHTML: true,
+      allowHTML: false,
       interactive: true,
       appendTo: () => document.body,
       aria: {

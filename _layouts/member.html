@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<h1>{{ page.name | default: page.title }}</h1>
+
 {% capture floatcontent %}
 
 {% include portrait.html lookup=page.slug %}
@@ -19,33 +21,3 @@ layout: default
 {% include float.html content=floatcontent %}
 
 {{ content }}
-
-{% assign aliases = page.aliases
-  | default: page.name
-  | default: page.title
-  | join: ","
-  | split: ","
-  | array_filter
-%}
-
-{% capture search -%}
-  research/?search={% for alias in aliases %}"{{ alias }}" {% endfor %}
-{%- endcapture %}
-
-<p class="center">
-  <a href="{{ search | relative_url | uri_escape }}">
-    Search for {{ page.name | default: page.title }}'s papers on the Research page
-  </a>
-</p>
-
-{% capture search -%}
-  blog/?search={{ page.name }}
-{%- endcapture %}
-
-<!--
-<p class="center">
-  <a href="{{ search | relative_url | uri_escape }}">
-    See {{ page.name | default: page.title }}'s posts on the Blog page
-  </a>
-</p>
--->

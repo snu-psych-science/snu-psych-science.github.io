@@ -1,9 +1,14 @@
-{% assign years = "2026|2025|2024" | split: "|" %}
+{% assign publication_groups = site.data.psi_publications
+  | group_by: "year"
+  | sort: "name"
+  | reverse
+%}
 
 <div class="publication-list">
 
-  {% for year in years %}
-    {% assign pubs = site.data.psi_publications | where: "year", year %}
+  {% for group in publication_groups %}
+    {% assign year = group.name %}
+    {% assign pubs = group.items %}
 
     {% if pubs.size > 0 %}
       <section class="publication-year-section">

@@ -1,6 +1,26 @@
-<form onsubmit="onSiteSearchSubmit(event)">
-  <input type="text" name="query" placeholder="Search site with Google" />
-  <button type="submit" class="button" aria-label="search site">
+<form
+  class="site-search"
+  role="search"
+  aria-label="사이트 검색"
+  action="https://www.google.com/search"
+  method="get"
+>
+  <input
+    type="hidden"
+    name="as_sitesearch"
+    value="{{ site.url | remove: 'https://' | remove: 'http://' }}"
+  >
+  <label>
+    <span class="visually-hidden">Google로 사이트 검색</span>
+    <input
+      type="search"
+      name="q"
+      placeholder="Google로 사이트 검색"
+      autocomplete="off"
+      required
+    >
+  </label>
+  <button type="submit" class="button" aria-label="사이트 검색">
     {% include icon.html icon="fa-solid fa-magnifying-glass" %}
   </button>
 </form>
