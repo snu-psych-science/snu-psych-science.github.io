@@ -104,38 +104,21 @@ test("mobile navigation synchronizes state and closes on Escape or resize", () =
   assert.equal(toggle.getAttribute("aria-expanded"), "false");
 });
 
-test("home slideshow exposes an action button and respects reduced motion", () => {
-  const slideshow = new FakeElement();
-  const toggle = new FakeElement();
-  slideshow.querySelector = (selector) =>
-    selector === ".home-slide-toggle" ? toggle : null;
+test("home slideshow autoplays without playback controls and respects reduced motion", () => {
+  const homepage = fs.readFileSync(path.join(root, "index.md"), "utf8");
+  const styles = fs.readFileSync(path.join(root, "_styles", "home.scss"), "utf8");
 
-  const document = new FakeElement();
-  document.readyState = "complete";
-  document.querySelector = (selector) =>
-    selector === "[data-slideshow]" ? slideshow : null;
-
-  const reducedMotion = new FakeElement();
-  reducedMotion.matches = false;
-  const window = { matchMedia: () => reducedMotion };
-
-  vm.runInNewContext(script("home-slideshow.js"), { window, document }, {
-    filename: "home-slideshow.js",
-  });
-
-  assert.equal(toggle.hidden, false);
-  assert.equal(toggle.getAttribute("aria-label"), "슬라이드 일시정지");
-  assert.equal(toggle.hasAttribute("aria-pressed"), false);
-
-  toggle.emit("click");
-  assert.ok(slideshow.hasAttribute("data-slideshow-paused"));
-  assert.equal(toggle.getAttribute("aria-label"), "슬라이드 재생");
-
-  toggle.emit("click");
-  assert.equal(slideshow.hasAttribute("data-slideshow-paused"), false);
-
-  reducedMotion.emit("change", { matches: true });
-  assert.ok(slideshow.hasAttribute("data-slideshow-paused"));
+  assert.doesNotMatch(homepage, /home-slide-toggle|data-slideshow/);
+  assert.match(styles, /\.home-slide-hero\s*{[\s\S]*min-height:\s*620px/);
+  assert.match(
+    styles,
+    /@media \(max-width: 900px\)[\s\S]*\.home-slide-hero\s*{[\s\S]*min-height:\s*500px/
+  );
+  assert.match(styles, /animation:\s*homeSlideFade 40s ease-in-out infinite/);
+  assert.match(
+    styles,
+    /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.home-slide-item\s*{[\s\S]*animation:\s*none/
+  );
 });
 
 test("anchor scrolling decodes Korean fragments and honors reduced motion", () => {

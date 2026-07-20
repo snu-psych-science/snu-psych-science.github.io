@@ -8,22 +8,14 @@ title: 홈
 
 <h1 class="visually-hidden">{{ site.title }}</h1>
 
-<div class="home-slide-hero" data-slideshow>
+<div class="home-slide-hero">
 
-  <div id="home-slides" class="home-slide-show" aria-hidden="true">
+  <div class="home-slide-show" aria-hidden="true">
     <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-active-aging-conference.jpg" | relative_url }}');"></div>
     <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-1.png" | relative_url }}');"></div>
     <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-2.jpeg" | relative_url }}');"></div>
     <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-3.png" | relative_url }}');"></div>
   </div>
-
-  <button
-    class="home-slide-toggle"
-    type="button"
-    aria-controls="home-slides"
-    aria-label="슬라이드 일시정지"
-    hidden
-  ></button>
 
 </div>
 
