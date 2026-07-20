@@ -109,6 +109,19 @@ test("home slideshow autoplays without playback controls and respects reduced mo
   const styles = fs.readFileSync(path.join(root, "_styles", "home.scss"), "utf8");
 
   assert.doesNotMatch(homepage, /home-slide-toggle|data-slideshow/);
+  const slideImages = [
+    "home-slide-arpa-h-bays.jpg",
+    "home-slide-research-group.jpg",
+    "home-slide-seminar.jpg",
+    "home-slide-active-aging-conference.jpg",
+  ];
+  assert.deepEqual(
+    [...homepage.matchAll(/\/images\/(home-slide-[^"']+)/g)].map((match) => match[1]),
+    slideImages
+  );
+  for (const image of slideImages)
+    assert.ok(fs.existsSync(path.join(root, "images", image)), `missing slide image: ${image}`);
+  assert.doesNotMatch(homepage, /home-slide-(?:1\.png|2\.jpeg|3\.png)/);
   assert.match(styles, /\.home-slide-hero\s*{[\s\S]*min-height:\s*620px/);
   assert.match(
     styles,
