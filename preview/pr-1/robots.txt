@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://snu-psych-science.github.io/sitemap.xml
