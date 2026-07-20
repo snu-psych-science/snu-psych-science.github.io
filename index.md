@@ -11,10 +11,10 @@ title: 홈
 <div class="home-slide-hero">
 
   <div class="home-slide-show" aria-hidden="true">
+    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-arpa-h-bays.jpg" | relative_url }}');"></div>
+    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-research-group.jpg" | relative_url }}');"></div>
+    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-seminar.jpg" | relative_url }}');"></div>
     <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-active-aging-conference.jpg" | relative_url }}');"></div>
-    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-1.png" | relative_url }}');"></div>
-    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-2.jpeg" | relative_url }}');"></div>
-    <div class="home-slide-item" style="background-image: url('{{ "/images/home-slide-3.png" | relative_url }}');"></div>
   </div>
 
 </div>
