@@ -24,7 +24,7 @@ header.background {
   background: $header-background !important;
   background-image: none !important;
   color: $header-text !important;
-  border-bottom: 5px solid var(--color-header-border);
+  border-bottom: 2px solid var(--color-border);
   box-shadow: var(--shadow-header);
 }
 

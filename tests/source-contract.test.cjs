@@ -102,10 +102,33 @@ test("header inherits the active site theme and uses dedicated semantic colors",
     "color-header-surface",
     "color-header-text",
     "color-header-accent",
-    "color-header-border",
   ]) {
     assert.match(styles, new RegExp(`var\\(--${token}\\)`));
     assert.equal((tokens.match(new RegExp(`--${token}:`, "g")) || []).length, 2);
+  }
+
+  const divider = styles.match(/header\.background\s*\{[\s\S]*?border-bottom:\s*(\d+)px solid var\(--color-border\)/);
+  assert.ok(divider, "header divider uses the shared theme border color");
+  assert.ok(Number(divider[1]) <= 2, "header divider stays visually lightweight");
+});
+
+test("primary content indexes use a consistent boxed page hero", () => {
+  for (const relativePath of [
+    "about/index.md",
+    "about/history/index.md",
+    "about/members/index.md",
+    "events/index.md",
+    "research/index.md",
+    "newsletters/index.md",
+    "notices/index.md",
+    "resources/index.md",
+    "resources/rules/index.md",
+    "resources/links/index.md",
+  ]) {
+    const page = read(relativePath);
+    assert.match(page, /class="[^"]*page-hero(?:\s|\")/i, `${relativePath} page hero`);
+    assert.match(page, /class="[^"]*page-hero__title(?:\s|\")/i, `${relativePath} hero title`);
+    assert.match(page, /class="[^"]*page-hero__description(?:\s|\")/i, `${relativePath} hero description`);
   }
 });
 
