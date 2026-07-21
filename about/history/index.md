@@ -2,13 +2,9 @@
 title: 설립목적 및 연혁
 ---
 
-{% assign about_navigation = site.data.navigation | where: "url", "/about/" | first %}
-{% assign history_navigation = about_navigation.children | where: "url", "/about/history/" | first %}
-
 <div class="page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
   <div class="page-hero__eyebrow">INSTITUTE HISTORY</div>
   <h1 class="page-hero__title">설립목적 및 연혁</h1>
-  <p class="page-hero__description">{{ history_navigation.description }}</p>
 </div>
 
 ## 설립목적

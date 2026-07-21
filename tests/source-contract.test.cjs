@@ -131,7 +131,6 @@ test("primary content indexes use a consistent boxed page hero", () => {
     const page = read(relativePath);
     assert.match(page, /class="[^"]*page-hero(?:\s|\")/i, `${relativePath} page hero`);
     assert.match(page, /class="[^"]*page-hero__title(?:\s|\")/i, `${relativePath} hero title`);
-    assert.match(page, /class="[^"]*page-hero__description(?:\s|\")/i, `${relativePath} hero description`);
   }
 });
 

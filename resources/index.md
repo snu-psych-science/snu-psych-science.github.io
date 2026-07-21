@@ -8,10 +8,6 @@ title: 자료실
 
   <h1 class="page-hero__title">자료실</h1>
 
-  <p class="resources-hero-subtitle page-hero__description">
-    심리과학연구소 운영과 연구 활동에 필요한 규정, 지침, 관련 기관 정보를 제공합니다.
-  </p>
-
 </div>
 
 <div class="resources-intro-panel intro-panel">

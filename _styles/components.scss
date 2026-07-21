@@ -43,6 +43,10 @@
   line-height: 1.15;
 }
 
+.page-hero .page-hero__title:last-child {
+  margin-bottom: 0;
+}
+
 .page-hero__description {
   position: relative;
   z-index: 1;

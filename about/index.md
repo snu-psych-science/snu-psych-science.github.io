@@ -8,10 +8,6 @@ title: 연구소 소개
 
   <h1 class="page-hero__title">심리과학연구소</h1>
 
-  <p class="about-hero-subtitle page-hero__description">
-    인간의 마음과 행동을 과학적으로 이해하고, 심리과학의 학문적 발전과 사회적 기여를 함께 추구합니다.
-  </p>
-
 </div>
 
 <div class="about-intro-panel intro-panel">

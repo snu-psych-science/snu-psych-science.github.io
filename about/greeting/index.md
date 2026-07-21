@@ -21,10 +21,6 @@ title: 소장 인사말
 
     <h1>소장 인사말</h1>
 
-    <p class="greeting-subtitle">
-      심리과학연구소 홈페이지를 방문해주셔서 감사합니다.
-    </p>
-
     <div class="greeting-signature">
       <strong>{{ director.name }}</strong>
       <span>{{ site.title | remove: "서울대학교 " }}장</span>

@@ -8,10 +8,6 @@ title: 공지사항
 
   <h1 class="page-hero__title">공지사항</h1>
 
-  <p class="notices-hero-subtitle page-hero__description">
-    심리과학연구소의 주요 공지, 안내사항, 자료 업데이트 소식을 확인할 수 있습니다.
-  </p>
-
 </div>
 
 {% assign notices = site.notices | sort: "date" | reverse %}

@@ -8,10 +8,6 @@ title: 찾아오시는 길
 
   <h1 class="page-hero__title">찾아오시는 길</h1>
 
-  <p class="page-hero__description">
-    서울대학교 심리과학연구소 방문 안내입니다.
-  </p>
-
 </div>
 
 <div class="location-map-card">

@@ -2,13 +2,9 @@
 title: 관련 링크
 ---
 
-{% assign resources_navigation = site.data.navigation | where: "url", "/resources/" | first %}
-{% assign links_navigation = resources_navigation.children | where: "url", "/resources/links/" | first %}
-
 <div class="page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
   <div class="page-hero__eyebrow">RELATED LINKS</div>
   <h1 class="page-hero__title">관련 링크</h1>
-  <p class="page-hero__description">{{ links_navigation.description }}</p>
 </div>
 
 <div class="related-link-grid">
