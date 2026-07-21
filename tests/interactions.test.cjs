@@ -104,39 +104,6 @@ test("mobile navigation synchronizes state and closes on Escape or resize", () =
   assert.equal(toggle.getAttribute("aria-expanded"), "false");
 });
 
-test("dark mode follows the system until the user saves a visible choice", () => {
-  const toggle = new FakeElement();
-  const preference = new FakeElement();
-  preference.matches = true;
-  const saved = new Map();
-  const document = new FakeElement();
-  document.readyState = "complete";
-  document.documentElement = { dataset: {} };
-  document.querySelector = (selector) => (selector === ".dark-toggle" ? toggle : null);
-  const window = {
-    matchMedia: () => preference,
-    localStorage: {
-      getItem: (key) => saved.get(key) ?? null,
-      setItem: (key, value) => saved.set(key, value),
-    },
-  };
-
-  vm.runInNewContext(script("dark-mode.js"), { window, document, console }, {
-    filename: "dark-mode.js",
-  });
-
-  assert.equal(document.documentElement.dataset.dark, "true");
-  assert.equal(toggle.checked, true);
-
-  toggle.checked = false;
-  toggle.emit("input");
-  assert.equal(document.documentElement.dataset.dark, "false");
-  assert.equal(saved.get("dark-mode"), "false");
-
-  preference.emit("change", { matches: true });
-  assert.equal(document.documentElement.dataset.dark, "false");
-});
-
 test("home slideshow autoplays without playback controls and respects reduced motion", () => {
   const homepage = fs.readFileSync(path.join(root, "index.md"), "utf8");
   const styles = fs.readFileSync(path.join(root, "_styles", "home.scss"), "utf8");

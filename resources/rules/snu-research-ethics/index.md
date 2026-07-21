@@ -17,8 +17,11 @@ title: 서울대학교 연구윤리 지침
 <div class="resources-guideline-panel">
 
   <div class="resources-guideline-meta">
-    <span>제정 2008. 6. 24</span>
-    <span>개정 2010. 7. 16</span>
+    <span>제정 2008. 6. 24.</span>
+    <span>일부개정 2010. 7. 16.</span>
+    <span>일부개정 2020. 9. 21.</span>
+    <span>일부개정 2022. 1. 18.</span>
+    <span>일부개정 2023. 2. 23.</span>
   </div>
 
   <h2>주요 내용</h2>
@@ -51,8 +54,18 @@ title: 서울대학교 연구윤리 지침
     </div>
 
     <div class="guideline-topic">
-      <h3>연구 안전관리 및 교육</h3>
-      <p>연구실 안전관리, 생물안전관리, 화학물질 및 방사선 안전관리, 연구윤리 교육에 관한 내용을 포함합니다.</p>
+      <h3>동물 대상 연구윤리</h3>
+      <p>실험동물의 건강과 복지, 대체 방법의 우선 고려, 동물실험윤리위원회 승인 및 관계법령 준수 원칙을 포함합니다.</p>
+    </div>
+
+    <div class="guideline-topic">
+      <h3>연구 안전관리</h3>
+      <p>연구실 안전관리, 생물안전관리, 화학물질 및 방사선 안전관리 원칙을 포함합니다.</p>
+    </div>
+
+    <div class="guideline-topic">
+      <h3>연구윤리 교육</h3>
+      <p>서울대학교와 연구자의 연구윤리 교육 책무 및 교육 내용에 관한 사항을 안내합니다.</p>
     </div>
 
   </div>
@@ -61,16 +74,25 @@ title: 서울대학교 연구윤리 지침
 
 {% include section.html %}
 
-<details class="guideline-fulltext">
-  <summary>서울대학교 연구윤리 지침 전문 보기</summary>
+<div class="regulation-pdf-panel">
 
-  <div class="guideline-fulltext-content">
+  <div class="regulation-pdf-header">
+    <div>
+      <span>FULL TEXT</span>
+      <h2>연구윤리 지침 전문</h2>
+      <p>
+        2023년 2월 23일 일부개정된 서울대학교 연구윤리 지침 전문과 별지 서식을 PDF로 확인할 수 있습니다.
+      </p>
+    </div>
 
-## 제1장 연구자의 책임과 의무
-
-### 제1조 (학문의 자유와 사회적 책임)
-
-서울대학교의 연구자는 연구를 수행함에 있어서 학문의 자유에 기초하여 창의적 연구를 할 수 있는 권리를 가짐과 동시에 연구가 장기적으로 인류문화사회에 영향을 미침을 깊이 인식한다.
-
+    <a
+      class="regulation-download-button"
+      href="{{ '/resources/rules/snu-research-ethics-guidelines-2023-02-23.pdf' | relative_url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      PDF 열기 및 다운로드 →
+    </a>
   </div>
-</details>
+
+</div>

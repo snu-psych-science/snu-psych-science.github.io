@@ -1,12 +1,8 @@
 {% assign image = page.footer | default: site.footer %}
-{% assign dark = page.footer-dark | is_nil: site.footer-dark | is_nil: true %}
 
 <footer
   class="background"
   style="--image: url('{{ image | relative_url | uri_escape }}')"
-  {% if dark == true or dark == false %}
-    data-dark="{{ dark }}"
-  {% endif %}
   data-size="wide"
 >
   <!--
@@ -36,11 +32,4 @@
     </a>
   </div>
 
-  <input
-    type="checkbox"
-    class="dark-toggle"
-    role="switch"
-    data-tooltip="다크 모드"
-    aria-label="다크 모드 전환"
-  >
 </footer>

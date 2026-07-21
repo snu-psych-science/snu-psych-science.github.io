@@ -69,10 +69,11 @@ test("core landmarks and progressive fallbacks are present", () => {
   assert.match(read("index.md"), /class="home-slide-show" aria-hidden="true"/);
 });
 
-test("semantic tokens cover light, dark, focus, spacing, radius, and shadows", () => {
+test("semantic tokens enforce the light theme and cover focus, spacing, radius, and shadows", () => {
   const tokens = read("_styles/tokens.scss");
-  for (const selector of ['[data-dark="false"]', '[data-dark="true"]'])
-    assert.match(tokens, new RegExp(selector.replaceAll("[", "\\[").replaceAll("]", "\\]")));
+  assert.match(tokens, /:root\s*\{/);
+  assert.match(tokens, /color-scheme:\s*light/);
+  assert.doesNotMatch(tokens, /data-dark|prefers-color-scheme/);
   for (const token of [
     "color-brand",
     "color-brand-strong",
@@ -93,7 +94,7 @@ test("semantic tokens cover light, dark, focus, spacing, radius, and shadows", (
   ]) assert.match(tokens, new RegExp(`--${token}`));
 });
 
-test("header inherits the active site theme and uses dedicated semantic colors", () => {
+test("header uses dedicated light-theme semantic colors", () => {
   const header = read("_includes/header.html");
   const styles = read("_styles/header.scss");
   const tokens = read("_styles/tokens.scss");
@@ -104,13 +105,13 @@ test("header inherits the active site theme and uses dedicated semantic colors",
     "color-header-accent",
   ]) {
     assert.match(styles, new RegExp(`var\\(--${token}\\)`));
-    assert.equal((tokens.match(new RegExp(`--${token}:`, "g")) || []).length, 2);
+    assert.equal((tokens.match(new RegExp(`--${token}:`, "g")) || []).length, 1);
   }
 
   const divider = styles.match(/header\.background\s*\{[\s\S]*?border-bottom:\s*(\d+)px solid var\(--color-border\)/);
   assert.ok(divider, "header divider uses the shared theme border color");
   assert.ok(Number(divider[1]) <= 2, "header divider stays visually lightweight");
-  assert.match(styles, /\[data-dark="true"\]\s+\.logo\s*>\s*\*/i, "header logo remains visible in dark mode");
+  assert.doesNotMatch(styles, /data-dark/i);
 });
 
 test("primary content indexes use a consistent boxed page hero", () => {
@@ -149,7 +150,7 @@ test("collection detail and member layouts use the shared boxed page hero", () =
   }
 });
 
-test("theme text, muted text, brand links, and focus colors meet WCAG contrast", () => {
+test("light-theme text, muted text, brand links, and focus colors meet WCAG contrast", () => {
   const tokens = read("_styles/tokens.scss");
   const luminance = (hex) => {
     const channels = hex.match(/[0-9a-f]{2}/gi).map((value) => Number.parseInt(value, 16) / 255);
@@ -163,15 +164,13 @@ test("theme text, muted text, brand links, and focus colors meet WCAG contrast",
     return (bright + 0.05) / (dark + 0.05);
   };
 
-  for (const theme of ["false", "true"]) {
-    const block = tokens.match(new RegExp(`\\[data-dark="${theme}"\\]\\s*\\{([\\s\\S]*?)\\}`))[1];
-    const color = (name) => block.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6})`, "i"))[1];
-    for (const foreground of ["color-text", "color-text-muted", "color-brand", "color-focus"])
-      assert.ok(
-        contrast(color(foreground), color("color-surface")) >= 4.5,
-        `${theme} ${foreground} contrast`
-      );
-  }
+  const block = tokens.match(/:root\s*\{([\s\S]*?)\}/)[1];
+  const color = (name) => block.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6})`, "i"))[1];
+  for (const foreground of ["color-text", "color-text-muted", "color-brand", "color-focus"])
+    assert.ok(
+      contrast(color(foreground), color("color-surface")) >= 4.5,
+      `${foreground} contrast`
+    );
 });
 
 test("styles use one explicit compiled entrypoint and baseurl-safe image injection", () => {
@@ -192,9 +191,22 @@ test("styles use one explicit compiled entrypoint and baseurl-safe image injecti
 test("script manifest is explicit, deferred, and free of unused CDN libraries", () => {
   const manifest = read("_includes/scripts.html");
   assert.doesNotMatch(manifest, /site\.static_files|tippy|popper|mark(?:\.min)?\.js|fetch-tags|["'\/]search\.js/);
-  for (const name of ["anchors", "dark-mode", "image-fallback", "navigation", "tooltip"])
+  for (const name of ["anchors", "image-fallback", "navigation", "tooltip"])
     assert.match(manifest, new RegExp(`${name}\\.js[^>]*defer`));
+  assert.doesNotMatch(manifest, /dark-mode/i);
   assert.match(manifest, /page\.url == "\/404\.html"[\s\S]*site-search\.js[^>]*defer/);
+});
+
+test("site exposes only the light color theme", () => {
+  const layout = read("_layouts/default.html");
+  const footer = read("_includes/footer.html");
+  const content = read("_includes/content.html");
+  const entrypoint = read("assets/css/main.scss");
+
+  for (const source of [layout, footer, content, entrypoint])
+    assert.doesNotMatch(source, /data-dark|dark-toggle|dark-mode/i);
+  assert.equal(fs.existsSync(path.join(root, "_scripts", "dark-mode.js")), false);
+  assert.equal(fs.existsSync(path.join(root, "_styles", "dark-toggle.scss")), false);
 });
 
 test("image fallback behavior does not rely on inline handlers", () => {
