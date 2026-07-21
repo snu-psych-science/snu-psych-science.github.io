@@ -162,6 +162,13 @@ test("home slideshow autoplays without playback controls and respects reduced mo
     styles,
     /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.home-slide-item:first-child[\s\S]*opacity:\s*1/
   );
+
+  const duration = Number(styles.match(/animation:\s*homeSlideFade\s+(\d+)s/)[1]);
+  const delays = [...styles.matchAll(/animation-delay:\s*(\d+)s/g)].map((match) => Number(match[1]));
+  const interval = delays[1] - delays[0];
+  assert.ok(interval >= 5 && interval <= 7, "each slide should remain visible for 5-7 seconds");
+  assert.equal(duration, interval * slideImages.length);
+  assert.deepEqual(delays, slideImages.map((_, index) => index * interval));
 });
 
 test("anchor scrolling decodes Korean fragments and honors reduced motion", () => {

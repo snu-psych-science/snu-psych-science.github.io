@@ -93,6 +93,22 @@ test("semantic tokens cover light, dark, focus, spacing, radius, and shadows", (
   ]) assert.match(tokens, new RegExp(`--${token}`));
 });
 
+test("header inherits the active site theme and uses dedicated semantic colors", () => {
+  const header = read("_includes/header.html");
+  const styles = read("_styles/header.scss");
+  const tokens = read("_styles/tokens.scss");
+  assert.doesNotMatch(header, /data-dark=/);
+  for (const token of [
+    "color-header-surface",
+    "color-header-text",
+    "color-header-accent",
+    "color-header-border",
+  ]) {
+    assert.match(styles, new RegExp(`var\\(--${token}\\)`));
+    assert.equal((tokens.match(new RegExp(`--${token}:`, "g")) || []).length, 2);
+  }
+});
+
 test("theme text, muted text, brand links, and focus colors meet WCAG contrast", () => {
   const tokens = read("_styles/tokens.scss");
   const luminance = (hex) => {

@@ -2,9 +2,9 @@ $logo-big: 80px;
 $logo: 40px;
 $big-padding: 100px;
 $collapse: 900px;
-$header-background: var(--color-surface);
-$header-text: var(--color-text);
-$header-accent: var(--color-brand);
+$header-background: var(--color-header-surface);
+$header-text: var(--color-header-text);
+$header-accent: var(--color-header-accent);
 
 header {
   position: sticky !important;
@@ -24,8 +24,8 @@ header.background {
   background: $header-background !important;
   background-image: none !important;
   color: $header-text !important;
-  border-bottom: 5px solid $header-text;
-  box-shadow: var(--shadow-sm);
+  border-bottom: 5px solid var(--color-header-border);
+  box-shadow: var(--shadow-header);
 }
 
 header.background::before,
@@ -86,7 +86,7 @@ header a {
   height: 44px;
   margin: 0;
   padding: 0;
-  border: 2px solid var(--color-border);
+  border: 2px solid var(--color-header-control-border);
   border-radius: 12px;
   background-color: $header-background;
   background-image:
@@ -157,10 +157,10 @@ header a {
   min-width: 220px;
   padding: 10px 0;
   transform: translateX(-50%);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-header-menu-border);
   border-radius: 10px;
   background: $header-background;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-header-menu);
   text-align: center;
 }
 
@@ -192,7 +192,7 @@ header a {
 .site-nav .dropdown-link:hover,
 .site-nav .dropdown-link:focus-visible {
   color: $header-accent !important;
-  background: var(--color-surface-muted);
+  background: var(--color-header-surface-muted);
 }
 
 header[data-big] {
