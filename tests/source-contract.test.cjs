@@ -117,6 +117,7 @@ test("primary content indexes use a consistent boxed page hero", () => {
   for (const relativePath of [
     "about/index.md",
     "about/history/index.md",
+    "about/location/index.md",
     "about/members/index.md",
     "events/index.md",
     "research/index.md",
