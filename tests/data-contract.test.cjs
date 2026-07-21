@@ -141,15 +141,34 @@ test("notices have valid metadata and safe attachment records", () => {
   }
 });
 
-test("members are unique, ordered, and use valid optional references", () => {
+test("members are unique, ordered, and separate faculty profiles from lab homepages", () => {
   const members = sequence(read("_data/members.yaml"));
   assert.ok(members.length > 0);
   assert.equal(new Set(members.map(({ name }) => name)).size, members.length, "duplicate member");
   assert.deepEqual(members.map(({ order }) => order), members.map((_, index) => index + 1));
+  const facultyUrls = new Set();
   for (const member of members) {
     assert.ok(member.name, "member name");
     assert.ok(member.role, `${member.name}: role`);
-    if (member.profile_url) assert.doesNotThrow(() => new URL(member.profile_url), `${member.name}: URL`);
+    assert.ok(member.faculty_url, `${member.name}: faculty URL`);
+    const facultyUrl = new URL(member.faculty_url);
+    assert.equal(facultyUrl.hostname, "psych.snu.ac.kr", `${member.name}: official faculty host`);
+    assert.equal(facultyUrl.pathname, "/bbs/board.php", `${member.name}: faculty page path`);
+    assert.equal(facultyUrl.searchParams.get("tbl"), "bbs21", `${member.name}: faculty board`);
+    assert.equal(facultyUrl.searchParams.get("mode"), "VIEW", `${member.name}: faculty view mode`);
+    assert.match(facultyUrl.searchParams.get("num") || "", /^\d+$/, `${member.name}: faculty record`);
+    assert.equal(facultyUrls.has(member.faculty_url), false, `${member.name}: duplicate faculty URL`);
+    facultyUrls.add(member.faculty_url);
+
+    assert.ok(member.lab_label, `${member.name}: lab label`);
+    if (member.lab_url) {
+      const labUrl = new URL(member.lab_url);
+      const pathParts = labUrl.pathname.split("/").filter(Boolean);
+      const isGoogleSiteRoot = labUrl.hostname === "sites.google.com" && pathParts.length === 2 && pathParts[0] === "view";
+      assert.ok(pathParts.length === 0 || isGoogleSiteRoot, `${member.name}: lab URL must be a homepage root`);
+    }
+    assert.equal(member.profile_url, undefined, `${member.name}: legacy profile URL`);
+    assert.equal(member.profile_label, undefined, `${member.name}: legacy profile label`);
     for (const key of ["image", "profile_image"])
       if (member[key]) assert.ok(localFileExists(member[key]), `${member.name}: missing ${member[key]}`);
   }

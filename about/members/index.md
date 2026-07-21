@@ -31,16 +31,16 @@ title: 조직 및 구성원
         <tr>
           <td class="member-role">{{ member.role }}</td>
           <td>
-            {% if member.profile_url %}<a href="{{ member.profile_url }}" target="_blank" rel="noopener noreferrer">{% endif %}
+            {% if member.faculty_url %}<a href="{{ member.faculty_url }}" target="_blank" rel="noopener noreferrer">{% endif %}
               {{ member.name }}
-            {% if member.profile_url %}</a>{% endif %}
+            {% if member.faculty_url %}</a>{% endif %}
           </td>
           <td>{{ member.research_area }}</td>
           <td>
-            {% if member.profile_url %}
-              <a href="{{ member.profile_url }}" target="_blank" rel="noopener noreferrer">{{ member.profile_label }}</a>
+            {% if member.lab_url %}
+              <a href="{{ member.lab_url }}" target="_blank" rel="noopener noreferrer">{{ member.lab_label }}</a>
             {% else %}
-              {{ member.profile_label }}
+              {{ member.lab_label }}
             {% endif %}
           </td>
         </tr>
@@ -49,16 +49,16 @@ title: 조직 및 구성원
         <tr>
           {% if forloop.first %}<td class="member-role" rowspan="{{ affiliated_members.size }}">{{ member.role }}</td>{% endif %}
           <td>
-            {% if member.profile_url %}<a href="{{ member.profile_url }}" target="_blank" rel="noopener noreferrer">{% endif %}
+            {% if member.faculty_url %}<a href="{{ member.faculty_url }}" target="_blank" rel="noopener noreferrer">{% endif %}
               {{ member.name }}
-            {% if member.profile_url %}</a>{% endif %}
+            {% if member.faculty_url %}</a>{% endif %}
           </td>
           <td>{{ member.research_area }}</td>
           <td>
-            {% if member.profile_url %}
-              <a href="{{ member.profile_url }}" target="_blank" rel="noopener noreferrer">{{ member.profile_label }}</a>
+            {% if member.lab_url %}
+              <a href="{{ member.lab_url }}" target="_blank" rel="noopener noreferrer">{{ member.lab_label }}</a>
             {% else %}
-              {{ member.profile_label }}
+              {{ member.lab_label }}
             {% endif %}
           </td>
         </tr>

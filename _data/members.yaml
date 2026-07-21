@@ -3,8 +3,9 @@
   role: 소장
   group: director
   research_area: 임상신경과학
-  profile_url: https://www.thecns.snu.ac.kr/professor
-  profile_label: thecns.snu.ac.kr
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=31
+  lab_url: https://www.thecns.snu.ac.kr/
+  lab_label: thecns.snu.ac.kr
   email: jychey@snu.ac.kr
   image: /images/jychey-director-2026.jpg
   image_width: 1742
@@ -21,8 +22,9 @@
   role: 겸임연구원
   group: affiliated
   research_area: 사회심리학
-  profile_url: http://snusocialpsy.com/people
-  profile_label: snusocialpsy.com
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=32
+  lab_url: http://snusocialpsy.com/
+  lab_label: snusocialpsy.com
   order: 2
   active: true
 
@@ -31,8 +33,9 @@
   role: 겸임연구원
   group: affiliated
   research_area: 임상상담심리학
-  profile_url: http://www.mindclinic.co.kr/
-  profile_label: mindclinic.co.kr
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=34
+  lab_url: http://www.mindclinic.co.kr/
+  lab_label: mindclinic.co.kr
   order: 3
   active: true
 
@@ -41,7 +44,8 @@
   role: 겸임연구원
   group: affiliated
   research_area: 언어심리학
-  profile_label: 준비 중
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=44
+  lab_label: 준비 중
   order: 4
   active: true
 
@@ -50,8 +54,8 @@
   role: 겸임연구원
   group: affiliated
   research_area: 지각심리학
-  profile_url: http://perception.snu.ac.kr
-  profile_label: perception.snu.ac.kr
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=36
+  lab_label: 준비 중
   order: 5
   active: true
 
@@ -60,8 +64,9 @@
   role: 겸임연구원
   group: affiliated
   research_area: 인지심리학
-  profile_url: https://hfpsych.snu.ac.kr/People.html
-  profile_label: hfpsych.snu.ac.kr
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=30
+  lab_url: https://hfpsych.snu.ac.kr/
+  lab_label: hfpsych.snu.ac.kr
   order: 6
   active: true
 
@@ -70,8 +75,9 @@
   role: 겸임연구원
   group: affiliated
   research_area: 임상심리 / 계산신경과학
-  profile_url: https://ccs-lab.github.io/team/young-ahn/
-  profile_label: ccs-lab.github.io
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=37
+  lab_url: https://ccs-lab.github.io/
+  lab_label: ccs-lab.github.io
   order: 7
   active: true
 
@@ -80,8 +86,9 @@
   role: 겸임연구원
   group: affiliated
   research_area: 신경과학 / 커넥톰
-  profile_url: https://www.connectomelab.com/team
-  profile_label: connectomelab.com
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=33
+  lab_url: https://www.connectomelab.com/
+  lab_label: connectomelab.com
   order: 8
   active: true
 
@@ -90,8 +97,9 @@
   role: 겸임연구원
   group: affiliated
   research_area: 임상심리
-  profile_url: https://sites.google.com/view/emphl-snu/members/principal-investigator
-  profile_label: emphl-snu
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=48
+  lab_url: https://sites.google.com/view/emphl-snu
+  lab_label: emphl-snu
   order: 9
   active: true
 
@@ -100,8 +108,9 @@
   role: 겸임연구원
   group: affiliated
   research_area: 인지신경과학
-  profile_url: https://memcolab.org/people/principal-investigator/
-  profile_label: memcolab.org
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=35
+  lab_url: https://memcolab.org/
+  lab_label: memcolab.org
   order: 10
   active: true
 
@@ -110,8 +119,9 @@
   role: 겸임연구원
   group: affiliated
   research_area: 조직심리
-  profile_url: https://www.kawon.snu.ac.kr
-  profile_label: kawon.snu.ac.kr
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=40
+  lab_url: https://www.kawon.snu.ac.kr/
+  lab_label: kawon.snu.ac.kr
   order: 11
   active: true
 
@@ -120,8 +130,9 @@
   role: 겸임연구원
   group: affiliated
   research_area: 발달심리
-  profile_url: https://snu-sldl.com/about-dr-lee-2/
-  profile_label: snu-sldl.com
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=51
+  lab_url: https://snu-sldl.com/
+  lab_label: snu-sldl.com
   order: 12
   active: true
 
@@ -130,7 +141,8 @@
   role: 겸임연구원
   group: affiliated
   research_area: 계량심리
-  profile_url: https://sites.google.com/view/hsuk/members
-  profile_label: hsuk
+  faculty_url: https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=52
+  lab_url: https://sites.google.com/view/hsuk/
+  lab_label: hsuk
   order: 13
   active: true

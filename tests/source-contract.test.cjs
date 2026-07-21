@@ -209,7 +209,11 @@ test("member and director pages read one canonical data source", () => {
       : [],
     []
   );
-  assert.match(read("about/members/index.md"), /site\.data\.members/);
+  const membersPage = read("about/members/index.md");
+  assert.match(membersPage, /site\.data\.members/);
+  assert.match(membersPage, /href="\{\{ member\.faculty_url \}\}"/);
+  assert.match(membersPage, /href="\{\{ member\.lab_url \}\}"/);
+  assert.doesNotMatch(membersPage, /member\.profile_url/);
   assert.match(read("about/greeting/index.md"), /site\.data\.members/);
   assert.match(read("_layouts/member.html"), /site\.data\.members/);
 });

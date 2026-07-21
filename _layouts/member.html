@@ -23,7 +23,8 @@ layout: default
     >
     <div>
       {% if member.research_area %}<p>{{ member.research_area }}</p>{% endif %}
-      {% if member.profile_url %}<p><a href="{{ member.profile_url }}" target="_blank" rel="noopener noreferrer">{{ member.profile_label }}</a></p>{% endif %}
+      {% if member.faculty_url %}<p><a href="{{ member.faculty_url }}" target="_blank" rel="noopener noreferrer">서울대 심리학과 교수 소개</a></p>{% endif %}
+      {% if member.lab_url %}<p><a href="{{ member.lab_url }}" target="_blank" rel="noopener noreferrer">{{ member.lab_label }}</a></p>{% endif %}
       {% if member.email %}<p><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>{% endif %}
     </div>
   </div>
