@@ -59,6 +59,11 @@ header a {
   height: 100%;
 }
 
+[data-dark="true"] .logo > * {
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
 .title-text {
   display: flex;
   justify-content: flex-start;

@@ -45,30 +45,7 @@
 }
 
 .event-detail {
-  margin: 32px 0 56px;
-}
-
-.event-detail-header {
-  margin-bottom: 28px;
-  padding: 32px 36px;
-  border-left: 5px solid var(--color-brand);
-  border-radius: var(--radius-md);
-  background: var(--color-surface-muted);
-}
-
-.event-detail-label {
-  margin-bottom: 10px;
-  color: var(--color-brand);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-}
-
-.event-detail-header h1 {
-  margin: 0;
-  color: var(--color-text);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.25;
+  margin: 0 0 56px;
 }
 
 .event-information-table {
@@ -104,7 +81,4 @@
     display: none;
   }
 
-  .event-detail-header {
-    padding: 26px 24px;
-  }
 }

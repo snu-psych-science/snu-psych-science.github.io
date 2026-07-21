@@ -3,16 +3,16 @@ layout: default
 ---
 
 <article class="newsletter-detail">
-  <header class="newsletter-detail-header">
-    <div class="newsletter-detail-label">NEWSLETTER</div>
-    <h1>{{ page.title }}</h1>
+  <header class="newsletter-detail-header page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
+    <div class="newsletter-detail-label page-hero__eyebrow">NEWSLETTER</div>
+    <h1 class="page-hero__title">{{ page.title }}</h1>
     <div class="newsletter-detail-meta">
       <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y.%m.%d" }}</time>
       {% if page.volume %}<span>{{ page.volume }}</span>{% endif %}
     </div>
+    {% if page.summary %}<p class="newsletter-detail-summary page-hero__description">{{ page.summary }}</p>{% endif %}
   </header>
 
-  {% if page.summary %}<p class="newsletter-detail-summary">{{ page.summary }}</p>{% endif %}
   {% if content != empty %}<div class="newsletter-detail-content">{{ content }}</div>{% endif %}
 
   <a class="action-link" href="{{ page.pdf | relative_url }}">뉴스레터 PDF 보기</a>

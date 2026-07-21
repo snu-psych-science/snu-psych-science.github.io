@@ -4,12 +4,12 @@ layout: default
 
 <article class="notice-detail">
 
-  <div class="notice-detail-header" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-    <div class="notice-detail-label">NOTICE</div>
+  <header class="notice-detail-header page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
+    <div class="notice-detail-label page-hero__eyebrow">NOTICE</div>
 
-    <h1>{{ page.title }}</h1>
+    <h1 class="page-hero__title">{{ page.title }}</h1>
 
-    <div class="notice-detail-meta">
+    <div class="notice-detail-meta page-hero__description">
       <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
         {{ page.date | date: "%Y.%m.%d" }}
       </time>
@@ -18,7 +18,7 @@ layout: default
         <span>{{ page.category }}</span>
       {% endif %}
     </div>
-  </div>
+  </header>
 
   <div class="notice-detail-content">
     {{ content }}

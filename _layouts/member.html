@@ -5,7 +5,11 @@ layout: default
 {% assign member = site.data.members | where: "id", page.member_id | first %}
 
 <article class="member-profile">
-  <h1>{{ member.name | default: page.title }}</h1>
+  <header class="member-profile-header page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
+    <div class="page-hero__eyebrow">MEMBER PROFILE</div>
+    <h1 class="page-hero__title">{{ member.name | default: page.title }}</h1>
+    {% if member.role %}<p class="page-hero__description">{{ member.role }}</p>{% endif %}
+  </header>
 
   <div class="member-profile-grid">
     <img
@@ -18,7 +22,6 @@ layout: default
       {% include fallback.html %}
     >
     <div>
-      <p class="member-profile-role">{{ member.role }}</p>
       {% if member.research_area %}<p>{{ member.research_area }}</p>{% endif %}
       {% if member.profile_url %}<p><a href="{{ member.profile_url }}" target="_blank" rel="noopener noreferrer">{{ member.profile_label }}</a></p>{% endif %}
       {% if member.email %}<p><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>{% endif %}

@@ -110,6 +110,7 @@ test("header inherits the active site theme and uses dedicated semantic colors",
   const divider = styles.match(/header\.background\s*\{[\s\S]*?border-bottom:\s*(\d+)px solid var\(--color-border\)/);
   assert.ok(divider, "header divider uses the shared theme border color");
   assert.ok(Number(divider[1]) <= 2, "header divider stays visually lightweight");
+  assert.match(styles, /\[data-dark="true"\]\s+\.logo\s*>\s*\*/i, "header logo remains visible in dark mode");
 });
 
 test("primary content indexes use a consistent boxed page hero", () => {
@@ -129,6 +130,21 @@ test("primary content indexes use a consistent boxed page hero", () => {
     assert.match(page, /class="[^"]*page-hero(?:\s|\")/i, `${relativePath} page hero`);
     assert.match(page, /class="[^"]*page-hero__title(?:\s|\")/i, `${relativePath} hero title`);
     assert.match(page, /class="[^"]*page-hero__description(?:\s|\")/i, `${relativePath} hero description`);
+  }
+});
+
+test("collection detail and member layouts use the shared boxed page hero", () => {
+  for (const relativePath of [
+    "_layouts/event.html",
+    "_layouts/newsletter.html",
+    "_layouts/notice.html",
+    "_layouts/member.html",
+  ]) {
+    const layout = read(relativePath);
+    assert.match(layout, /class="[^"]*page-hero(?:\s|\")/i, `${relativePath} page hero`);
+    assert.match(layout, /class="[^"]*page-hero__title(?:\s|\")/i, `${relativePath} hero title`);
+    assert.match(layout, /class="[^"]*page-hero__description(?:\s|\")/i, `${relativePath} hero description`);
+    assert.match(layout, /--page-hero-image:[\s\S]*relative_url/i, `${relativePath} baseurl-safe hero image`);
   }
 });
 

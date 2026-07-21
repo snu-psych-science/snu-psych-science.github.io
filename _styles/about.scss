@@ -273,7 +273,7 @@
 }
 
 .member-profile {
-  margin: 32px 0 56px;
+  margin: 0 0 56px;
   text-align: left;
 }
 
@@ -291,11 +291,6 @@
   margin: 0;
   border-radius: var(--radius-lg);
   object-fit: cover;
-}
-
-.member-profile-role {
-  color: var(--color-brand);
-  font-weight: 800;
 }
 
 .member-table th:nth-child(1),
