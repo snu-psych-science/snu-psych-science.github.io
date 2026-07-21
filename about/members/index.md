@@ -10,8 +10,6 @@ title: 조직 및 구성원
 
 {% include section.html %}
 
-## 겸임연구원
-
 {% assign active_members = site.data.members | where: "active", true | sort: "order" %}
 {% assign directors = active_members | where: "group", "director" %}
 {% assign affiliated_members = active_members | where: "group", "affiliated" %}
