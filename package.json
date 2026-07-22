@@ -8,6 +8,6 @@
     "build": "bundle exec jekyll build",
     "test:source": "node --test tests/interactions.test.cjs tests/search.test.cjs tests/source-contract.test.cjs tests/data-contract.test.cjs",
     "test:generated": "node --test tests/generated-site.ci.cjs",
-    "test": "npm run test:source && npm run test:generated"
+    "test": "npm run test:source && npm run build && npm run test:generated"
   }
 }

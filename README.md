@@ -55,14 +55,13 @@ bundle exec jekyll serve
 npm run test:source
 ```
 
-생성된 사이트까지 포함한 전체 검증은 Jekyll 빌드 후 실행합니다.
+생성된 사이트까지 포함한 전체 검증은 다음 명령으로 실행합니다.
 
 ```sh
-npm run build
-npm run test:generated
+npm test
 ```
 
-생성물 검사는 공개 경로, 내부 링크, 로컬 asset, `baseurl`, canonical URL, JSON-LD, 접근성 구조를 확인합니다. `npm test`는 소스 검사와 생성물 검사를 연속 실행하므로 최신 `_site` 빌드가 필요합니다.
+생성물 검사는 공개 경로, 내부 링크, 로컬 asset, `baseurl`, canonical URL, JSON-LD, 접근성 구조를 확인합니다. `npm test`는 소스 검사, Jekyll 빌드, 생성물 검사를 순서대로 실행합니다.
 
 ## 배포
 
