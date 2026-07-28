@@ -2,25 +2,137 @@
   type: "Book"
   title: "뇌 속의 사회"
   citation: >-
-    최진영. (2026). 뇌 속의 사회. 사회평론아카데미.
-  link: "https://product.kyobobook.co.kr/detail/S000219610967"
+    최진영, 염유식, 곽세열, 이성하, 설선혜, 조이수, 김호영, 김준솔, & 김혜린. (2026). 뇌 속의 사회. 사회평론아카데미.
+  link: "https://www.yes24.com/product/goods/184678671"
   link_label: "Book"
+
+- year: "2026"
+  type: "Book"
+  title: "지능 파산: AI 시대, 편리함에 갇혀 버린 사람들"
+  citation: >-
+    한소원. (2026). 지능 파산: AI 시대, 편리함에 갇혀 버린 사람들. 바다출판사.
+  link: "https://m.yes24.com/goods/detail/193928899"
+  link_label: "Book"
+
+- year: "2026"
+  type: "Book"
+  title: "심리학은 어떻게 삶의 무기가 되는가"
+  citation: >-
+    한소원. (2026). 심리학은 어떻게 삶의 무기가 되는가. 스몰빅라이프.
+  link: "https://www.yes24.com/product/goods/186502789"
+  link_label: "Book"
+
+- year: "2026"
+  type: "Article"
+  title: "Five-factor model-based personality profiles in South Korea"
+  citation: >-
+    Jyung, M., Kim, J. H., Kim, K., & Choi, I. (2026). Five-factor model-based personality profiles in South Korea. Scientific Reports, 16, 4290.
+  link: "https://doi.org/10.1038/s41598-025-34511-4"
+  link_label: "DOI"
+
+- year: "2026"
+  type: "Article"
+  title: "To be authentic or not to be"
+  citation: >-
+    Jyung, M., Kim, J., Jun, Y. J., Son, E. J., & Choi, I. (2026). To be authentic or not to be: How and why North Americans and South Koreans differ in making true-self-congruent choices. Journal of Experimental Psychology: General, 155(4), 1049–1080.
+  link: "https://doi.org/10.1037/xge0001907"
+  link_label: "DOI"
+
+- year: "2026"
+  type: "Article"
+  title: "Essentializing Happiness Mitigates the Changes in Subjective Well-Being Following Negative Life Events"
+  citation: >-
+    Ku, X., Cha, S. E., Kim, Y., Jun, Y. J., & Choi, I. (2026). Essentializing happiness mitigates the changes in subjective well-being following negative life events. Personality and Social Psychology Bulletin, 52(3), 499–515.
+  link: "https://doi.org/10.1177/01461672241279657"
+  link_label: "DOI"
 
 - year: "2026"
   type: "Article"
   title: "A Systematic Review of Interoception in Substance Use Disorders"
   citation: >-
-    Im, J. J., So, E., Kim, K., & Ahn, W. Y. (2026). A Systematic Review of Interoception in Substance Use Disorders. Current Addiction Reports, 13(1), 43.
+    Im, J. J., So, E., Kim, K., & Ahn, W.-Y. (2026). A systematic review of interoception in substance use disorders. Current Addiction Reports, 13(1), 43.
   link: "https://doi.org/10.1007/s40429-026-00747-x"
   link_label: "DOI"
 
-- year: "2025"
+- year: "2026"
   type: "Article"
-  title: "Having more friends is associated with greater sensitization to social exclusion"
+  title: "Decomposing the neurocomputational mechanisms of deontological moral preferences"
   citation: >-
-    Baek, E. C., Shen, Y. L., Kim, H., Baldina, E., Chey, J., Youm, Y., & Parkinson, C. (2025). Having more friends is associated with greater sensitization to social exclusion: Neural and behavioral evidence. Social Cognitive and Affective Neuroscience, 20, nsaf067.
-  link: "https://doi.org/10.1093/scan/nsaf067"
+    Zoh, Y., Kim, S., Kim, H., Crockett, M. J., & Ahn, W.-Y. (2026). Decomposing the neurocomputational mechanisms of deontological moral preferences. PNAS Nexus, 5(4), pgag074.
+  link: "https://doi.org/10.1093/pnasnexus/pgag074"
   link_label: "DOI"
+
+- year: "2026"
+  type: "Article"
+  title: "Rapid and reliable computational markers of decision-making for predicting daily smoking behavior and smoking cessation treatment outcomes"
+  citation: >-
+    Lee, J.-H., Lee, S. H., Yang, J., Kim, H., Pitt, M. A., Park, H. J., Joh, H.-K., Konova, A. B., & Ahn, W.-Y. (2026). Rapid and reliable computational markers of decision-making for predicting daily smoking behavior and smoking cessation treatment outcomes. Neuropsychopharmacology. Advance online publication.
+  link: "https://doi.org/10.1038/s41386-026-02448-5"
+  link_label: "DOI"
+
+- year: "2026"
+  type: "Article"
+  title: "Individual differences in effects of stressful life events on childhood ADHD"
+  citation: >-
+    Choi, S. Y., Lee, J., Park, J., Lee, E., Kim, B.-G., Kim, G., Joo, Y. Y., & Cha, J. (2026). Individual differences in effects of stressful life events on childhood ADHD: Genetic, neural, and familial contributions. Journal of Child Psychology and Psychiatry, 67(5), 788–800.
+  link: "https://doi.org/10.1111/jcpp.70074"
+  link_label: "DOI"
+
+- year: "2026"
+  type: "Article"
+  title: "Learning brain dynamics across distinct scaling regimes reveals psychiatric signatures"
+  citation: >-
+    Bae, S., Kwon, J., Yoo, S., & Cha, J. (2026). Learning brain dynamics across distinct scaling regimes reveals psychiatric signatures. Communications Biology, 9, 963.
+  link: "https://doi.org/10.1038/s42003-026-10011-7"
+  link_label: "DOI"
+
+- year: "2026"
+  type: "Preprint"
+  title: "Drinking Motives Synchronize Behavioral and Neural Craving Responses to Alcohol-drinking Videos"
+  citation: >-
+    Kwon, M., Song, S., Lee, H., Kwon, M., Choi, J.-S., Jung, Y.-C., Rosenberg, M. D., & Ahn, W.-Y. (2026). Drinking motives synchronize behavioral and neural craving responses to alcohol-drinking videos. bioRxiv. [Preprint]
+  link: "https://doi.org/10.64898/2026.07.05.736452"
+  link_label: "DOI"
+
+- year: "2026"
+  type: "Preprint"
+  title: "Inverse reinforcement learning reveals action-oriented value signals in naturalistic decision making"
+  citation: >-
+    Lee, S. H., Chung, C., Oh, M.-H., & Ahn, W.-Y. (2026). Inverse reinforcement learning reveals action-oriented value signals in naturalistic decision making. bioRxiv. [Preprint]
+  link: "https://doi.org/10.64898/2026.06.24.733779"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Book"
+  title: "감상의 심리학: 예술 작품을 볼 때 머릿속에서는 무슨 일이 벌어질까?"
+  citation: >-
+    오성주. (2025). 감상의 심리학: 예술 작품을 볼 때 머릿속에서는 무슨 일이 벌어질까? 북하우스.
+  link: "https://www.yes24.com/product/goods/142971312"
+  link_label: "Book"
+
+- year: "2025"
+  type: "Other book"
+  title: "행복력: 매일 써 내려가는 하루 한 장의 행복"
+  citation: >-
+    서울대학교 행복연구센터, 최인철, & 우정은. (2025). 행복력: 매일 써 내려가는 하루 한 장의 행복. 김영사. [일력·워크북]
+  link: "https://www.yes24.com/product/goods/162982882"
+  link_label: "Book"
+
+- year: "2025"
+  type: "Translated book"
+  title: "조직심리학 및 조직행동"
+  citation: >-
+    Jex, S. M., Britt, T. W., & Thompson, C. A. (2025). 조직심리학 및 조직행동 (김가원, 박지영, 이선희, 이승미, & 정예슬, 역; 제4판). 시그마프레스.
+  link: "https://www.yes24.com/product/goods/143343284"
+  link_label: "Book"
+
+- year: "2025"
+  type: "Translated book"
+  title: "임상심리학"
+  citation: >-
+    Abramowitz, J. S., Prinstein, M. J., & Trull, T. J. (2025). 임상심리학 (김주은, 김향숙, 박용천, 안정광, 장혜인, 정경미, 최기홍, & 허지원, 역; 제9판). 시그마프레스.
+  link: "https://www.yes24.com/product/goods/150710133"
+  link_label: "Book"
 
 - year: "2025"
   type: "Article"
@@ -40,34 +152,10 @@
 
 - year: "2025"
   type: "Article"
-  title: "Social stress enhances intuitive prosocial behavior in males while disrupting self-reward processing"
-  citation: >-
-    Kim, K. I., Lee, J.-H., Ahn, W.-Y., & Kim, H. (2025). Social stress enhances intuitive prosocial behavior in males while disrupting self-reward processing: Evidence from behavioral, computational, and neuroimaging studies. NeuroImage, 315, 121273.
-  link: "https://doi.org/10.1016/j.neuroimage.2025.121273"
-  link_label: "DOI"
-
-- year: "2025"
-  type: "Preprint"
-  title: "A reinforcement learning and decision-making framework for understanding mental disorders"
-  citation: >-
-    Lee, J.-H., et al. (2025). A reinforcement learning and decision-making framework for understanding mental disorders. PsyArXiv. [preprint]
-  link: "https://scholar.google.com/scholar?q=A+reinforcement+learning+and+decision-making+framework+for+understanding+mental+disorders"
-  link_label: "Scholar"
-
-- year: "2025"
-  type: "Article"
   title: "Polygenic architecture of brain structure and function, behaviors, and psychopathologies in children"
   citation: >-
     Joo, Y. Y., Kim, B. G., Kim, G., Lee, E., Seo, J., & Cha, J. (2025). Polygenic architecture of brain structure and function, behaviors, and psychopathologies in children. Nature Communications, 16(1), 1–18.
   link: "https://doi.org/10.1038/s41467-025-63312-6"
-  link_label: "DOI"
-
-- year: "2025"
-  type: "Article"
-  title: "Polygenic scores for psychiatric traits mediate the impact of multigenerational history of depression on offspring psychopathology"
-  citation: >-
-    Lee, E., van Dijk, M. T., Kim, B. G., et al. (2025). Polygenic scores for psychiatric traits mediate the impact of multigenerational history of depression on offspring psychopathology. Molecular Psychiatry.
-  link: "https://doi.org/10.1038/s41380-025-03221-8"
   link_label: "DOI"
 
 - year: "2025"
@@ -95,22 +183,6 @@
   link_label: "DOI"
 
 - year: "2025"
-  type: "In press"
-  title: "The moderating effects of emotion regulation goals on the relationship between emotional suppression and psychological well-being"
-  citation: >-
-    Han, J., & Kim, H. S. (in press). The moderating effects of emotion regulation goals on the relationship between emotional suppression and psychological well-being. Korean Journal of Clinical Psychology.
-  link: "https://scholar.google.com/scholar?q=The+moderating+effects+of+emotion+regulation+goals+on+the+relationship+between+emotional+suppression+and+psychological+well-being"
-  link_label: "Scholar"
-
-- year: "2025"
-  type: "In press"
-  title: "A short-term longitudinal effect of future-oriented goals and autonomy on the self-esteem of college students"
-  citation: >-
-    Kim, H., & Kim, H. S. (in press). A short-term longitudinal effect of future-oriented goals and autonomy on the self-esteem of college students. Korean Journal of Health Psychology.
-  link: "https://scholar.google.com/scholar?q=A+short-term+longitudinal+effect+of+future-oriented+goals+and+autonomy+on+the+self-esteem+of+college+students"
-  link_label: "Scholar"
-
-- year: "2025"
   type: "Article"
   title: "사전-사후 통제집단 설계에서 차이점수 분석과 공분산분석의 수행 비교"
   citation: >-
@@ -128,34 +200,178 @@
 
 - year: "2025"
   type: "Article"
-  title: "Ten-year differences in the prevalence and related factors of depression and suicidal behavior in Korean older adults"
-  citation: >-
-    Jeon, J. Y., Hahm, B.-J., Seong, S. J., Seo, H. Y., Chang, S. M., Kim, B.-S., An, H., Jeon, H. J., Hong, J. P., Suk, H. W., & Park, J. E. (2025). Ten-year differences in the prevalence and related factors of depression and suicidal behavior in Korean older adults: A comparison of representative nationwide studies for mental disorders in 2011 and 2021. Journal of Affective Disorders, 384, 173–179.
-  link: "https://doi.org/10.1016/j.jad.2025.05.007"
-  link_label: "DOI"
-
-- year: "2025"
-  type: "Article"
   title: "Putting maximization dimensions and well-being in a daily context"
   citation: >-
     Shim, Y., Quan, S., Lim, J.-A., & Suk, H. W. (2025). Putting maximization dimensions and well-being in a daily context: The moderating role of choice domains and characteristics. The Journal of Positive Psychology, 20(3), 485–497.
   link: "https://doi.org/10.1080/17439760.2024.2370534"
   link_label: "DOI"
 
-- year: "2024"
+- year: "2025"
   type: "Article"
-  title: "Challenges of brain ageing in modern societies"
+  title: "Mapping of Meaning and Pleasure on the Temporal Horizon"
   citation: >-
-    Chey, J. (2024). Challenges of brain ageing in modern societies: A case of a rapidly ageing society and its dementia risk. International Journal of Psychology, 59, 315–316. [DOI 미확인, invited symposium]
-  link: "https://scholar.google.com/scholar?q=Challenges+of+brain+ageing+in+modern+societies+a+case+of+a+rapidly+ageing+society+and+its+dementia+risk"
-  link_label: "Scholar"
+    Hong, E. K., Kim, J., & Choi, I. (2025). Mapping of meaning and pleasure on the temporal horizon. European Journal of Social Psychology, 55(2), 274–293.
+  link: "https://doi.org/10.1002/ejsp.3142"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Why Do Happy People Exercise More?"
+  citation: >-
+    Jung, S., Ku, X., & Choi, I. (2025). Why do happy people exercise more? The role of beliefs in the psychosocial benefits of exercise. Journal of Happiness Studies, 26(4), 50.
+  link: "https://doi.org/10.1007/s10902-025-00885-5"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Mitigating the Negative Effects of Lower-Class Backgrounds on Subjective Well-Being"
+  citation: >-
+    Kim, Y., Ku, X., Kim, J. H., Lee, S.-H., Cha, S. E., & Choi, I. (2025). Mitigating the negative effects of lower-class backgrounds on subjective well-being: The role of nonessentialist views of happiness. Journal of Happiness Studies, 26(5), 80.
+  link: "https://doi.org/10.1007/s10902-025-00909-0"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Happier individuals generate more spontaneous thoughts about friends and value relationships over money"
+  citation: >-
+    Shin, W.-G., Ahn, J., Choe, K. W., Lee, H., Han, J., Lee, E., Kim, B. L., Woo, C.-W., Choi, I., & Sul, S. (2025). Happier individuals generate more spontaneous thoughts about friends and value relationships over money. Communications Psychology, 3, 162.
+  link: "https://doi.org/10.1038/s44271-025-00341-3"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Sound mind, sound body, or vice versa?"
+  citation: >-
+    Ku, X., Jyung, M., Kim, J. H., & Choi, I. (2025). Sound mind, sound body, or vice versa? Mind–body beliefs shape health behaviors. Applied Psychology: Health and Well-Being, 17(1), e12617.
+  link: "https://doi.org/10.1111/aphw.12617"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Social Class and Well-being Trajectories during COVID-19"
+  citation: >-
+    Kwon, Y., Zong, S. K., Kim, N., Choi, Y., & Choi, I. (2025). Social class and well-being trajectories during COVID-19: A 4-year longitudinal study revealed a steeper decline among higher-class individuals in South Korea. Social Indicators Research, 176(3), 1021–1042.
+  link: "https://doi.org/10.1007/s11205-024-03496-4"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "여가유형에 따른 행복본질주의 신념과 주관적 웰빙의 관계"
+  citation: >-
+    주진영, 최인철, & 신규리. (2025). 여가유형에 따른 행복본질주의 신념과 주관적 웰빙의 관계. 한국여가레크리에이션학회지, 49(4), 85–96.
+  link: "https://doi.org/10.26446/kjlrp.2025.12.49.4.85"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Implicit Theories of Happiness"
+  citation: >-
+    Hong, E. K., Kim, J., & Choi, I. (2025). Implicit theories of happiness: When happiness is viewed as changeable, happy people are perceived much more positively than unhappy people. Personality and Social Psychology Bulletin, 51(2), 185–202.
+  link: "https://doi.org/10.1177/01461672231184711"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Conference paper"
+  title: "Exploring Digital Phenotypes for Life Satisfaction in Middle-Aged Women"
+  citation: >-
+    Lee, I., Kang, G., Bae, S., Maeng, H., & Hahn, S. (2025). Exploring digital phenotypes for life satisfaction in middle-aged women. Proceedings of the 22nd Congress of the International Ergonomics Association, 635–641.
+  link: "https://doi.org/10.1007/978-981-96-8904-0_83"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Conference paper"
+  title: "Enhancing Exhibition Experience by Visualizing Visitor Emotion Using Digital Media Art and Artificial Intelligence"
+  citation: >-
+    Lee, Y. K., Shin, G. W., You, J., Suh, B., Yun, M. H., & Hahn, S. (2025). Enhancing exhibition experience by visualizing visitor emotion using digital media art and artificial intelligence. Proceedings of the 22nd Congress of the International Ergonomics Association, 249–254.
+  link: "https://doi.org/10.1007/978-981-96-8904-0_33"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Conference paper"
+  title: "How Empathy Promotes Socially Adaptive Behaviors in Interpersonal Conflicts?"
+  citation: >-
+    Lee, I., & Hahn, S. (2025). How empathy promotes socially adaptive behaviors in interpersonal conflicts? Proceedings of the 47th Annual Meeting of the Cognitive Science Society.
+  link: "https://escholarship.org/uc/item/7qt9x244"
+  link_label: "Paper"
+
+- year: "2025"
+  type: "Article"
+  title: "Longitudinal brain connectivity changes associated with successful smoking cessation"
+  citation: >-
+    Im, J. J., Kim, H., Lee, J.-H., Park, H. J., Joh, H.-K., & Ahn, W.-Y. (2025). Longitudinal brain connectivity changes associated with successful smoking cessation. Frontiers in Psychology, 16, 1734803.
+  link: "https://doi.org/10.3389/fpsyg.2025.1734803"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Awe is characterized as an ambivalent affect in the human behavior and cortex"
+  citation: >-
+    Lee, J., Han, D. D., Oh, S.-Y., & Cha, J. (2025). Awe is characterized as an ambivalent affect in the human behavior and cortex: Integrated virtual reality-electroencephalogram study. Communications Psychology, 3, 123.
+  link: "https://doi.org/10.1038/s44271-025-00299-2"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Article"
+  title: "Predicting task-related brain activity from resting-state brain dynamics with fMRI Transformer"
+  citation: >-
+    Kwon, J., Seo, J., Wang, H., Moon, T., Yoo, S., & Cha, J. (2025). Predicting task-related brain activity from resting-state brain dynamics with fMRI Transformer. Imaging Neuroscience, 3, imag_a_00440.
+  link: "https://doi.org/10.1162/imag_a_00440"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Conference paper"
+  title: "Revisiting Your Memory"
+  citation: >-
+    Kwon, J., Wang, H., Lee, J., Kim, S., Yoo, S., Lin, Y., & Cha, J. (2025). Revisiting your memory: Reconstruction of affect-contextualized memory via EEG-guided audiovisual generation. Proceedings of the 1st International Workshop on Cognition-oriented Multimodal Affective and Empathetic Computing, 1–10.
+  link: "https://doi.org/10.1145/3746277.3760413"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Preprint"
+  title: "A reinforcement learning and decision-making framework for understanding mental disorders"
+  citation: >-
+    Lee, J.-H., Lee, E., Im, J., O'Doherty, J. P., & Ahn, W.-Y. (2025). A reinforcement learning and decision-making framework for understanding mental disorders. PsyArXiv. [Preprint]
+  link: "https://doi.org/10.31234/osf.io/s58jh_v1"
+  link_label: "DOI"
+
+- year: "2025"
+  type: "Preprint"
+  title: "CausalMamba: Scalable Conditional State Space Models for Neural Causal Inference"
+  citation: >-
+    Bae, S., & Cha, J. (2025). CausalMamba: Scalable conditional state space models for neural causal inference. arXiv. [Preprint]
+  link: "https://doi.org/10.48550/arXiv.2510.17318"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Book chapter"
+  title: "Psychology in South Korea"
+  citation: >-
+    Chey, J., Choi, K.-H., Kim, J., & Kim, H. S. (2024). Psychology in South Korea. In M. Bullock, C. Stevens, D. Wedding, & A. Clinton (Eds.), The Handbook of International Psychology (2nd ed., pp. 307–315). Routledge. [The parent volume lists copyright 2025.]
+  link: "https://doi.org/10.4324/9781315682945-58"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Translated book"
+  title: "뇌과학 혁명: 뇌의 언어부터 이해하라"
+  citation: >-
+    Buzsáki, G. (2024). 뇌과학 혁명: 뇌의 언어부터 이해하라 (차지욱, 역). 학지사.
+  link: "https://www.yes24.com/Product/Goods/138723124"
+  link_label: "Book"
 
 - year: "2024"
   type: "Article"
-  title: "A prospective sociocentric study of 2 entire traditional Korean villages"
+  title: "Moderating Effects of Emotion Regulation Goals on Relationship between Emotional Suppression and Psychological Well-being"
   citation: >-
-    Baek, J., Baldina, E., Sung, K., Lee, S. H., Christakis, N. A., Bearman, P., Kim, H. C., Chu, S. H., Lee, E., Park, Y.-R., Chey, J., Choi, Y. H., Lee, D., & Youm, Y. (2024). A prospective sociocentric study of 2 entire traditional Korean villages: The Korean Social Life, Health, and Aging Project (KSHAP). American Journal of Epidemiology, 193(2), 241–255.
-  link: "https://doi.org/10.1093/aje/kwad190"
+    Han, J., & Kim, H. S. (2024). Moderating effects of emotion regulation goals on relationship between emotional suppression and psychological well-being. Korean Journal of Clinical Psychology, 43(4), 143–153.
+  link: "https://doi.org/10.15842/kjcp.2024.43.4.001"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Short-Term Longitudinal Effect of Future-Oriented Goals and Autonomy on Self-Esteem of College Students"
+  citation: >-
+    Kim, H., & Kim, H. S. (2024). Short-term longitudinal effect of future-oriented goals and autonomy on self-esteem of college students. Korean Journal of Health Psychology, 29(6), 1067–1083.
+  link: "https://doi.org/10.17315/kjhp.2024.29.6.007"
   link_label: "DOI"
 
 - year: "2024"
@@ -184,22 +400,6 @@
 
 - year: "2024"
   type: "Article"
-  title: "Neural correlates of model-based behavior in internet gaming disorder and alcohol use disorder"
-  citation: >-
-    Kwon, M., Choi, H., Park, H., Ahn, W.-Y., & Jung, Y.-C. (2024). Neural correlates of model-based behavior in internet gaming disorder and alcohol use disorder. Journal of Behavioral Addictions, 13(1), 236–249.
-  link: "https://doi.org/10.1556/2006.2024.00006"
-  link_label: "DOI"
-
-- year: "2024"
-  type: "Article"
-  title: "Multimodal-based machine learning approach to classify features of internet gaming disorder and alcohol use disorder"
-  citation: >-
-    Lee, J.-Y., Song, M.-S., Yoo, S. Y., Jang, J. H., Lee, D., Jung, Y.-C., Ahn, W.-Y., & Choi, J.-S. (2024). Multimodal-based machine learning approach to classify features of internet gaming disorder and alcohol use disorder. Comprehensive Psychiatry, 130, 152460.
-  link: "https://doi.org/10.1016/j.comppsych.2023.152460"
-  link_label: "DOI"
-
-- year: "2024"
-  type: "Article"
   title: "Early life stress modulates the genetic influence on brain structure and cognitive function in children"
   citation: >-
     Wang, H.-H., Moon, S.-Y., Kim, H., Kim, G., Ahn, W.-Y., Joo, Y. Y., & Cha, J. (2024). Early life stress modulates the genetic influence on brain structure and cognitive function in children. Heliyon, 10(1), e23345.
@@ -207,12 +407,12 @@
   link_label: "DOI"
 
 - year: "2024"
-  type: "Interview"
-  title: "Vision for Change: Measuring memory"
+  type: "Article"
+  title: "Bridging the gap between self-report and behavioral laboratory measures"
   citation: >-
-    Lee, S.-H. (2024). Vision for Change: Measuring memory [Interview]. Nature, 632, S12.
-  link: "https://scholar.google.com/scholar?q=Vision+for+Change+Measuring+memory+Lee+S-H+Nature+632+S12"
-  link_label: "Scholar"
+    Lee, S. H., Song, M. S., Oh, M. H., & Ahn, W.-Y. (2024). Bridging the gap between self-report and behavioral laboratory measures: A real-time driving task with inverse reinforcement learning. Psychological Science, 35(4), 345–357.
+  link: "https://doi.org/10.1177/09567976241228503"
+  link_label: "DOI"
 
 - year: "2024"
   type: "Article"
@@ -220,14 +420,6 @@
   citation: >-
     Hwang, S.-H., Park, D., Lee, J.-W., Lee, S.-H., & Kim, H. F. (2024). Convergent representation of values from tactile and visual inputs for efficient goal-directed behavior in the primate putamen. Nature Communications, 15.
   link: "https://doi.org/10.1038/s41467-024-53342-x"
-  link_label: "DOI"
-
-- year: "2024"
-  type: "Article"
-  title: "Internalizing symptoms moderate associations between adolescent hormones and stress coping"
-  citation: >-
-    Chafkin, J. E., Josephs, R. A., Lee, H. Y., & Yeager, D. S. (2024). Internalizing symptoms moderate associations between adolescent hormones and stress coping. Psychoneuroendocrinology, 160, 106803.
-  link: "https://doi.org/10.1016/j.psyneuen.2023.106803"
   link_label: "DOI"
 
 - year: "2024"
@@ -272,8 +464,80 @@
 
 - year: "2024"
   type: "Article"
-  title: "Bridging the gap between self-report and behavioral laboratory measures"
+  title: "Seizing and freezing to life outcomes"
   citation: >-
-    Lee, S. H., Song, M. S., Oh, M. H., & Ahn, W.-Y. (2024). Bridging the gap between self-report and behavioral laboratory measures: A real-time driving task with inverse reinforcement learning. Psychological Science, 35(4), 345–357.
-  link: "https://doi.org/10.1177/09567976241228503"
+    Cha, S. E., Ku, X., Lee, S. S., & Choi, I. (2024). Seizing and freezing to life outcomes: Need for cognitive closure intensifies affective reactions to major events. Motivation and Emotion, 48(2), 155–169.
+  link: "https://doi.org/10.1007/s11031-024-10058-1"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "The Unhappy Beliefs of Happiness"
+  citation: >-
+    Kwon, Y., Choi, J., & Choi, I. (2024). The unhappy beliefs of happiness. Journal of Happiness Studies, 25, 97.
+  link: "https://doi.org/10.1007/s10902-024-00804-0"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Unraveling the Most Important Predictors of Eudaimonic and Hedonic Well-Being in Korean Adults"
+  citation: >-
+    Jyung, M., Lee, S.-H., & Choi, I. (2024). Unraveling the most important predictors of eudaimonic and hedonic well-being in Korean adults: A machine learning approach. Journal of Happiness Studies, 25(7), 85.
+  link: "https://doi.org/10.1007/s10902-024-00792-1"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Striatal–hippocampal functional connectivity contributes to real-life positive anticipatory experiences and subjective well-being"
+  citation: >-
+    Shin, W.-G., Jyung, M., Choi, J.-A., Choi, I., & Sul, S. (2024). Striatal–hippocampal functional connectivity contributes to real-life positive anticipatory experiences and subjective well-being. Social Cognitive and Affective Neuroscience, 19(1), nsae096.
+  link: "https://doi.org/10.1093/scan/nsae096"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Effect of Robot Head Movement and its Timing on Human-Robot Interaction"
+  citation: >-
+    Lee, H., & Hahn, S. (2025). Effect of robot head movement and its timing on human-robot interaction. International Journal of Social Robotics, 17(1), 3–14. [Version of record first published online in 2024.]
+  link: "https://doi.org/10.1007/s12369-024-01196-0"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Effect of Feedback Styles in Robotic Fitness Coaching on Exercise Intensity"
+  citation: >-
+    Lee, Y.-K., Park, Y., Shin, M., & Hahn, S. (2024). Effect of feedback styles in robotic fitness coaching on exercise intensity. Journal of the HCI Society of Korea, 19(2), 35–45.
+  link: "https://doi.org/10.17210/jhsk.2024.06.19.2.35"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "Enhancing Empathic Reasoning of Large Language Models Based on Psychotherapy Models for AI-assisted Social Support"
+  citation: >-
+    Lee, Y.-K., Lee, I., Shin, M., Bae, S., & Hahn, S. (2024). Enhancing empathic reasoning of large language models based on psychotherapy models for AI-assisted social support. Korean Journal of Cognitive Science, 35(1), 23–48.
+  link: "https://doi.org/10.19066/cogsci.2024.35.1.002"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "On the Relationship Between Mind Perception and Social Support of Chatbots"
+  citation: >-
+    Lee, I., & Hahn, S. (2024). On the relationship between mind perception and social support of chatbots. Frontiers in Psychology, 15, 1282036.
+  link: "https://doi.org/10.3389/fpsyg.2024.1282036"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Article"
+  title: "White matter diffusion estimates in obsessive-compulsive disorder across 1653 individuals"
+  citation: >-
+    Kim, B.-G., Kim, G., et al. (2024). White matter diffusion estimates in obsessive-compulsive disorder across 1653 individuals: Machine learning findings from the ENIGMA OCD Working Group. Molecular Psychiatry, 29(4), 1063–1074.
+  link: "https://doi.org/10.1038/s41380-023-02392-6"
+  link_label: "DOI"
+
+- year: "2024"
+  type: "Preprint"
+  title: "Stress vulnerability and resilience in children facing COVID-19-related discrimination: A quasi-experimental study using polygenic, brain, and sociodemographic data"
+  citation: >-
+    Yi, J., Lee, E., Kim, B.-G., Kim, G., Joo, Y. Y., & Cha, J. (2024). Stress vulnerability and resilience in children facing COVID-19-related discrimination: A quasi-experimental study using polygenic, brain, and sociodemographic data. medRxiv. [Preprint]
+  link: "https://doi.org/10.1101/2024.03.04.24303643"
   link_label: "DOI"

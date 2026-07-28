@@ -29,7 +29,7 @@
 
               <div class="publication-meta">
                 <span class="publication-year">{{ pub.year }}</span>
-                {% if pub.type %}
+                {% if pub.type and pub.type != pub.year %}
                   <span class="publication-type">{{ pub.type }}</span>
                 {% endif %}
               </div>

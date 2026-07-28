@@ -196,11 +196,16 @@ test("home slides and publications have valid data references", () => {
   for (const publication of publications) {
     for (const key of ["year", "title", "citation"])
       assert.ok(publication[key], `publication ${key}`);
-    assert.match(String(publication.year), /^\d{4}$/, `${publication.title}: year`);
+    assert.match(String(publication.year), /^(?:\d{4}|In press)$/, `${publication.title}: year`);
     if (publication.link) {
       assert.doesNotThrow(() => new URL(publication.link), `${publication.title}: link`);
       if (publication.link_label === "DOI")
         assert.equal(new URL(publication.link).hostname, "doi.org", `${publication.title}: DOI label`);
     }
   }
+  assert.equal(
+    new Set(publications.map(({ year, title }) => `${year}\u0000${title.toLowerCase()}`)).size,
+    publications.length,
+    "duplicate publication"
+  );
 });
