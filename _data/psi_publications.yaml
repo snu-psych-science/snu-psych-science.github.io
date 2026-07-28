@@ -111,14 +111,6 @@
   link_label: "Book"
 
 - year: "2025"
-  type: "Other book"
-  title: "행복력: 매일 써 내려가는 하루 한 장의 행복"
-  citation: >-
-    서울대학교 행복연구센터, 최인철, & 우정은. (2025). 행복력: 매일 써 내려가는 하루 한 장의 행복. 김영사. [일력·워크북]
-  link: "https://www.yes24.com/product/goods/162982882"
-  link_label: "Book"
-
-- year: "2025"
   type: "Translated book"
   title: "조직심리학 및 조직행동"
   citation: >-
