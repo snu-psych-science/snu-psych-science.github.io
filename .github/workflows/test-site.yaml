@@ -3,38 +3,74 @@ run-name: test site source and generated output
 
 on:
   workflow_call:
+    inputs:
+      baseurl:
+        description: Base URL used to build and validate this deployment artifact
+        required: false
+        type: string
+        default: ""
+      artifact_name:
+        description: Name of the tested site artifact
+        required: true
+        type: string
   workflow_dispatch:
+    inputs:
+      baseurl:
+        description: Base URL used to build and validate this deployment artifact
+        required: false
+        type: string
+        default: ""
+      artifact_name:
+        description: Name of the tested site artifact
+        required: false
+        type: string
+        default: site-manual
 
 jobs:
   test-site:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       contents: read
 
     steps:
       - name: Checkout tested revision
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: "20"
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install Node.js packages from lockfile
+        run: npm ci
 
       - name: Test source contracts and JavaScript
         run: npm run test:source
 
       - name: Install Ruby packages
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
         with:
           ruby-version: "3.2"
           bundler-cache: true
 
-      - name: Build production preview-path site
-        run: bundle exec jekyll build --config _config.yaml --baseurl "/preview/test"
+      - name: Build deployment artifact
+        run: bundle exec jekyll build --config _config.yaml --baseurl "$SITE_BASEURL"
         env:
           JEKYLL_ENV: production
+          SITE_BASEURL: ${{ inputs.baseurl }}
 
       - name: Test generated site
         run: npm run test:generated
         env:
-          SITE_BASEURL: /preview/test
+          SITE_BASEURL: ${{ inputs.baseurl }}
+
+      - name: Upload tested site artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: _site
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 3

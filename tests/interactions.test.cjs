@@ -70,14 +70,24 @@ test("failed images switch once to their declared fallback", () => {
 
 test("mobile navigation synchronizes state and closes on Escape or resize", () => {
   const header = new FakeElement();
+  const home = new FakeElement();
   const toggle = new FakeElement();
   const navigation = new FakeElement();
+  const navLink = new FakeElement();
+  navigation.contains = (element) => element === navLink;
   header.querySelector = (selector) =>
-    selector === ".nav-toggle" ? toggle : selector === "#site-navigation" ? navigation : null;
+    selector === ".home"
+      ? home
+      : selector === ".nav-toggle"
+        ? toggle
+        : selector === "#site-navigation"
+          ? navigation
+          : null;
 
   const document = new FakeElement();
   document.readyState = "complete";
-  document.querySelector = (selector) => (selector === "header" ? header : null);
+  document.activeElement = null;
+  document.querySelector = (selector) => (selector === ".site-header" ? header : null);
 
   const mobile = new FakeElement();
   mobile.matches = true;
@@ -100,8 +110,16 @@ test("mobile navigation synchronizes state and closes on Escape or resize", () =
   assert.equal(toggle.focused, true);
 
   toggle.emit("click");
+  document.activeElement = toggle;
   mobile.emit("change", { matches: false });
   assert.equal(toggle.getAttribute("aria-expanded"), "false");
+  assert.equal(home.focused, true);
+
+  toggle.focused = false;
+  document.activeElement = navLink;
+  mobile.emit("change", { matches: true });
+  assert.equal(toggle.getAttribute("aria-expanded"), "false");
+  assert.equal(toggle.focused, true);
 });
 
 test("home slideshow autoplays without playback controls and respects reduced motion", () => {
@@ -138,14 +156,33 @@ test("home slideshow autoplays without playback controls and respects reduced mo
   assert.deepEqual(delays, slideImages.map((_, index) => index * interval));
 });
 
-test("anchor scrolling decodes Korean fragments and honors reduced motion", () => {
+test("anchor links preserve heading IDs and scrolling uses only the site header", () => {
   const events = new Map();
   let requestedId;
+  let headerSelector;
   let scrollOptions;
+  let appendedLink;
+  const heading = {
+    id: "행사-정보",
+    append: (link) => {
+      appendedLink = link;
+    },
+  };
+  const link = {
+    attributes: new Map(),
+    classList: { add: () => {} },
+    setAttribute(name, value) {
+      this.attributes.set(name, value);
+    },
+  };
   const target = { getBoundingClientRect: () => ({ top: 200 }) };
   const document = {
-    querySelectorAll: () => [],
-    querySelector: () => ({ clientHeight: 50 }),
+    querySelectorAll: () => [heading],
+    querySelector: (selector) => {
+      headerSelector = selector;
+      return selector === ".site-header" ? { clientHeight: 50 } : null;
+    },
+    createElement: () => link,
     getElementById: (id) => {
       requestedId = id;
       return target;
@@ -168,8 +205,15 @@ test("anchor scrolling decodes Korean fragments and honors reduced motion", () =
   vm.runInNewContext(script("anchors.js"), { window, document, console }, {
     filename: "anchors.js",
   });
+  for (const listener of events.get("load") || []) listener();
   for (const listener of events.get("hashchange") || []) listener();
 
+  assert.equal(heading.id, "행사-정보");
+  assert.equal(appendedLink, link);
+  assert.equal(link.href, "#행사-정보");
+  assert.equal(link.attributes.get("aria-label"), "link to this section");
+  assert.equal(events.has("tagsfetched"), false);
+  assert.equal(headerSelector, ".site-header");
   assert.equal(requestedId, "행사-정보");
   assert.equal(scrollOptions.top, 150);
   assert.equal(scrollOptions.behavior, "auto");

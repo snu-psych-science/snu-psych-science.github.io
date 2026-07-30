@@ -18,9 +18,15 @@ jobs:
     permissions:
       contents: read
     uses: ./.github/workflows/test-site.yaml
+    with:
+      baseurl: ""
+      artifact_name: live-site-${{ github.sha }}
 
   build-site:
     needs: test-site
     permissions:
       contents: write
+      actions: read
     uses: ./.github/workflows/build-site.yaml
+    with:
+      artifact_name: live-site-${{ github.sha }}

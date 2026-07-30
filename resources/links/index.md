@@ -2,14 +2,11 @@
 title: 관련 링크
 ---
 
-<div class="page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-  <div class="page-hero__eyebrow">RELATED LINKS</div>
-  <h1 class="page-hero__title">관련 링크</h1>
-</div>
+{% include page-hero.html eyebrow="RELATED LINKS" %}
 
 <div class="related-link-grid">
 
-  <a class="related-link-card" href="https://psych.snu.ac.kr/" target="_blank" rel="noopener noreferrer">
+  <a class="related-link-card content-card" href="https://psych.snu.ac.kr/" target="_blank" rel="noopener noreferrer">
     <div class="related-link-icon">
       {% include icon.html icon="fa-solid fa-brain" %}
     </div>
@@ -18,7 +15,7 @@ title: 관련 링크
     <span>바로가기 →</span>
   </a>
 
-  <a class="related-link-card" href="https://social.snu.ac.kr/" target="_blank" rel="noopener noreferrer">
+  <a class="related-link-card content-card" href="https://social.snu.ac.kr/" target="_blank" rel="noopener noreferrer">
     <div class="related-link-icon">
       {% include icon.html icon="fa-solid fa-building-columns" %}
     </div>
@@ -27,7 +24,7 @@ title: 관련 링크
     <span>바로가기 →</span>
   </a>
 
-  <a class="related-link-card" href="https://www.koreanpsychology.or.kr/" target="_blank" rel="noopener noreferrer">
+  <a class="related-link-card content-card" href="https://www.koreanpsychology.or.kr/" target="_blank" rel="noopener noreferrer">
     <div class="related-link-icon">
       {% include icon.html icon="fa-solid fa-users" %}
     </div>
@@ -36,7 +33,7 @@ title: 관련 링크
     <span>바로가기 →</span>
   </a>
 
-  <a class="related-link-card" href="https://www.snu.ac.kr/" target="_blank" rel="noopener noreferrer">
+  <a class="related-link-card content-card" href="https://www.snu.ac.kr/" target="_blank" rel="noopener noreferrer">
     <div class="related-link-icon">
       {% include icon.html icon="fa-solid fa-school" %}
     </div>

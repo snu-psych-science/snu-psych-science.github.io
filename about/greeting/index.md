@@ -4,7 +4,7 @@ title: 소장 인사말
 
 {% assign director = site.data.members | where: "id", "director" | first %}
 
-<div class="greeting-hero-card" style="--page-hero-image: url('{{ site.header | relative_url }}')">
+<div class="greeting-hero-card page-hero" style="--page-hero-image: url('{{ site.header | relative_url }}')">
 
   <div class="greeting-photo-wrap">
     <img
@@ -17,9 +17,9 @@ title: 소장 인사말
   </div>
 
   <div class="greeting-hero-content">
-    <div class="greeting-label">DIRECTOR'S MESSAGE</div>
+    <div class="page-hero__eyebrow">DIRECTOR'S MESSAGE</div>
 
-    <h1>소장 인사말</h1>
+    <h1 class="page-hero__title">소장 인사말</h1>
 
     <div class="greeting-signature">
       <strong>{{ director.name }}</strong>

@@ -2,17 +2,10 @@
 title: 공지사항
 ---
 
-<div class="notices-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-
-  <div class="notices-hero-label page-hero__eyebrow">NOTICE</div>
-
-  <h1 class="page-hero__title">공지사항</h1>
-
-  <p class="notices-hero-subtitle page-hero__description">
-    심리과학연구소의 주요 공지, 안내사항, 자료 업데이트 소식을 확인할 수 있습니다.
-  </p>
-
-</div>
+{% include page-hero.html
+  eyebrow="NOTICE"
+  description="심리과학연구소의 주요 공지, 안내사항, 자료 업데이트 소식을 확인할 수 있습니다."
+%}
 
 {% assign notices = site.notices | sort: "date" | reverse %}
 

@@ -1,31 +1,11 @@
-<!--
-  modify main content of page:
-  - add section breaks
-  - attach section properties
-  - filter out blank sections
--->
-
 {% assign content = include.content %}
-
-{% assign sections = content | split: "<!-- section break -->" | array_filter %}
+{% assign sections = content | split: "<!-- section break -->" %}
 
 {% for section in sections %}
-  {% assign image = section
-    | regex_scan: "<background>(.*?)</background>"
-    | default: nil
-  %}
-  {% assign size = section
-    | regex_scan: "<size>(.*?)</size>"
-    | default: "page"
-  %}
-
-  <section
-    class="background"
-    data-size="{{ size }}"
-    {% if image %}
-      style="--image: url('{{ image | relative_url | uri_escape }}')"
-    {% endif %}
-  >
-    {{ section }}
-  </section>
+  {% assign section_content = section | strip %}
+  {% unless section_content == "" %}
+    <section class="content-section background">
+      {{ section_content }}
+    </section>
+  {% endunless %}
 {% endfor %}

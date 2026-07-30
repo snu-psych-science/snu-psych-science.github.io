@@ -2,13 +2,10 @@
 title: 연구소 소개
 ---
 
-<div class="about-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-
-  <div class="about-hero-label page-hero__eyebrow">ABOUT THE INSTITUTE</div>
-
-  <h1 class="page-hero__title">심리과학연구소</h1>
-
-</div>
+{% include page-hero.html
+  eyebrow="ABOUT THE INSTITUTE"
+  title="심리과학연구소"
+%}
 
 <div class="about-intro-panel intro-panel">
 

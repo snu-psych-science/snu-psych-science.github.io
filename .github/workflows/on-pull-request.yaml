@@ -19,6 +19,9 @@ jobs:
     permissions:
       contents: read
     uses: ./.github/workflows/test-site.yaml
+    with:
+      baseurl: /preview/pr-${{ github.event.pull_request.number }}
+      artifact_name: preview-pr-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
 
   build-preview:
     needs: test-site
@@ -29,4 +32,8 @@ jobs:
       (github.event.action == 'closed' || needs.test-site.result == 'success')
     permissions:
       contents: write
+      actions: read
+      pull-requests: read
     uses: ./.github/workflows/build-preview.yaml
+    with:
+      artifact_name: preview-pr-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}

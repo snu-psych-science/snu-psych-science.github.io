@@ -2,17 +2,10 @@
 title: 서울대학교 연구윤리 지침
 ---
 
-<div class="resources-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-
-  <div class="resources-hero-label page-hero__eyebrow">RESEARCH ETHICS</div>
-
-  <h1 class="page-hero__title">서울대학교 연구윤리 지침</h1>
-
-  <p class="resources-hero-subtitle page-hero__description">
-    서울대학교 연구자가 연구 수행 과정에서 준수해야 할 책임, 진실성, 연구자료 관리, 이해상충 및 연구윤리 원칙을 안내합니다.
-  </p>
-
-</div>
+{% include page-hero.html
+  eyebrow="RESEARCH ETHICS"
+  description="서울대학교 연구자가 연구 수행 과정에서 준수해야 할 책임, 진실성, 연구자료 관리, 이해상충 및 연구윤리 원칙을 안내합니다."
+%}
 
 <div class="resources-guideline-panel">
 

@@ -1,0 +1,16 @@
+{% assign hero_image = include.image | default: page.header | default: site.header %}
+
+<div
+  class="page-hero{% unless include.decorated == false %} page-hero--decorated{% endunless %}{% if include.modifier %} {{ include.modifier }}{% endif %}"
+  style="--page-hero-image: url('{{ hero_image | relative_url | uri_escape }}')"
+>
+  {% if include.eyebrow %}
+    <div class="page-hero__eyebrow">{{ include.eyebrow }}</div>
+  {% endif %}
+
+  <h1 class="page-hero__title">{{ include.title | default: page.title }}</h1>
+
+  {% if include.description %}
+    <p class="page-hero__description">{{ include.description }}</p>
+  {% endif %}
+</div>

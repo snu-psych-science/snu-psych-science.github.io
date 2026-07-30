@@ -53,11 +53,15 @@ test("source image tags declare alternative text", () => {
 test("navigation exposes its observable accessibility states", () => {
   const header = read("_includes/header.html");
   const navigation = read("_scripts/navigation.js");
+  assert.match(header, /class="site-header"/);
   assert.match(header, /<button[\s\S]*aria-controls="site-navigation"[\s\S]*aria-expanded="false"/);
   assert.match(header, /<nav id="site-navigation"[\s\S]*aria-label="주요 메뉴"/);
+  assert.match(navigation, /document\.querySelector\("\.site-header"\)/);
+  assert.doesNotMatch(navigation, /document\.querySelector\("header"\)/);
   assert.match(navigation, /setAttribute\("aria-expanded"/);
   assert.match(navigation, /event\.key === "Escape"/);
   assert.match(navigation, /toggle\.focus\(\)/);
+  assert.match(navigation, /document\.activeElement === toggle[\s\S]*home\?\.focus\(\)/);
   assert.match(navigation, /\.addEventListener\?\.\("change"/);
 });
 
@@ -108,13 +112,38 @@ test("header uses dedicated light-theme semantic colors", () => {
     assert.equal((tokens.match(new RegExp(`--${token}:`, "g")) || []).length, 1);
   }
 
-  const divider = styles.match(/header\.background\s*\{[\s\S]*?border-bottom:\s*(\d+)px solid var\(--color-border\)/);
+  const divider = styles.match(/\.site-header\s*\{[\s\S]*?border-bottom:\s*(\d+)px solid var\(--color-border\)/);
   assert.ok(divider, "header divider uses the shared theme border color");
   assert.ok(Number(divider[1]) <= 2, "header divider stays visually lightweight");
   assert.doesNotMatch(styles, /data-dark/i);
 });
 
+test("site chrome and generated content spacing are explicitly scoped", () => {
+  const header = read("_includes/header.html");
+  const content = read("_includes/content.html");
+  const footer = read("_includes/footer.html");
+  const headerStyles = read("_styles/header.scss");
+  const sectionStyles = read("_styles/section.scss");
+  const anchors = read("_scripts/anchors.js");
+
+  assert.match(header, /class="site-header"/);
+  assert.match(content, /class="content-section background"/);
+  assert.match(headerStyles, /^\.site-header\s*\{/m);
+  assert.match(sectionStyles, /^\.content-section\s*\{/m);
+  assert.doesNotMatch(headerStyles, /^\s*header(?=[\s.#:[>{])/m);
+  assert.doesNotMatch(headerStyles, /data-big|\.site-header\.background/);
+  assert.doesNotMatch(sectionStyles, /^\s*section(?=[\s.#:[>{])/m);
+  assert.doesNotMatch([content, footer, sectionStyles].join("\n"), /data-size/);
+  assert.match(anchors, /document\.querySelector\("\.site-header"\)/);
+  assert.doesNotMatch(anchors, /document\.querySelector\("header"\)|removeAttribute\("id"\)|tagsfetched/);
+});
+
 test("primary content indexes use a consistent boxed page hero", () => {
+  const sharedHero = read("_includes/page-hero.html");
+  assert.match(sharedHero, /class="page-hero/);
+  assert.match(sharedHero, /class="page-hero__title"/);
+  assert.match(sharedHero, /--page-hero-image:[\s\S]*relative_url/);
+
   for (const relativePath of [
     "about/index.md",
     "about/history/index.md",
@@ -127,11 +156,40 @@ test("primary content indexes use a consistent boxed page hero", () => {
     "resources/index.md",
     "resources/rules/index.md",
     "resources/links/index.md",
+    "resources/rules/institute-operating-regulations/index.md",
+    "resources/rules/snu-research-ethics/index.md",
   ]) {
     const page = read(relativePath);
-    assert.match(page, /class="[^"]*page-hero(?:\s|\")/i, `${relativePath} page hero`);
-    assert.match(page, /class="[^"]*page-hero__title(?:\s|\")/i, `${relativePath} hero title`);
+    assert.match(page, /include\s+page-hero\.html\b/i, `${relativePath} shared page hero`);
   }
+});
+
+test("site assets are explicit and no custom Ruby filters remain", () => {
+  const config = read("_config.yaml");
+  const header = read("_includes/header.html");
+  const meta = read("_includes/meta.html");
+  const content = read("_includes/content.html");
+  const section = read("_includes/section.html");
+
+  for (const [key, asset] of [
+    ["logo", "images/logo_.png"],
+    ["icon", "images/icon.png"],
+    ["share_image", "images/share.png"],
+  ]) {
+    assert.match(config, new RegExp(`^${key}:\\s*${asset.replace(".", "\\.")}$`, "m"));
+    assert.equal(fs.existsSync(path.join(root, asset)), true, asset);
+  }
+  assert.match(header, /assign logo = site\.logo/);
+  assert.match(meta, /site\.icon \| absolute_url/);
+  assert.match(meta, /site\.share_image \| absolute_url/);
+  assert.doesNotMatch([header, meta, content].join("\n"), /file_exists|file_read|array_filter|regex_/);
+  assert.doesNotMatch(section, /<background>|<size>/);
+  assert.deepEqual(
+    fs.existsSync(path.join(root, "_plugins"))
+      ? fs.readdirSync(path.join(root, "_plugins")).filter((name) => name.endsWith(".rb"))
+      : [],
+    []
+  );
 });
 
 test("collection detail and member layouts use the shared boxed page hero", () => {
@@ -294,20 +352,32 @@ test("deployment workflows minimize permissions and serialize gh-pages writes", 
   const preview = read(".github/workflows/build-preview.yaml");
   const pullRequest = read(".github/workflows/on-pull-request.yaml");
   const push = read(".github/workflows/on-push.yaml");
+  const nodeVersion = read(".node-version").trim();
 
   assert.match(testSite, /test-site:[\s\S]*permissions:\s*\n\s+contents: read/);
-  assert.match(testSite, /node-version: "20"/);
+  assert.equal(nodeVersion, "24");
+  assert.match(testSite, /node-version-file:\s*\.node-version/);
+  assert.match(testSite, /run:\s*npm ci/);
   assert.match(testSite, /ruby-version: "3\.2"/);
+  assert.match(testSite, /actions\/upload-artifact@v7/);
+  assert.match(testSite, /bundle exec jekyll build[\s\S]*--baseurl "\$SITE_BASEURL"/);
   for (const writer of [live, preview]) {
     assert.match(writer, /group: gh-pages-writes/);
     assert.match(writer, /cancel-in-progress: false/);
-    assert.match(writer, /permissions:\s*\n\s+contents: write/);
+    assert.match(writer, /permissions:\s*\n\s+contents: write\s*\n\s+actions: read/);
     assert.doesNotMatch(writer, /pull-requests: write/);
+    assert.match(writer, /actions\/download-artifact@v8/);
+    assert.doesNotMatch(writer, /bundle exec|ruby\/setup-ruby|npm (?:ci|run)/);
   }
   assert.match(pullRequest, /group: preview-pr-/);
   assert.match(pullRequest, /cancel-in-progress: true/);
+  assert.match(pullRequest, /baseurl: \/preview\/pr-/);
+  assert.match(pullRequest, /artifact_name: preview-pr-/);
   assert.match(push, /group: live-main-build/);
+  assert.match(push, /artifact_name: live-site-/);
   assert.match(preview, /github\.paginate\(/);
   assert.match(preview, /path\.dirname\(target\) !== previewsRoot/);
+  assert.match(live, /github-pages-deploy-action@[0-9a-f]{40}/);
+  assert.match(preview, /git-auto-commit-action@[0-9a-f]{40}/);
   assert.doesNotMatch([live, preview].join("\n"), />>\s*_config\.yaml|Add-Content[^\n]*_config\.yaml/i);
 });

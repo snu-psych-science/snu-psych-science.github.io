@@ -7,7 +7,8 @@
   if (typeof window === "undefined" || typeof document === "undefined") return;
 
   const onReady = () => {
-    const header = document.querySelector("header");
+    const header = document.querySelector(".site-header");
+    const home = header?.querySelector(".home");
     const toggle = header?.querySelector(".nav-toggle");
     const navigation = header?.querySelector("#site-navigation");
     if (!header || !toggle || !navigation) return;
@@ -38,7 +39,15 @@
     });
 
     mobile.addEventListener?.("change", (event) => {
-      if (!event.matches) setOpen(false);
+      if (event.matches) {
+        const focusWasInNavigation = navigation.contains?.(document.activeElement);
+        setOpen(false);
+        if (focusWasInNavigation) toggle.focus();
+        return;
+      }
+      const toggleHadFocus = document.activeElement === toggle;
+      setOpen(false);
+      if (toggleHadFocus) home?.focus();
     });
   };
 

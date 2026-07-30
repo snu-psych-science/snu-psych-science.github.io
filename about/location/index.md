@@ -2,13 +2,7 @@
 title: 찾아오시는 길
 ---
 
-<div class="page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-
-  <div class="page-hero__eyebrow">LOCATION</div>
-
-  <h1 class="page-hero__title">찾아오시는 길</h1>
-
-</div>
+{% include page-hero.html eyebrow="LOCATION" %}
 
 <div class="location-map-card">
 

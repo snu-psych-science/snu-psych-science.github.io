@@ -2,17 +2,10 @@
 title: 자료실
 ---
 
-<div class="resources-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-
-  <div class="resources-hero-label page-hero__eyebrow">RESOURCES</div>
-
-  <h1 class="page-hero__title">자료실</h1>
-
-  <p class="resources-hero-subtitle page-hero__description">
-    연구소 운영규정, 연구윤리 지침, 관련 기관 및 학술단체 링크 등 연구소 구성원과 방문자가 참고할 수 있는 자료를 제공합니다.
-  </p>
-
-</div>
+{% include page-hero.html
+  eyebrow="RESOURCES"
+  description="연구소 운영규정, 연구윤리 지침, 관련 기관 및 학술단체 링크 등 연구소 구성원과 방문자가 참고할 수 있는 자료를 제공합니다."
+%}
 
 {% include section.html %}
 

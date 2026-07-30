@@ -2,10 +2,7 @@
 title: 설립목적 및 연혁
 ---
 
-<div class="page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-  <div class="page-hero__eyebrow">INSTITUTE HISTORY</div>
-  <h1 class="page-hero__title">설립목적 및 연혁</h1>
-</div>
+{% include page-hero.html eyebrow="INSTITUTE HISTORY" %}
 
 ## 설립목적
 

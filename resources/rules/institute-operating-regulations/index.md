@@ -2,17 +2,10 @@
 title: 서울대학교 사회과학연구원 규정
 ---
 
-<div class="resources-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-
-  <div class="resources-hero-label page-hero__eyebrow">INSTITUTE REGULATIONS</div>
-
-  <h1 class="page-hero__title">서울대학교 사회과학연구원 규정</h1>
-
-  <p class="resources-hero-subtitle page-hero__description">
-    서울대학교 사회과학연구원의 조직과 운영, 산하 연구소 및 연구센터의 직무, 연구원 구성과 운영위원회에 관한 규정을 안내합니다.
-  </p>
-
-</div>
+{% include page-hero.html
+  eyebrow="INSTITUTE REGULATIONS"
+  description="서울대학교 사회과학연구원의 조직과 운영, 산하 연구소 및 연구센터의 직무, 연구원 구성과 운영위원회에 관한 규정을 안내합니다."
+%}
 
 <div class="resources-guideline-panel">
 

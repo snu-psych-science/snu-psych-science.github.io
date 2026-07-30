@@ -15,12 +15,6 @@
       link.href = "#" + heading.id;
       link.setAttribute("aria-label", "link to this section");
       heading.append(link);
-
-      // if first heading in the section, move id to parent section
-      if (heading.matches("section > :first-child")) {
-        heading.parentElement.id = heading.id;
-        heading.removeAttribute("id");
-      }
     }
   };
 
@@ -36,7 +30,7 @@
     const target = document.getElementById(id);
 
     if (!target) return;
-    const offset = document.querySelector("header")?.clientHeight || 0;
+    const offset = document.querySelector(".site-header")?.clientHeight || 0;
     const reducedMotion = window.matchMedia?.(
       "(prefers-reduced-motion: reduce)"
     ).matches;
@@ -49,7 +43,6 @@
   // after page loads
   window.addEventListener("load", onLoad);
   window.addEventListener("load", scrollToTarget);
-  window.addEventListener("tagsfetched", scrollToTarget);
 
   // when hash nav happens
   window.addEventListener("hashchange", scrollToTarget);

@@ -3,7 +3,11 @@ run-name: build live site
 
 on:
   workflow_call:
-  workflow_dispatch:
+    inputs:
+      artifact_name:
+        description: Name of the tested site artifact to deploy
+        required: true
+        type: string
 
 env:
   PREVIEWS_FOLDER: preview
@@ -16,30 +20,23 @@ concurrency:
 jobs:
   build-site:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
+      actions: read
 
     steps:
-      - name: Checkout branch contents
-        uses: actions/checkout@v4
+      - name: Checkout deployment repository
+        uses: actions/checkout@v7
 
-      - name: Install Ruby packages
-        uses: ruby/setup-ruby@v1
+      - name: Download tested site artifact
+        uses: actions/download-artifact@v8
         with:
-          ruby-version: "3.2"
-          bundler-cache: true
-
-      - name: Get Pages URL
-        id: pages
-        uses: actions/configure-pages@v4
-
-      - name: Build live version of site
-        run: bundle exec jekyll build --config _config.yaml --baseurl "${{ steps.pages.outputs.base_path || '' }}"
-        env:
-          JEKYLL_ENV: production
+          name: ${{ inputs.artifact_name }}
+          path: _site
 
       - name: Commit live site to Pages branch
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
         with:
           folder: _site
           clean-exclude: ${{ env.PREVIEWS_FOLDER }}

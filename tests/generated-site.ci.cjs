@@ -33,12 +33,12 @@ const decodeEntities = (value) =>
     .replaceAll("&lt;", "<")
     .replaceAll("&gt;", ">");
 
-const localTargetExists = (pathname) => {
+const localTargetCandidates = (pathname) => {
   let decoded = decodeURIComponent(pathname);
   if (baseurl) {
     if (decoded === baseurl || decoded === `${baseurl}/`) decoded = "/";
     else if (decoded.startsWith(`${baseurl}/`)) decoded = decoded.slice(baseurl.length);
-    else return false;
+    else return [];
   }
 
   decoded = decoded.replace(/^\/+/, "");
@@ -52,12 +52,28 @@ const localTargetExists = (pathname) => {
   }
 
   if (!decoded) candidates.push(path.join(site, "index.html"));
-  return candidates.some((candidate) => fs.existsSync(candidate));
+  return candidates;
+};
+
+const localTargetExists = (pathname) =>
+  localTargetCandidates(pathname).some((candidate) => fs.existsSync(candidate));
+
+const htmlIds = new Map();
+const idsForFile = (file) => {
+  if (!htmlIds.has(file)) {
+    const html = fs.readFileSync(file, "utf8");
+    htmlIds.set(
+      file,
+      new Set([...html.matchAll(/\bid=["']([^"']+)["']/gi)].map((match) => decodeEntities(match[1])))
+    );
+  }
+  return htmlIds.get(file);
 };
 
 test("generated internal links resolve to built files", () => {
   assert.ok(fs.existsSync(site), "_site must be built before this test runs");
   const missing = [];
+  const missingFragments = [];
 
   for (const file of pageFiles()) {
     const relative = path.relative(site, file).replaceAll(path.sep, "/");
@@ -67,12 +83,24 @@ test("generated internal links resolve to built files", () => {
 
     for (const match of html.matchAll(/\b(?:href|src|action)=["']([^"']+)["']/gi)) {
       const reference = match[1].replaceAll("&amp;", "&");
-      if (!reference || reference.startsWith("#") || reference.startsWith("data:"))
-        continue;
+      if (!reference || reference.startsWith("data:")) continue;
 
       const url = new URL(reference, base);
       if (url.origin !== base.origin) continue;
-      if (!localTargetExists(url.pathname)) missing.push(`${relative}: ${reference}`);
+      const candidates = localTargetCandidates(url.pathname);
+      if (!candidates.some((candidate) => fs.existsSync(candidate))) {
+        missing.push(`${relative}: ${reference}`);
+        continue;
+      }
+
+      if (url.hash) {
+        const targetFile = candidates.find(
+          (candidate) => candidate.endsWith(".html") && fs.existsSync(candidate)
+        );
+        const fragment = decodeURIComponent(url.hash.slice(1));
+        if (targetFile && !idsForFile(targetFile).has(fragment))
+          missingFragments.push(`${relative}: ${reference}`);
+      }
     }
 
     for (const match of html.matchAll(/\bsrcset=["']([^"']+)["']/gi)) {
@@ -87,6 +115,7 @@ test("generated internal links resolve to built files", () => {
   }
 
   assert.deepEqual(missing, []);
+  assert.deepEqual(missingFragments, []);
 });
 
 test("generated routes exactly match the pre-refactor snapshot", () => {
@@ -100,6 +129,28 @@ test("generated routes exactly match the pre-refactor snapshot", () => {
     .map(routeForFile)
     .sort();
   assert.deepEqual(actual, expected);
+});
+
+test("generated site omits development-only files", () => {
+  const excluded = [
+    ".github",
+    ".node-version",
+    "Gemfile",
+    "Gemfile.lock",
+    "LICENSE.md",
+    "README.md",
+    "node_modules",
+    "package.json",
+    "package-lock.json",
+    "tests",
+    "tmp",
+    "vendor",
+  ];
+
+  assert.deepEqual(
+    excluded.filter((entry) => fs.existsSync(path.join(site, entry))),
+    []
+  );
 });
 
 test("generated CSS references are baseurl-safe and resolvable", () => {
@@ -130,11 +181,25 @@ test("generated pages satisfy structural contracts", async (t) => {
     const html = fs.readFileSync(file, "utf8");
 
     await t.test(relative, () => {
+      const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i)?.[1];
+      assert.ok(canonical, "canonical URL");
+      const canonicalUrl = new URL(decodeEntities(canonical));
+      assert.equal(canonicalUrl.hostname, "snu-psych-science.github.io");
+
       const isRedirect = /<meta\s+name="robots"\s+content="noindex"/i.test(html);
       if (isRedirect) {
         assert.match(html, /<meta\s+http-equiv="refresh"/i);
-        assert.match(html, /<link\s+rel="canonical"/i);
         assert.equal((html.match(/<h1\b/gi) || []).length, 1, "one redirect heading");
+        assert.ok(localTargetExists(canonicalUrl.pathname), "redirect canonical target exists");
+        const refreshTarget = html.match(
+          /<meta\s+http-equiv="refresh"\s+content="[^"]*url=([^"]+)"/i
+        )?.[1];
+        assert.ok(refreshTarget, "redirect refresh target");
+        assert.equal(
+          new URL(decodeEntities(refreshTarget), canonicalUrl).href,
+          canonicalUrl.href,
+          "refresh and canonical targets agree"
+        );
         return;
       }
 
@@ -143,11 +208,8 @@ test("generated pages satisfy structural contracts", async (t) => {
       assert.equal((html.match(/<h1\b/gi) || []).length, 1, "one primary heading");
       assert.doesNotMatch(html, /\bon[a-z]+\s*=/i, "no inline event handlers");
 
-      const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i)?.[1];
-      assert.ok(canonical, "canonical URL");
-      const canonicalUrl = new URL(decodeEntities(canonical));
-      assert.equal(canonicalUrl.hostname, "snu-psych-science.github.io");
-      if (baseurl) assert.ok(canonicalUrl.pathname.startsWith(`${baseurl}/`) || canonicalUrl.pathname === baseurl);
+      const expectedPath = `${baseurl}${routeForFile(file)}`.replaceAll(/\/{2,}/g, "/");
+      assert.equal(decodeURIComponent(canonicalUrl.pathname), expectedPath, "canonical path");
 
       for (const image of html.match(/<img\b[^>]*>/gis) || []) {
         assert.match(image, /\balt\s*=/i, `missing alt: ${image}`);
@@ -161,8 +223,13 @@ test("generated pages satisfy structural contracts", async (t) => {
       for (const link of html.match(/<a\b[^>]*\btarget=["']_blank["'][^>]*>/gis) || [])
         assert.match(link, /\brel=["'][^"']*\bnoopener\b[^"']*\bnoreferrer\b[^"']*["']/i, `unsafe target blank: ${link}`);
 
-      for (const script of html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi))
-        assert.doesNotThrow(() => JSON.parse(decodeEntities(script[1].trim())), "valid JSON-LD");
+      for (const script of html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)) {
+        const data = JSON.parse(decodeEntities(script[1].trim()));
+        assert.equal(data["@context"], "https://schema.org", "JSON-LD context");
+        assert.ok(data["@type"], "JSON-LD type");
+        assert.ok(data.name || data.headline, "JSON-LD name or headline");
+        assert.ok(data.url || data.mainEntityOfPage, "JSON-LD URL");
+      }
 
       const ids = [...html.matchAll(/\bid="([^"]+)"/gi)].map((match) => match[1]);
       const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);

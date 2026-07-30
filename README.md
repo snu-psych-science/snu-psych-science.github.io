@@ -38,9 +38,10 @@
 
 ## 로컬 실행
 
-Node.js 20 이상과 Ruby 3.2가 필요합니다.
+Node.js 24와 Ruby 3.2가 필요합니다. Node 버전은 `.node-version`에 고정되어 있습니다.
 
 ```sh
+npm ci
 bundle install
 bundle exec jekyll serve
 ```

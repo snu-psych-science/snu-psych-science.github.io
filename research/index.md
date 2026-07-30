@@ -5,17 +5,10 @@ redirect_from:
   - /research/projects/
 ---
 
-<div class="research-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-
-  <div class="research-hero-label page-hero__eyebrow">RESEARCH AREAS</div>
-
-  <h1 class="page-hero__title">연구소개</h1>
-
-  <p class="research-hero-subtitle page-hero__description">
-    심리과학연구소는 인간의 마음과 행동을 과학적으로 이해하기 위해 기초 심리학과 응용 심리학을 아우르는 다학제적 연구를 수행합니다.
-  </p>
-
-</div>
+{% include page-hero.html
+  eyebrow="RESEARCH AREAS"
+  description="심리과학연구소는 인간의 마음과 행동을 과학적으로 이해하기 위해 기초 심리학과 응용 심리학을 아우르는 다학제적 연구를 수행합니다."
+%}
 
 <div class="research-intro-panel intro-panel">
 

@@ -3,6 +3,12 @@ run-name: build pull request preview
 
 on:
   workflow_call:
+    inputs:
+      artifact_name:
+        description: Name of the tested preview artifact
+        required: false
+        type: string
+        default: ""
 
 env:
   PREVIEWS_FOLDER: preview
@@ -15,49 +21,41 @@ concurrency:
 jobs:
   build-preview:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       contents: write
+      actions: read
+      pull-requests: read
 
     steps:
-      - name: Checkout pull request contents
-        if: github.event.action != 'closed'
-        uses: actions/checkout@v4
+      - name: Checkout trusted base revision
+        uses: actions/checkout@v7
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.repository }}
+          ref: ${{ github.event.pull_request.base.sha }}
 
-      - name: Install Ruby packages
+      - name: Download tested preview artifact
         if: github.event.action != 'closed'
-        uses: ruby/setup-ruby@v1
+        uses: actions/download-artifact@v8
         with:
-          ruby-version: "3.2"
-          bundler-cache: true
-
-      - name: Get Pages URL
-        if: github.event.action != 'closed'
-        id: pages
-        uses: actions/configure-pages@v4
-
-      - name: Build preview version of site
-        if: github.event.action != 'closed'
-        run: bundle exec jekyll build --config _config.yaml --baseurl "${{ steps.pages.outputs.base_path || '' }}/${{ env.PREVIEWS_FOLDER }}/pr-${{ github.event.number }}"
-        env:
-          JEKYLL_ENV: production
+          name: ${{ inputs.artifact_name }}
+          path: _site
 
       - name: Commit preview to Pages branch
         if: github.event.action != 'closed'
-        uses: rossjrw/pr-preview-action@v1.4.7
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
         with:
-          source-dir: _site
-          umbrella-dir: ${{ env.PREVIEWS_FOLDER }}
+          folder: _site
+          target-folder: ${{ env.PREVIEWS_FOLDER }}/pr-${{ github.event.number }}
+          force: false
 
       - name: Checkout Pages branch for cleanup
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
 
       - name: Remove previews for every closed pull request
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const path = require("path");
@@ -90,7 +88,7 @@ jobs:
 
       - name: Commit cleanup only when files changed
         if: steps.cleanup.outputs.changed == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
         with:
           branch: gh-pages
           commit_message: "Clean up closed pull request previews"
