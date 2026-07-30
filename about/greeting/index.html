@@ -43,11 +43,6 @@
 
 
 
-
-
-
-
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -101,6 +96,7 @@
 </script>
 
 <link rel="alternate" type="application/rss+xml" href="https://snu-psych-science.github.io/feed.xml">
+
   <!-- Explicit font manifest matching _styles/tokens.scss. -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
@@ -124,18 +120,11 @@
     <a class="skip-link" href="#main-content">본문 바로가기</a>
     
 
-
-
-
-
-
-<header class="background" style="--image: url('/images/background.png')">
+<header class="site-header">
   <a href="/" class="home">
     
       <span class="logo">
-        
-          <img src="/images/logo_.png" alt="" width="2116" height="2195">
-        
+        <img src="/images/logo_.png" alt="" width="2116" height="2195">
       </span>
     
     
@@ -241,32 +230,23 @@
 </header>
 
     <main id="main-content" tabindex="-1">
-      <!--
-  modify main content of page:
-  - add section breaks
-  - attach section properties
-  - filter out blank sections
--->
-
-
-
+      
 
 
 
   
   
-
-  <section class="background" data-size="page">
-    <div class="greeting-hero-card" style="--page-hero-image: url('/images/background.png')">
+    <section class="content-section background">
+      <div class="greeting-hero-card page-hero" style="--page-hero-image: url('/images/background.png')">
 
   <div class="greeting-photo-wrap">
     <img class="greeting-photo" src="/images/jychey-director-2026.jpg" alt="최진영 심리과학연구소장" width="1742" height="2613">
   </div>
 
   <div class="greeting-hero-content">
-    <div class="greeting-label">DIRECTOR'S MESSAGE</div>
+    <div class="page-hero__eyebrow">DIRECTOR'S MESSAGE</div>
 
-    <h1>소장 인사말</h1>
+    <h1 class="page-hero__title">소장 인사말</h1>
 
     <div class="greeting-signature">
       <strong>최진영</strong>
@@ -295,13 +275,14 @@
   </p>
 
 </div>
-  </section>
+    </section>
+  
 
 
     </main>
     
 
-<footer class="background" style="--image: url('/images/background.png')" data-size="wide">
+<footer class="background" style="--image: url('/images/background.png')">
   <!--
     <div>
       Extra details like contact info or address

@@ -43,11 +43,6 @@
 
 
 
-
-
-
-
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -101,6 +96,7 @@
 </script>
 
 <link rel="alternate" type="application/rss+xml" href="https://snu-psych-science.github.io/feed.xml">
+
   <!-- Explicit font manifest matching _styles/tokens.scss. -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
@@ -124,18 +120,11 @@
     <a class="skip-link" href="#main-content">본문 바로가기</a>
     
 
-
-
-
-
-
-<header class="background" style="--image: url('/images/background.png')">
+<header class="site-header">
   <a href="/" class="home">
     
       <span class="logo">
-        
-          <img src="/images/logo_.png" alt="" width="2116" height="2195">
-        
+        <img src="/images/logo_.png" alt="" width="2116" height="2195">
       </span>
     
     
@@ -241,39 +230,32 @@
 </header>
 
     <main id="main-content" tabindex="-1">
-      <!--
-  modify main content of page:
-  - add section breaks
-  - attach section properties
-  - filter out blank sections
--->
-
-
-
+      
 
 
 
   
   
-
-  <section class="background" data-size="page">
-    <div class="resources-hero-card page-hero page-hero--decorated" style="--page-hero-image: url('/images/background.png')">
-
-  <div class="resources-hero-label page-hero__eyebrow">REGULATIONS &amp; GUIDELINES</div>
+    <section class="content-section background">
+      <div class="page-hero page-hero--decorated" style="--page-hero-image: url('/images/background.png')">
+  
+    <div class="page-hero__eyebrow">REGULATIONS &amp; GUIDELINES</div>
+  
 
   <h1 class="page-hero__title">연구소 규정</h1>
 
+  
 </div>
 
 <div class="resources-rule-list">
 
-  <a class="resources-rule-card" href="/resources/rules/snu-research-ethics/">
+  <a class="resources-rule-card content-card" href="/resources/rules/snu-research-ethics/">
     <div class="resources-rule-icon">
       <i class="icon fa-solid fa-book"></i>
     </div>
 
     <div class="resources-rule-content">
-      <h3>서울대학교 연구윤리 지침</h3>
+      <h2>서울대학교 연구윤리 지침</h2>
       <p>
         연구자의 책임과 의무, 연구발표의 진실성, 연구자료 관리, 이해상충, 인간 및 동물 대상 연구윤리, 연구 안전관리, 연구윤리 교육 등에 관한 서울대학교 연구윤리 지침입니다.
       </p>
@@ -281,13 +263,13 @@
     </div>
   </a>
 
-  <a class="resources-rule-card" href="/resources/rules/institute-operating-regulations/">
+  <a class="resources-rule-card content-card" href="/resources/rules/institute-operating-regulations/">
     <div class="resources-rule-icon">
       <i class="icon fa-solid fa-file-lines"></i>
     </div>
 
     <div class="resources-rule-content">
-      <h3>서울대학교 사회과학연구원 운영규정</h3>
+      <h2>서울대학교 사회과학연구원 운영규정</h2>
       <p>
         서울대학교 사회과학연구원의 목적, 사업, 조직, 운영위원회, 연구원 구성 및 운영에 관한 규정입니다.
       </p>
@@ -296,13 +278,14 @@
   </a>
 
 </div>
-  </section>
+    </section>
+  
 
 
     </main>
     
 
-<footer class="background" style="--image: url('/images/background.png')" data-size="wide">
+<footer class="background" style="--image: url('/images/background.png')">
   <!--
     <div>
       Extra details like contact info or address

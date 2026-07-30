@@ -43,11 +43,6 @@
 
 
 
-
-
-
-
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -101,6 +96,7 @@
 </script>
 
 <link rel="alternate" type="application/rss+xml" href="https://snu-psych-science.github.io/feed.xml">
+
   <!-- Explicit font manifest matching _styles/tokens.scss. -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
@@ -124,18 +120,11 @@
     <a class="skip-link" href="#main-content">본문 바로가기</a>
     
 
-
-
-
-
-
-<header class="background" style="--image: url('/images/background.png')">
+<header class="site-header">
   <a href="/" class="home">
     
       <span class="logo">
-        
-          <img src="/images/logo_.png" alt="" width="2116" height="2195">
-        
+        <img src="/images/logo_.png" alt="" width="2116" height="2195">
       </span>
     
     
@@ -241,52 +230,45 @@
 </header>
 
     <main id="main-content" tabindex="-1">
-      <!--
-  modify main content of page:
-  - add section breaks
-  - attach section properties
-  - filter out blank sections
--->
-
-
-
+      
 
 
 
   
   
+    <section class="content-section background">
+      <div class="page-hero page-hero--decorated" style="--page-hero-image: url('/images/background.png')">
+  
+    <div class="page-hero__eyebrow">MEMBERS</div>
+  
 
-  <section class="background" data-size="page">
-    <div class="page-hero page-hero--decorated" style="--page-hero-image: url('/images/background.png')">
-  <div class="page-hero__eyebrow">MEMBERS</div>
   <h1 class="page-hero__title">조직 및 구성원</h1>
-  <p class="page-hero__description">심리과학연구소는 소장을 중심으로 운영위원회, 행정실, 그리고 다양한 심리학 연구 분야의 겸임연구원 및 연구진으로 구성되어 있습니다. 본 연구소는 기초 심리학, 응용 심리학, 임상·상담 심리학 등 여러 분야의 연구자들이 참여하는 학제적 연구 플랫폼을 지향합니다.</p>
+
+  
+    <p class="page-hero__description">심리과학연구소는 소장을 중심으로 운영위원회, 행정실, 그리고 다양한 심리학 연구 분야의 겸임연구원 및 연구진으로 구성되어 있습니다. 본 연구소는 기초 심리학, 응용 심리학, 임상·상담 심리학 등 여러 분야의 연구자들이 참여하는 학제적 연구 플랫폼을 지향합니다.</p>
+  
 </div>
-  </section>
+    </section>
+  
 
   
   
-
-  <section class="background" data-size="page">
-    <!--
-  <background></background>
-  <size></size>
--->
-
-<div class="member-table-wrap table-scroll" tabindex="0" aria-label="심리과학연구소 구성원 표">
+    <section class="content-section background">
+      <div class="member-table-wrap table-scroll" tabindex="0" aria-label="심리과학연구소 구성원 표">
   <table class="member-table">
     <thead>
       <tr>
-        <th>직위</th>
-        <th>성명</th>
-        <th>연구 분야</th>
-        <th>랩 웹사이트</th>
+        <th scope="col">직위</th>
+        <th scope="col">성명</th>
+        <th scope="col">연구 분야</th>
+        <th scope="col">랩 웹사이트</th>
       </tr>
     </thead>
+    
     <tbody>
       
         <tr>
-          <td class="member-role">소장</td>
+          <th class="member-role" scope="row">소장</th>
           <td><a href="https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=31" target="_blank" rel="noopener noreferrer">
 최진영
 </a></td>
@@ -294,9 +276,13 @@
           <td><a href="https://www.thecns.snu.ac.kr/" target="_blank" rel="noopener noreferrer">thecns.snu.ac.kr</a></td>
         </tr>
       
+    </tbody>
+    
+    
+    <tbody>
       
         <tr>
-          <td class="member-role" rowspan="12">겸임연구원</td>
+          <th class="member-role" scope="rowgroup" rowspan="12">겸임연구원</th>
           <td><a href="https://psych.snu.ac.kr/bbs/board.php?tbl=bbs21&mode=VIEW&num=32" target="_blank" rel="noopener noreferrer">
 최인철
 </a></td>
@@ -404,15 +390,17 @@
         </tr>
       
     </tbody>
+    
   </table>
 </div>
-  </section>
+    </section>
+  
 
 
     </main>
     
 
-<footer class="background" style="--image: url('/images/background.png')" data-size="wide">
+<footer class="background" style="--image: url('/images/background.png')">
   <!--
     <div>
       Extra details like contact info or address
