@@ -6,16 +6,9 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), "utf8");
 
-test("list-page card titles follow each page h1 with h2 headings", () => {
-  const cases = [["events/index.md", "event"], ["newsletters/index.md", "newsletter"]];
+test("card heading styles use h2 and resource titles remain accessible", () => {
   const styles = read("_styles/components.scss");
 
-  for (const [pagePath, record] of cases) {
-    const page = read(pagePath);
-    assert.match(page, new RegExp(`<h2>\\{\\{ ${record}\\.title \\}\\}</h2>`), pagePath);
-    assert.doesNotMatch(page, new RegExp(`<h3>\\{\\{ ${record}\\.title \\}\\}</h3>`), pagePath);
-    assert.match(page, /class="collection-card__content"/);
-  }
   assert.match(styles, /\.collection-card__content h2\s*\{/);
   assert.doesNotMatch(styles, /\.collection-card__content h3\s*\{/);
 

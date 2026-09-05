@@ -36,6 +36,11 @@
 
 공통 화면 구조는 `_layouts/`와 `_includes/`, 스타일은 `assets/css/main.scss`와 `_styles/`에서 관리합니다. 기존 공개 URL은 `tests/fixtures/routes.txt`를 기준으로 보존합니다.
 
+### 공통 화면 구성요소
+
+- `_includes/page-hero.html`: 목록과 상세 페이지의 제목 영역을 관리합니다. 상세 페이지는 `tag="header"`를 지정하고, 날짜·권호·분류처럼 페이지마다 다른 정보는 레이아웃에서 `capture`한 HTML을 `metadata`로 전달합니다. 기존 스타일을 유지할 때는 `modifier`, `eyebrow_class`, `description_class`를 사용합니다.
+- `_includes/collection-list.html`: `items`로 받은 학술행사·뉴스레터를 최신 날짜순으로 표시합니다. `meta_field`는 연사(`speaker`) 또는 권호(`volume`)를 지정하며, `summary_limit`을 지정한 경우에만 요약문 길이를 제한합니다.
+
 ## 로컬 실행
 
 Node.js 24와 Ruby 3.2가 필요합니다. Node 버전은 `.node-version`에 고정되어 있습니다.
@@ -62,7 +67,7 @@ npm run test:source
 npm test
 ```
 
-생성물 검사는 공개 경로, 내부 링크, 로컬 asset, `baseurl`, canonical URL, JSON-LD, 접근성 구조를 확인합니다. `npm test`는 소스 검사, Jekyll 빌드, 생성물 검사를 순서대로 실행합니다.
+생성물 검사는 공개 경로, 내부 링크, 로컬 asset, `baseurl`, canonical URL, JSON-LD, 접근성 구조를 확인합니다. 목록의 항목·정렬·제목 단계와 상세 페이지의 제목·날짜·권호·분류도 원본 데이터와 대조합니다. `npm test`는 소스 검사, Jekyll 빌드, 생성물 검사를 순서대로 실행합니다.
 
 ## 배포
 

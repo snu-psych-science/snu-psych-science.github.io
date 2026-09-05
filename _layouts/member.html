@@ -5,11 +5,14 @@ layout: default
 {% assign member = site.data.members | where: "id", page.member_id | first %}
 
 <article class="member-profile">
-  <header class="member-profile-header page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-    <div class="page-hero__eyebrow">MEMBER PROFILE</div>
-    <h1 class="page-hero__title">{{ member.name | default: page.title }}</h1>
-    {% if member.role %}<p class="page-hero__description">{{ member.role }}</p>{% endif %}
-  </header>
+  {% include page-hero.html
+    tag="header"
+    modifier="member-profile-header"
+    image=site.header
+    eyebrow="MEMBER PROFILE"
+    title=member.name
+    description=member.role
+  %}
 
   <div class="member-profile-grid">
     <img

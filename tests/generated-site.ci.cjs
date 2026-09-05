@@ -2,8 +2,10 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
+const { parse } = require("yaml");
 
-const site = path.resolve(__dirname, "..", "_site");
+const root = path.resolve(__dirname, "..");
+const site = path.join(root, "_site");
 const configuredBaseurl = (process.env.SITE_BASEURL || "").replace(/^\/+|\/+$/g, "");
 const baseurl = configuredBaseurl ? `/${configuredBaseurl}` : "";
 
@@ -32,6 +34,24 @@ const decodeEntities = (value) =>
     .replaceAll("&amp;", "&")
     .replaceAll("&lt;", "<")
     .replaceAll("&gt;", ">");
+
+const textContent = (html) =>
+  decodeEntities(html.replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+
+const sourceMetadata = (relativePath) => {
+  const source = fs.readFileSync(path.join(root, relativePath), "utf8");
+  const frontMatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+  assert.ok(frontMatter, `${relativePath}: front matter`);
+  return parse(frontMatter[1]);
+};
+
+const collectionEntries = (collection) =>
+  fs.readdirSync(path.join(root, `_${collection}`))
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => {
+      const data = sourceMetadata(`_${collection}/${file}`);
+      return { ...data, route: data.permalink || `/${collection}/${file.slice(0, -3)}/` };
+    });
 
 const localTargetCandidates = (pathname) => {
   let decoded = decodeURIComponent(pathname);
@@ -129,6 +149,82 @@ test("generated routes exactly match the pre-refactor snapshot", () => {
     .map(routeForFile)
     .sort();
   assert.deepEqual(actual, expected);
+});
+
+test("collection lists preserve records, dates, metadata, and h2 titles", () => {
+  for (const [collection, metaField] of [["events", "speaker"], ["newsletters", "volume"]]) {
+    const records = collectionEntries(collection);
+    const expected = new Map(records.map((record) => [`${baseurl}${record.route}`, record]));
+    const html = fs.readFileSync(path.join(site, collection, "index.html"), "utf8");
+    const cards = [...html.matchAll(/<a\b[^>]*class="[^"]*\bcollection-card\b[^"]*"[^>]*>([\s\S]*?)<\/a>/gi)];
+    const actualRoutes = cards.map(([card]) => decodeEntities(card.match(/\bhref="([^"]+)"/)[1]));
+    assert.deepEqual([...actualRoutes].sort(), [...expected.keys()].sort(), `${collection}: every record appears once`);
+    assert.equal((html.match(/<h1\b/gi) || []).length, 1, `${collection}: page heading`);
+
+    let previousDate = "9999-12-31";
+    for (const [index, [, body]] of cards.entries()) {
+      const record = expected.get(actualRoutes[index]);
+      const title = body.match(/<h2\b[^>]*>([\s\S]*?)<\/h2>/i)?.[1];
+      assert.equal(textContent(title || ""), record.title, `${record.route}: h2 title`);
+      assert.doesNotMatch(body, /<h[13-6]\b/i, `${record.route}: card heading level`);
+      assert.ok(record.date <= previousDate, `${collection}: newest first`);
+      previousDate = record.date;
+
+      const fieldText = (name) => textContent(body.match(
+        new RegExp(`<[^>]+class="collection-card__${name}"[^>]*>([\\s\\S]*?)<\\/[^>]+>`)
+      )?.[1] || "");
+      assert.equal(fieldText("date"), record.date.replaceAll("-", "."), `${record.route}: date`);
+      assert.equal(fieldText("meta"), record[metaField] || "", `${record.route}: metadata`);
+      const summary = record.summary || "";
+      const expectedSummary = collection === "newsletters" && [...summary].length > 140
+        ? [...summary].slice(0, 137).join("") + "..."
+        : summary;
+      assert.equal(fieldText("summary"), expectedSummary, `${record.route}: summary`);
+    }
+  }
+});
+
+test("detail headers preserve semantic structure and page-specific information", () => {
+  const headerImage = parse(fs.readFileSync(path.join(root, "_config.yaml"), "utf8")).header;
+  const memberPage = sourceMetadata("members/최진영.md");
+  const member = parse(fs.readFileSync(path.join(root, "_data/members.yaml"), "utf8"))
+    .find((entry) => entry.id === memberPage.member_id);
+  const cases = [
+    ...collectionEntries("events").map((record) => ({
+      ...record, eyebrow: "ACADEMIC EVENT", description: record.summary,
+    })),
+    ...collectionEntries("newsletters").map((record) => ({
+      ...record, eyebrow: "NEWSLETTER", description: record.summary, dated: true, label: record.volume,
+    })),
+    ...collectionEntries("notices").map((record) => ({
+      ...record, eyebrow: "NOTICE", dated: true, label: record.category,
+    })),
+    { route: memberPage.permalink, title: member.name, eyebrow: "MEMBER PROFILE", description: member.role },
+  ];
+
+  for (const record of cases) {
+    const file = localTargetCandidates(`${baseurl}${record.route}`)
+      .find((candidate) => candidate.endsWith(".html") && fs.existsSync(candidate));
+    assert.ok(file, `${record.route}: detail page exists`);
+    const html = fs.readFileSync(file, "utf8");
+    const hero = html.match(/<header\b[^>]*class="[^"]*\bpage-hero\b[^"]*"[^>]*>([\s\S]*?)<\/header>/i);
+    assert.ok(hero, `${record.route}: semantic header`);
+    assert.match(hero[0], /\bpage-hero--decorated\b/, `${record.route}: decoration`);
+    assert.ok(hero[0].includes(`url('${baseurl}/${headerImage}')`), `${record.route}: baseurl-safe image`);
+    assert.equal((hero[1].match(/<h1\b/gi) || []).length, 1, `${record.route}: one title`);
+    assert.equal(textContent(hero[1].match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)[1]), record.title);
+    assert.ok(textContent(hero[1]).includes(record.eyebrow), `${record.route}: eyebrow`);
+    if (record.description) {
+      const description = hero[1].match(/<p\b[^>]*class="[^"]*\bpage-hero__description\b[^"]*"[^>]*>([\s\S]*?)<\/p>/i);
+      assert.equal(textContent(description?.[1] || ""), record.description, `${record.route}: description`);
+    }
+    if (record.dated) {
+      const date = hero[1].match(/<time\s+datetime="([^"]+)"[^>]*>([\s\S]*?)<\/time>/i);
+      assert.equal(date?.[1], record.date, `${record.route}: machine-readable date`);
+      assert.equal(textContent(date?.[2] || ""), record.date.replaceAll("-", "."), `${record.route}: displayed date`);
+    }
+    if (record.label) assert.ok(textContent(hero[1]).includes(record.label), `${record.route}: metadata label`);
+  }
 });
 
 test("generated site omits development-only files", () => {

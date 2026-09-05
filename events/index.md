@@ -8,30 +8,4 @@ title: 학술행사
   decorated=false
 %}
 
-{% assign events = site.events | sort: "date" | reverse %}
-
-<div class="collection-list">
-
-  {% for event in events %}
-    <a class="collection-card list-card" href="{{ event.url | relative_url }}">
-      <div class="collection-card__date">
-        {{ event.date | date: "%Y.%m.%d" }}
-      </div>
-
-      <div class="collection-card__content">
-        <h2>{{ event.title }}</h2>
-
-        {% if event.speaker %}
-          <p class="collection-card__meta">{{ event.speaker }}</p>
-        {% endif %}
-
-        {% if event.summary %}
-          <p class="collection-card__summary">{{ event.summary }}</p>
-        {% endif %}
-      </div>
-
-      <div class="collection-card__arrow">→</div>
-    </a>
-  {% endfor %}
-
-</div>
+{% include collection-list.html items=site.events meta_field="speaker" %}

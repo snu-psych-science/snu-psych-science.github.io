@@ -4,11 +4,7 @@ layout: default
 
 <article class="notice-detail">
 
-  <header class="notice-detail-header page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-    <div class="notice-detail-label page-hero__eyebrow">NOTICE</div>
-
-    <h1 class="page-hero__title">{{ page.title }}</h1>
-
+  {% capture notice_metadata %}
     <div class="notice-detail-meta page-hero__description">
       <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
         {{ page.date | date: "%Y.%m.%d" }}
@@ -18,7 +14,15 @@ layout: default
         <span>{{ page.category }}</span>
       {% endif %}
     </div>
-  </header>
+  {% endcapture %}
+  {% include page-hero.html
+    tag="header"
+    modifier="notice-detail-header"
+    image=site.header
+    eyebrow="NOTICE"
+    eyebrow_class="notice-detail-label"
+    metadata=notice_metadata
+  %}
 
   <div class="notice-detail-content">
     {{ content }}

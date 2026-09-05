@@ -3,15 +3,22 @@ layout: default
 ---
 
 <article class="newsletter-detail">
-  <header class="newsletter-detail-header page-hero page-hero--decorated" style="--page-hero-image: url('{{ site.header | relative_url }}')">
-    <div class="newsletter-detail-label page-hero__eyebrow">NEWSLETTER</div>
-    <h1 class="page-hero__title">{{ page.title }}</h1>
+  {% capture newsletter_metadata %}
     <div class="newsletter-detail-meta">
       <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y.%m.%d" }}</time>
       {% if page.volume %}<span>{{ page.volume }}</span>{% endif %}
     </div>
-    {% if page.summary %}<p class="newsletter-detail-summary page-hero__description">{{ page.summary }}</p>{% endif %}
-  </header>
+  {% endcapture %}
+  {% include page-hero.html
+    tag="header"
+    modifier="newsletter-detail-header"
+    image=site.header
+    eyebrow="NEWSLETTER"
+    eyebrow_class="newsletter-detail-label"
+    metadata=newsletter_metadata
+    description=page.summary
+    description_class="newsletter-detail-summary"
+  %}
 
   {% if content != empty %}<div class="newsletter-detail-content">{{ content }}</div>{% endif %}
 

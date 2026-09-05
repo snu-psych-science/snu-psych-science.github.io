@@ -1,0 +1,32 @@
+{% assign collection_items = include.items | sort: "date" | reverse %}
+
+<div class="collection-list">
+  {% for item in collection_items %}
+    <a class="collection-card list-card" href="{{ item.url | relative_url }}">
+      <div class="collection-card__date">
+        {{ item.date | date: "%Y.%m.%d" }}
+      </div>
+
+      <div class="collection-card__content">
+        <h2>{{ item.title }}</h2>
+
+        {% assign item_meta = item[include.meta_field] %}
+        {% if item_meta %}
+          <p class="collection-card__meta">{{ item_meta }}</p>
+        {% endif %}
+
+        {% if item.summary %}
+          <p class="collection-card__summary">
+            {% if include.summary_limit %}
+              {{ item.summary | truncate: include.summary_limit }}
+            {% else %}
+              {{ item.summary }}
+            {% endif %}
+          </p>
+        {% endif %}
+      </div>
+
+      <div class="collection-card__arrow">→</div>
+    </a>
+  {% endfor %}
+</div>

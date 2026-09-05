@@ -192,21 +192,6 @@ test("site assets are explicit and no custom Ruby filters remain", () => {
   );
 });
 
-test("collection detail and member layouts use the shared boxed page hero", () => {
-  for (const relativePath of [
-    "_layouts/event.html",
-    "_layouts/newsletter.html",
-    "_layouts/notice.html",
-    "_layouts/member.html",
-  ]) {
-    const layout = read(relativePath);
-    assert.match(layout, /class="[^"]*page-hero(?:\s|\")/i, `${relativePath} page hero`);
-    assert.match(layout, /class="[^"]*page-hero__title(?:\s|\")/i, `${relativePath} hero title`);
-    assert.match(layout, /class="[^"]*page-hero__description(?:\s|\")/i, `${relativePath} hero description`);
-    assert.match(layout, /--page-hero-image:[\s\S]*relative_url/i, `${relativePath} baseurl-safe hero image`);
-  }
-});
-
 test("light-theme text, muted text, brand links, and focus colors meet WCAG contrast", () => {
   const tokens = read("_styles/tokens.scss");
   const luminance = (hex) => {
