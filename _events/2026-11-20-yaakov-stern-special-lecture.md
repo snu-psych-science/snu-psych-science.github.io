@@ -1,9 +1,9 @@
 ---
-title: "Columbia University Yaakov Stern 교수님 해외 석학 초청강연"
+title: "Columbia University Yaakov Stern 교수 해외 석학 초청강연"
 date: 2026-11-20
 start_time: "11:00"
 venue: "아시아연구소(101동) 210호 영원홀"
-speaker: "Yaakov Stern 교수님"
+speaker: "Yaakov Stern 교수"
 affiliation: "Columbia University Irving Medical Center"
 category: "해외 석학 초청강연"
 topic_label: "강연 제목"
@@ -32,6 +32,6 @@ Cognitive reserve (CR) is a property of the brain that allows for cognitive perf
 
 ## 연사 소개
 
-Yaakov Stern 교수님은 Columbia University Irving Medical Center의 Florence Irving Professor of Neuropsychology이자 Cognitive Neuroscience Division의 책임자로, Taub Institute for Research on Alzheimer’s Disease and the Aging Brain에 소속되어 있습니다.
+Yaakov Stern 교수는 Columbia University Irving Medical Center의 Florence Irving Professor of Neuropsychology이자 Cognitive Neuroscience Division의 책임자로, Taub Institute for Research on Alzheimer’s Disease and the Aging Brain에 소속되어 있습니다.
 
 비슷한 수준의 뇌 병리가 있어도 인지 기능에 개인차가 나타나는 현상을 설명하는 인지 예비능 개념의 발전에 기여해 왔습니다. 신경심리검사, 인지 실험, 기능적 뇌영상을 결합해 인지노화와 인지 예비능의 신경 기반을 연구하며, Reference Ability Neural Network 종단 연구와 노년층 대상 인지 중재 임상시험을 수행해 왔습니다.
