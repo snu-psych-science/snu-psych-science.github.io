@@ -138,7 +138,7 @@ test("generated internal links resolve to built files", () => {
   assert.deepEqual(missingFragments, []);
 });
 
-test("generated routes exactly match the pre-refactor snapshot", () => {
+test("generated routes exactly match the maintained public route list", () => {
   const expected = fs
     .readFileSync(path.join(__dirname, "fixtures", "routes.txt"), "utf8")
     .split(/\r?\n/)
@@ -149,6 +149,27 @@ test("generated routes exactly match the pre-refactor snapshot", () => {
     .map(routeForFile)
     .sort();
   assert.deepEqual(actual, expected);
+});
+
+test("home announcement has a body link and separate dismissal controls", () => {
+  const home = fs.readFileSync(path.join(site, "index.html"), "utf8");
+  const dialog = home.match(/<dialog\b[^>]*id="event-announcement"[^>]*>([\s\S]*?)<\/dialog>/);
+  assert.ok(dialog, "native home dialog");
+  assert.match(dialog[0], /data-expires-at="2026-11-20T11:00:00\+09:00"/);
+  assert.doesNotMatch(dialog[0].split(">", 1)[0], /\sopen(?:\s|=)/, "hidden without JavaScript");
+  const link = dialog[1].match(/<a\b[^>]*class="event-announcement__body"[^>]*>([\s\S]*?)<\/a>/);
+  assert.ok(link);
+  assert.ok(link[0].includes(`href="${baseurl}/events/yaakov-stern-special-lecture-2026/"`));
+  assert.match(link[1], /<img\b/);
+  assert.doesNotMatch(link[1], /<button\b|<a\b/, "no nested controls inside the body link");
+  assert.match(dialog[1].slice(link.index + link[0].length), /data-hide-today/);
+  assert.match(dialog[1].slice(link.index + link[0].length), /data-close-announcement/);
+  const event = fs.readFileSync(path.join(site, "events/yaakov-stern-special-lecture-2026/index.html"), "utf8");
+  assert.doesNotMatch(event, /<dialog\b/, "announcement is home-only");
+  const schemas = [...event.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)].map((match) => JSON.parse(match[1]));
+  const metadata = schemas.find((data) => data["@type"] === "Event");
+  assert.equal(metadata.startDate, "2026-11-20T11:00:00+09:00");
+  assert.equal(metadata.endDate, undefined, "unknown finish time must not be invented");
 });
 
 test("collection lists preserve records, dates, metadata, and h2 titles", () => {

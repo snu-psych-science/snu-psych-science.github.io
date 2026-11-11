@@ -19,6 +19,10 @@ contact:
 
 ### jekyll settings
 
+timezone: Asia/Seoul
+# Event dates describe when the event takes place, including upcoming events.
+future: true
+
 # front matter defaults
 defaults:
   # all markdown files

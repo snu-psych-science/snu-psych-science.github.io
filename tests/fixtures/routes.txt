@@ -20,7 +20,9 @@
 /events/han-sowon-seminar-2025/
 /events/hbayesdm-workshop-2024/
 /events/hong-seokjun-special-lecture-2024/
+/events/jay-myung-special-lecture-2026/
 /events/jin-kyungsun-seminar-2025/
+/events/jung-minyoung-special-lecture-2026/
 /events/kang-inhan-seminar-2025/
 /events/kim-gawon-special-lecture-2024/
 /events/kim-hyangsook-seminar-2025/
@@ -32,6 +34,7 @@
 /events/lee-jihang-special-lecture-2024/
 /events/lee-suhyun-special-lecture-2024/
 /events/liana-machado-seminar-2024/
+/events/min-byoung-kyong-special-lecture-2026/
 /events/na-jinkyung-seminar-2025/
 /events/oh-sungjoo-special-lecture-2024/
 /events/park-guihyun-seminar-2025/
@@ -42,8 +45,14 @@
 /events/pilyoung-kim-seminar-2024/
 /events/pyongwon-kang-seminar-2024/
 /events/sander-thomaes-special-lecture-2026/
+/events/sanghack-lee-special-lecture-2026/
+/events/seol-sunhae-special-lecture-2026/
+/events/shinobu-kitayama-special-lecture-2026/
+/events/si-on-yoon-special-lecture-2026/
 /events/uri-hasson-seminar-2024/
+/events/yaakov-stern-special-lecture-2026/
 /events/yoon-seojin-seminar-2025/
+/events/zhicheng-lin-special-lecture-2026/
 /google78a4bc3ad1d21015.html
 /members/최진영.html
 /naver1667d8f8bf5abdbd8094e3d44f333f6a.html

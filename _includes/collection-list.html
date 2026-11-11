@@ -10,6 +10,8 @@
       <div class="collection-card__content">
         <h2>{{ item.title }}</h2>
 
+        {% if include.show_event_status %}{% include event-status.html event=item %}{% endif %}
+
         {% assign item_meta = item[include.meta_field] %}
         {% if item_meta %}
           <p class="collection-card__meta">{{ item_meta }}</p>

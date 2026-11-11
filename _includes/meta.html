@@ -20,7 +20,7 @@
 
 {% assign fulltitle = fulltitle_parts | join: " | " %}
 
-{% assign description_text = page.description | default: site.description | default: "" %}
+{% assign description_text = page.description | default: page.summary | default: site.description | default: "" %}
 
 {% if site.subtitle %}
   {% capture description_text -%}
@@ -38,7 +38,7 @@
 {% assign url = page.url | absolute_url %}
 
 {% assign icon = site.icon | absolute_url %}
-{% assign share = site.share_image | absolute_url %}
+{% assign share = page.image | default: site.share_image | absolute_url %}
 
 {% assign published = page.date | date_to_xmlschema %}
 {% assign updated = page.last_modified_at | date_to_xmlschema %}

@@ -1,0 +1,10 @@
+{%- assign status_day = include.event.date | date: "%Y-%m-%d" -%}
+{%- assign current_day = site.time | date: "%Y-%m-%d" -%}
+{%- if status_day > current_day -%}
+  {%- assign status_state = "upcoming" -%}{%- assign status_label = "예정 행사" -%}
+{%- elsif status_day == current_day -%}
+  {%- assign status_state = "today" -%}{%- assign status_label = "오늘" -%}
+{%- else -%}
+  {%- assign status_state = "past" -%}{%- assign status_label = "지난 행사" -%}
+{%- endif -%}
+<span class="event-status" data-event-date="{{ status_day }}" data-state="{{ status_state }}">{{ status_label }}</span>

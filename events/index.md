@@ -8,4 +8,4 @@ title: 학술행사
   decorated=false
 %}
 
-{% include collection-list.html items=site.events meta_field="speaker" %}
+{% include collection-list.html items=site.events meta_field="speaker" show_event_status=true %}

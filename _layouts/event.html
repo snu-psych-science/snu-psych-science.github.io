@@ -31,7 +31,9 @@ layout: default
           {% if page.topic %}<tr><th scope="row">{{ page.topic_label | default: "내용" }}</th><td>{{ page.topic }}</td></tr>{% endif %}
           {% if page.organizer %}<tr><th scope="row">{{ page.organizer_label | default: "주최" }}</th><td>{{ page.organizer }}</td></tr>{% endif %}
           {% if page.host %}<tr><th scope="row">호스트</th><td>{{ page.host }}</td></tr>{% endif %}
+          {% if page.moderator %}<tr><th scope="row">사회</th><td>{{ page.moderator }}</td></tr>{% endif %}
           {% if page.sponsor %}<tr><th scope="row">후원</th><td>{{ page.sponsor }}</td></tr>{% endif %}
+          {% if page.contact_email %}<tr><th scope="row">문의</th><td><a href="mailto:{{ page.contact_email | escape }}">{{ page.contact_email }}</a></td></tr>{% endif %}
         </tbody>
       </table>
     </div>
@@ -39,6 +41,14 @@ layout: default
 
   {% if content != empty %}
     <div class="event-detail-content">{{ content }}</div>
+  {% endif %}
+  {% if page.image %}
+    <section aria-labelledby="event-poster-title">
+      <h2 id="event-poster-title">포스터</h2>
+      <a class="event-poster" href="{{ page.image | relative_url }}" aria-label="{{ page.title | escape }} 포스터 원본 보기">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }} 포스터" width="{{ page.image_width }}" height="{{ page.image_height }}" loading="lazy">
+      </a>
+    </section>
   {% endif %}
 </article>
 
@@ -53,8 +63,9 @@ layout: default
   "description": {{ page.summary | default: page.topic | jsonify }},
   "url": {{ page.url | absolute_url | jsonify }},
   "startDate": {{ event_start | jsonify }},
-  "endDate": {{ event_end | jsonify }},
-  "organizer": { "@type": "Organization", "name": {{ page.organizer | default: site.title | jsonify }} }{% if page.venue %},
+  {% if page.end_time %}"endDate": {{ event_end | jsonify }},{% endif %}
+  "eventStatus": "https://schema.org/EventScheduled"{% if page.organizer %},
+  "organizer": { "@type": "Organization", "name": {{ page.organizer | jsonify }} }{% endif %}{% if page.venue %},
   "location": { "@type": "Place", "name": {{ page.venue | jsonify }} }{% endif %}{% if page.speaker %},
   "performer": { "@type": "Person", "name": {{ page.speaker | jsonify }} }{% endif %}
 }

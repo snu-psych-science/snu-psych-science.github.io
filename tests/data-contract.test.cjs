@@ -306,6 +306,16 @@ test("navigation has unique routes and complete ordered records", () => {
 test("home slides and publications have valid data references", () => {
   const home = yamlFile("_data/home.yaml");
   assert.ok(isRecord(home), "_data/home.yaml: mapping");
+  if (home.announcement) {
+    const event = markdownFiles("_events")
+      .map((name) => frontMatter(`_events/${name}`).data)
+      .find((entry) => entry.permalink === home.announcement);
+    assert.ok(event, "home announcement links to an event");
+    timeInMinutes(event.start_time, "home announcement: expiry time");
+    assert.ok(event.image, "home announcement: poster");
+    assertImageMetadata(event, "image", "home announcement");
+    assert.equal(yamlFile("_config.yaml").future, true, "upcoming event pages must be published");
+  }
   const slides = assertRecordArray(home.slides, "_data/home.yaml: slides");
   assert.ok(slides.length > 1, "home slides");
   const slideImages = new Set();

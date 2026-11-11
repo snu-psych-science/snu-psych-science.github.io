@@ -36,6 +36,8 @@
 
 공통 화면 구조는 `_layouts/`와 `_includes/`, 스타일은 `assets/css/main.scss`와 `_styles/`에서 관리합니다. 기존 공개 URL은 `tests/fixtures/routes.txt`를 기준으로 보존합니다.
 
+홈의 강연 팝업은 `_data/home.yaml`의 `announcement`에 행사 permalink를 지정해 선택합니다. 포스터와 안내는 해당 행사 데이터에서 읽고, 본문 전체가 상세페이지로 연결됩니다. 같은 탭 방문에서는 한 번만 표시하며, ‘오늘 하루 보지 않기’는 한국시간 날짜를 기준으로 저장합니다. 행사의 `date`와 `start_time`에 도달하면 재배포 없이 표시를 종료합니다. 예정 행사도 상세페이지가 생성되도록 `future: true`를 사용합니다.
+
 ### 공통 화면 구성요소
 
 - `_includes/page-hero.html`: 목록과 상세 페이지의 제목 영역을 관리합니다. 상세 페이지는 `tag="header"`를 지정하고, 날짜·권호·분류처럼 페이지마다 다른 정보는 레이아웃에서 `capture`한 HTML을 `metadata`로 전달합니다. 기존 스타일을 유지할 때는 `modifier`, `eyebrow_class`, `description_class`를 사용합니다.

@@ -37,6 +37,8 @@ title: 홈
 
     <h3>{{ event.title }}</h3>
 
+    {% include event-status.html event=event %}
+
     {% if event.speaker %}
       <p class="home-preview-meta">{{ event.speaker }}</p>
     {% endif %}
