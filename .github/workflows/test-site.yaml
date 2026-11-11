@@ -28,7 +28,8 @@ on:
 
 jobs:
   test-site:
-    runs-on: ubuntu-latest
+    # The locked posix-spawn extension does not compile on Ubuntu 26.04.
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
       contents: read
