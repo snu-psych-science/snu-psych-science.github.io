@@ -1,2 +1,2 @@
 <!-- Single explicit Sass entrypoint; partials under _styles are never requested directly. -->
-<link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet">
+<link href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}" rel="stylesheet">

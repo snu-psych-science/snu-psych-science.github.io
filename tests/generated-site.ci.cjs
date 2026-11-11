@@ -366,7 +366,10 @@ test("ordinary pages request one local compiled stylesheet", async (t) => {
         .map((tag) => tag.match(/\bhref="([^"]+)"/i)?.[1])
         .filter(Boolean)
         .filter((reference) => !/^https?:/i.test(reference));
-      assert.deepEqual(localStyles, [`${baseurl}/assets/css/main.css`]);
+      assert.equal(localStyles.length, 1);
+      const stylesheet = new URL(localStyles[0], "https://example.test");
+      assert.equal(stylesheet.pathname, `${baseurl}/assets/css/main.css`);
+      assert.match(stylesheet.searchParams.get("v") || "", /^\d+$/, "build version avoids stale cached styles");
     });
   }
 });
